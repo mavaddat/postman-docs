@@ -30,7 +30,7 @@ The following is a list of dynamic variables whose values are randomly generated
 
 ## Contents
 
-* [Common variables](#common)
+* [Common](#common)
 * [Text, numbers, and colors](#text-numbers-and-colors)
 * [Internet and IP addresses](#internet-and-ip-addresses)
 * [Names](#names)
