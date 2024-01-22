@@ -27,7 +27,7 @@ contextual_links:
     url: "https://www.postman.com/postman/workspace/test-examples-in-postman/overview"
 ---
 
-Postman enables you to write your own test scripts, use predefined variables to generate sample data, and utilize JavaScript APIs to test your request and response data. Learn how to use this reference to extend your testing functionality.
+Postman enables you to write your own test scripts, use predefined variables to generate sample data, and utilize JavaScript APIs to test your request and response data. Learn how to use the Postman scripting reference to extend your API testing functionality.
 
 ## Test examples
 
