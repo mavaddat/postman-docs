@@ -27,39 +27,7 @@ contextual_links:
     url: "https://www.postman.com/postman/workspace/test-examples-in-postman/overview"
 ---
 
-You can use the following test script examples to write your own test scripts for requests, folders, and collections. Test scripts execute when Postman receives a response from the API you sent the request to. When you add tests to a folder or collection, they execute after each request inside it.
-
-## Contents
-
-* [Get started with tests](#get-started-with-tests)
-* [Use multiple assertions](#use-multiple-assertions)
-* [Parse response body data](#parse-response-body-data)
-    * [Handle responses that don't parse](#handle-responses-that-dont-parse)
-* [Make assertions on the HTTP response](#make-assertions-on-the-http-response)
-    * [Test response body](#test-response-body)
-    * [Test status codes](#test-status-codes)
-    * [Test headers](#test-headers)
-    * [Test cookies](#test-cookies)
-    * [Test response times](#test-response-times)
-* [Common assertion examples](#common-assertion-examples)
-    * [Assert a response value against a variable](#assert-a-response-value-against-a-variable)
-    * [Assert a value type](#assert-a-value-type)
-    * [Assert array properties](#assert-array-properties)
-    * [Assert object properties](#assert-object-properties)
-    * [Assert that a value is in a set](#assert-that-a-value-is-in-a-set)
-    * [Assert that an object is contained](#assert-that-an-object-is-contained)
-    * [Assert the current environment](#assert-the-current-environment)
-* [Troubleshoot common test errors](#troubleshoot-common-test-errors)
-    * [Assertion deep equality error](#assertion-deep-equality-error)
-    * [Variable not defined error](#variable-not-defined-error)
-    * [Assertion undefined error](#assertion-undefined-error)
-    * [Test not failing](#test-not-failing)
-* [Validate response structure](#validate-response-structure)
-* [Send an asynchronous request](#send-an-asynchronous-request)
-* [Previous style of writing Postman tests (deprecated)](#previous-style-of-writing-postman-tests-deprecated)
-* [Next steps](#next-steps)
-
-## Get started with tests
+You can use test script examples for various scenarios. Learn how to make assertions, validate response structure, and troubleshoot common test errors.
 
 To write your first test script, open a request in Postman, then select the **Tests** tab. Enter the following JavaScript code:
 
@@ -86,6 +54,35 @@ pm.test("Status code is 200", () => {
 ```
 
 > Refer to the [Chai Assertion Library Docs](https://www.chaijs.com/api/bdd/) for a complete overview of assertion syntax options.
+
+## Contents
+
+* [Use multiple assertions](#use-multiple-assertions)
+* [Parse response body data](#parse-response-body-data)
+    * [Handle responses that don't parse](#handle-responses-that-dont-parse)
+* [Make assertions on the HTTP response](#make-assertions-on-the-http-response)
+    * [Test response body](#test-response-body)
+    * [Test status codes](#test-status-codes)
+    * [Test headers](#test-headers)
+    * [Test cookies](#test-cookies)
+    * [Test response times](#test-response-times)
+* [Common assertion examples](#common-assertion-examples)
+    * [Assert a response value against a variable](#assert-a-response-value-against-a-variable)
+    * [Assert a value type](#assert-a-value-type)
+    * [Assert array properties](#assert-array-properties)
+    * [Assert object properties](#assert-object-properties)
+    * [Assert that a value is in a set](#assert-that-a-value-is-in-a-set)
+    * [Assert that an object is contained](#assert-that-an-object-is-contained)
+    * [Assert the current environment](#assert-the-current-environment)
+* [Troubleshoot common test errors](#troubleshoot-common-test-errors)
+    * [Assertion deep equality error](#assertion-deep-equality-error)
+    * [Variable not defined error](#variable-not-defined-error)
+    * [Assertion undefined error](#assertion-undefined-error)
+    * [Test not failing](#test-not-failing)
+* [Validate response structure](#validate-response-structure)
+* [Send an asynchronous request](#send-an-asynchronous-request)
+* [Previous style of writing Postman tests (deprecated)](#previous-style-of-writing-postman-tests-deprecated)
+* [Next steps](#next-steps)
 
 ## Use multiple assertions
 
