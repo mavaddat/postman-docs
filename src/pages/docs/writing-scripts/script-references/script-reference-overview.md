@@ -40,4 +40,3 @@ Postman uses the [Faker](https://www.npmjs.com/package/@faker-js/faker) library 
 ## Postman JavaScript APIs
 
 Postman provides [JavaScript APIs](/docs/writing-scripts/script-references/postman-sandbox-api-reference/) that you can use in your request scripts. The `pm` object provides functionality for testing your request and response data, with the `postman` object providing additional workflow control.
-
