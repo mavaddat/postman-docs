@@ -35,7 +35,7 @@ You can use test [script examples](/docs/writing-scripts/script-references/test-
 
 ## Dynamic variables
 
-Postman uses the [Faker](https://www.npmjs.com/package/@faker-js/faker) library to generate sample data, including random names, addresses, email addresses, and much more. You can use these pre-defined variables multiple times to return different values per request. Learn how to [use predefined variables](/docs/writing-scripts/script-references/variables-list/).
+Postman uses the [Faker](https://www.npmjs.com/package/@faker-js/faker) library to generate sample data, including random names, addresses, email addresses, and much more. You can use these predefined variables multiple times to return different values per request. Learn how to [use predefined variables](/docs/writing-scripts/script-references/variables-list/).
 
 ## Postman JavaScript APIs
 
