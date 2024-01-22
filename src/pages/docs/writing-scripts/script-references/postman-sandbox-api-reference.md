@@ -22,7 +22,7 @@ contextual_links:
     url: "https://blog.postman.com/adding-external-libraries-in-postman/"
 ---
 
-The Postman JavaScript API functionality enables you to programmatically access and alter request and response data and variables using the `pm` object. You can also build request workflows for the Collection Runner using the `postman` object.
+The Postman JavaScript API functionality enables you to programmatically access and alter request and response data and variables using the `pm` object. You can also dynamically alter execution order to build request workflows for the Collection Runner using the `postman` object.
 
 ## Contents
 
