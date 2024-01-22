@@ -27,7 +27,7 @@ contextual_links:
     url: "https://www.postman.com/postman/workspace/test-examples-in-postman/overview"
 ---
 
-You can use test script examples for various scenarios. Learn how to make assertions, validate response structure, and troubleshoot common test errors.
+This page provides test script examples for various API testing scenarios in Postman. You can use these test scripts in your request to parse respond data and make assertions. You can also use these scripts to validate response structure and troubleshoot common test errors.
 
 To write your first test script, open a request in Postman, then select the **Tests** tab. Enter the following JavaScript code:
 
