@@ -736,10 +736,6 @@ export const leftNavItems = [
             url: '/docs/postman-flows/concepts/selecting-information/',
           },
           {
-            name: 'Pinned variables',
-            url: '/docs/postman-flows/concepts/pinning-variables/',
-          },
-          {
             name: 'Send data between blocks',
             url: '/docs/postman-flows/concepts/passing-information-between-blocks/',
           },
