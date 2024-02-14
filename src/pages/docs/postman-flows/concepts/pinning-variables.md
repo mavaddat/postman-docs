@@ -1,5 +1,5 @@
 ---
-title: "Pinning variables in Postman Flows"
+title: "Pin variables in Postman Flows"
 updated: 2024-02-15
 early_access: true
 plan: beta
