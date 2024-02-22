@@ -44,8 +44,6 @@ You can export your Postman data, including collections, environments, global va
 
 You can export a data dump of all your collections, environments, globals, and header presets in Postman.
 
-> You can export individual collections and environments from the [Scratch Pad](/docs/getting-started/basics/using-scratch-pad/). You can't make bulk data exports of all collections and environments at once.
-
 1. Select the settings icon <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> in the header, then select **Settings**.
 
 1. Select the **Data** tab, then select **Request Data Export** to start your request for the data dump.
@@ -66,3 +64,5 @@ The [Export page](http://go.postman.co/me/export) shows information about your e
 * **Download** - The zipped file is ready to download.
 
 When the export is ready, you will receive an email with link to download a zipped file with the data dump. You can also download the file from the Export page using **Download**.
+
+After exporting, you can import the data into any Postman instance. You must unzip the exported file before [importing the data into Postman](/docs/getting-started/importing-and-exporting/importing-data/#import-postman-data).

@@ -48,8 +48,7 @@ To get started using Postman, check out the [Get started](/docs/getting-started/
 
 ## Send requests
 
-You can send requests in Postman to connect to APIs you are working with. To learn more about how to send requests, see
-[Create and send API requests in Postman](/docs/sending-requests/requests/) and learn how to [send your first request](/docs/getting-started/first-steps/sending-the-first-request/).
+You can send requests in Postman to connect to APIs you are working with. To learn more about how to send requests, see [Send API requests and get response data in Postman](/docs/sending-requests/requests/) and learn how to [send your first request](/docs/getting-started/first-steps/sending-the-first-request/).
 
 ## Write scripts
 
@@ -69,13 +68,13 @@ To learn more about Postman Flows, see [Build API applications visually using Po
 
 The Postman CLI is a secure command-line companion for Postman. You can use the Postman CLI to run a collection, send run results to Postman, check API definitions against configured API Governance and API Security rules, and more.
 
-To learn more about the Postman CLI, see [Explore Postman’s command-line companion](/docs/postman-cli/postman-cli-overview/).
+To learn more about the Postman CLI, see [Explore Postman's command-line companion](/docs/postman-cli/postman-cli-overview/).
 
 ## Collaborate in Postman
 
 Postman provides a variety of tools to enable and enhance [collaboration](https://www.postman.com/api-platform/api-collaboration/) within your team. You can create team workspaces, where team members can share their work and collaborate on API projects. Users can also discuss their work directly in Postman by commenting on collections and APIs, including on specific requests, versions, and inline on API definitions and scripts.
 
-To learn more about collaboration in Postman, see [Create, join, and manage teams in Postman](/docs/collaborating-in-postman/working-with-your-team/collaboration-overview/).
+To learn more about collaboration in Postman, see [Collaborate in Postman](/docs/collaborating-in-postman/collaborate-in-postman-overview/).
 
 ## Design and develop your API
 
@@ -107,7 +106,7 @@ To learn more about Postman's API Governance and API Security features, see [API
 
 Postman provides a variety of options to customize your team's experience, from the initial setup to ongoing team and plan management. As a Team Admin, you can streamline the onboarding process for your team, manage access control, and keep your team up to date with the latest version of Postman.
 
-To learn more about administering your Postman team, see the [Administration](/docs/administration/managing-your-team/managing-your-team/) section.
+To learn more about administering your Postman team, see the [Team management overview](/docs/administration/managing-your-team/managing-your-team/).
 
 ## Use reports
 

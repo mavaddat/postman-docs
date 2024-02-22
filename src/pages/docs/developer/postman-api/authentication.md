@@ -1,6 +1,6 @@
 ---
 title: "Generate and use Postman API keys"
-updated: 2023-06-15
+updated: 2024-01-25
 search_keyword: "postman api key, collection access key, postman api"
 contextual_links:
   - type: section
@@ -69,13 +69,9 @@ Use **API key settings** to specify expiration periods for your keys.
 
 ### Use your Postman API key
 
-After you have a Postman API key, you must authenticate your requests to the Postman API by sending your API Key in the `X-Api-Key` header of every request you make.
+After you have a Postman API key, you must authenticate your requests to the Postman API by sending your API key in the `X-Api-Key` header of every request you make. Your API key provides access to any Postman data you have permissions for.
 
-You can also send the key as an `apikey` URL query parameter. An API key sent as part of the header has a higher priority in case you send the key using both request header and query parameter.
-
-Your API Key provides access to any Postman data you have permissions for.
-
-You can store your API key in a [variable](/docs/sending-requests/variables/). If you name it `postman-api-key`, the Postman API collection will use it automatically.
+You can store your API key in a [variable](/docs/sending-requests/variables/variables/). If you name it `postman-api-key`, the Postman API collection will use it automatically.
 
 ## Generate a collection access key
 
