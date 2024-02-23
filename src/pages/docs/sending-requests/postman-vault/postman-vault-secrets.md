@@ -36,8 +36,7 @@ Vault secrets are useful when:
 * You want to be the only user with access to your sensitive data.
 * You want to specify the domains and subdomains you're allowed to send your sensitive data to.
 * You want your sensitive data encrypted.
-
-<!-- TODO: add info about integrating with external vault -->
+* ([Enterprise teams only](https://www.postman.com/pricing/)) You want to store your secrets in an external vault, such as Azure Key Vault, and [integrate Postman Vault with your external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
 
 Vault secrets are created at the *vault* scope, which is the broadest scope compared to the [variable scopes](/docs/sending-requests/variables/variables/#variable-scopes) in Postman. This enables you to securely access and reuse vault secrets in your collections, requests, and environments throughout your workspaces.
 
@@ -112,7 +111,7 @@ You can reset your vault key if you lose it, but Postman will permanently delete
 
 After you [save your vault key](#save-your-vault-key), you can add sensitive data, such as API keys and passwords, to your Postman Vault and reuse them in your local instance of Postman. You can also add secrets from the HTTP request builder.
 
-You can also [create an integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) ([Enterprise teams only](https://www.postman.com/pricing/)) that connects Postman Vault with external vaults, such as Azure Key Vault. This enables your authenticated team members to retrieve sensitive data stored in external vaults and use it in their local instances of Postman.
+You can also [create an integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) ([Enterprise teams only](https://www.postman.com/pricing/)) that connects your Postman Vault with external vaults, such as Azure Key Vault. This enables you to retrieve sensitive data stored in external vaults and use it in your local instance of Postman.
 
 To add secrets to your Postman Vault, do the following:
 
@@ -167,9 +166,8 @@ To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.
 * To delete a secret, hover over a secret and select the delete icon <img alt="Delete link icon" src="https://assets.postman.com/postman-docs/icon-delete-v9.jpg#icon" width="12px" />.
 * To update the list of allowed domains, select the empty cell or list of domains.
 * To make a secret unavailable without deleting it, clear the checkbox next to the secret. Any references to the secret will be unresolved. To make the secret available again, select the checkbox.
+* To [edit a secret you've retrieved from an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#edit-a-secret-stored-in-an-external-vault), select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">  next to the secret you want to edit, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">.
 * Select <img alt="Save icon" src="https://assets.postman.com/postman-docs/icon-save.jpg#icon" width="16px"> **Save** to save any changes you've made.
-
-<!-- TODO: add how to edit vault integrations, or add link -->
 
 ![Edit vault secrets](https://assets.postman.com/postman-docs/v10/edit-postman-vault-secrets-v10-23-c.jpg)
 
@@ -214,8 +212,11 @@ A vault secret can be unresolved for the following reasons:
 * The secret is turned off in your Postman Vault.
 * The secret isn't allowed to be in requests to the domain.
 * You haven't entered your vault key since you last signed in to Postman.
-
-<!-- TODO: add how to fix unresolved reference to vault integration secrets, or add link -->
+* The secret is stored in an external vault you created an [integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) with:
+    * The integration is configured with incorrect details.
+    * The integration was disconnected.
+    * You must be assigned roles in your external vault that give you permission to retrieve the secret. Review the [instructions for your external vault provider](/docs/sending-requests/postman-vault/postman-vault-integrations/) for more details.
+    * You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](#/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
 
 > Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
 
