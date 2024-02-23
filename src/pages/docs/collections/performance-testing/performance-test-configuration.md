@@ -1,6 +1,6 @@
 ---
 title: "Configure and run performance tests in Postman"
-updated: 2024-01-23
+updated: 2024-03-15
 contextual_links:
   - type: section
     name: "Additional resources"
@@ -24,6 +24,7 @@ In the Collection Runner, you can set the duration of the test and the number of
 
 * [Configure a performance test](#configure-a-performance-test)
 * [Virtual users and system resources](#virtual-users-and-system-resources)
+* [Rename a performance run](#rename-a-performance-run)
 * [View past performance runs](#view-past-performance-runs)
 
 ## Configure a performance test
@@ -82,6 +83,14 @@ Use the following guidelines to understand how many virtual users you can simula
 Attempting to simulate a higher number of virtual users may cause inaccurate metrics and reduced throughput (requests per second). Try running a small test with 10 to 20 virtual users and observing system resource usage. You can use this information to estimate that maximum number of virtual users that can be simulated for your collection and host computer.
 
 > If you have a problem with the performance testing feature, contact the [Postman support team](https://support.postman.com/hc/en-us). Make sure to attach your [Postman logs](https://support.postman.com/hc/en-us/articles/360025298633-How-to-get-logs-from-the-Postman-Desktop-app) in your support request.
+
+## Rename a performance run
+
+You can change the name of a performance run while it's in progress, or you can rename a past run. Rename a performance run to help you identify runs later, for example, when [comparing performance runs](/docs/collections/performance-testing/performance-test-metrics/#compare-two-performance-runs).
+
+To rename a performance run, [start a new run](#configure-a-performance-test) or [open a past run](#view-past-performance-runs). Select the name of the performance run and enter a new name.
+
+SCREENSHOT
 
 ## View past performance runs
 

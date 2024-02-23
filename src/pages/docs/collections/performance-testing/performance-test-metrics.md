@@ -1,6 +1,6 @@
 ---
 title: "View metrics for performance tests"
-updated: 2023-10-16
+updated: 2024-03-15
 contextual_links:
   - type: section
     name: "Additional resources"
@@ -22,6 +22,7 @@ During a [performance test](/docs/collections/performance-testing/performance-te
 
 * [View performance metrics](#view-performance-metrics)
 * [Customize the performance view](#customize-the-performance-view)
+* [Compare two performance runs](#compare-two-performance-runs)
 
 ## View performance metrics
 
@@ -76,3 +77,25 @@ To change the graph back to the default view, select **Reset**.
 To view details for a section of the graph, select a point on the graph. The table below the graph shows total requests, throughput, response time, and error metrics for each request during the selected time period. To change the graph back to the default time period, select **Clear Filter**.
 
 <img alt="Viewing a time period" src="https://assets.postman.com/postman-docs/v10/performance-test-zoom-v10-15.jpg" width="620px"/>
+
+## Compare two performance runs
+
+To allow users to track changes in API performance over time by comparing the results of two Performance Test runs.
+
+APIs in service tend to change over time – bug fixes, improvements, new features – and these changes tend to have an impact on API performance, usually a negative one. This isn’t usually a problem version to version, but can lead to an observable impact on API performance in the long run.
+
+> Make sure to [name your performance test runs](/docs/collections/performance-testing/performance-test-configuration/#rename-a-performance-run) so you can identify then when comparing runs.
+
+To compare two performance test runs, do the following:
+
+1. Open the [past performance run](/docs/collections/performance-testing/performance-test-configuration/#view-past-performance-runs) you want to compare other runs to. This will be the reference run.
+1. Select ICON **Compare runs** to enter comparison mode.
+1. Choose a performance run to compare to the reference run. Select a recent run from the list, or search for a run by name.
+
+    * The graph shows performance data for the reference run (solid lines) and the comparison run (dotted lines).
+    * The table below the graph shows how much each value in the comparison run differs from the reference run.
+    * Hover over a point on the graph or a value in the table to check which run the value is for.
+    * You can [customize the performance view](#customize-the-performance-view) to display the data or requests you're most interested in comparing.
+
+1. At any time you, can choose another comparison run in the list.
+1. When you are finished comparing performance runs, select **Exit Comparison**.
