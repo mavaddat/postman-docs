@@ -18,6 +18,8 @@ contextual_links:
 
 During a [performance test](/docs/collections/performance-testing/performance-test-configuration/), all requests are sent from your computer where you are running the Postman desktop app. You can view real-time metrics such as the average response time, error rate, and throughput. You can also customize the performance test graph to focus on the requests or test metrics you're most interested in.
 
+To understand how your API's performance has changed over time, you can choose two performance runs and compare metrics between them.
+
 ## Contents
 
 * [View performance metrics](#view-performance-metrics)
@@ -28,7 +30,7 @@ During a [performance test](/docs/collections/performance-testing/performance-te
 
 The **Summary** tab displays performance metrics in real time so you can observe how your API performs under load.
 
-<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-18a.jpg"/>
+<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-24.jpg"/>
 
 You can view the following information about the performance test:
 
@@ -89,7 +91,7 @@ To understand how the performance of your API has changed over time, you can com
 To compare two performance runs, do the following:
 
 1. Open the [past performance run](/docs/collections/performance-testing/performance-test-configuration/#view-past-performance-runs) you want to compare other runs to. This will be the reference run.
-1. Select ICON **Compare runs** to enter comparison mode.
+1. Select <img alt="Full screen icon" src="https://assets.postman.com/postman-docs/icons/icon-compare.jpg#icon" width="16px"/> **Compare runs** to enter comparison mode.
 1. Choose a performance run to compare to the reference run. Select a recent run from the list, or search for a run by name.
 1. Use the performance view to compare the selected runs:
 
@@ -99,3 +101,5 @@ To compare two performance runs, do the following:
     * At any time you, can choose another comparison run in the list.
 
 1. When you're finished comparing performance runs, select **Exit Comparison**.
+
+<img alt="Comparing performance runs" src="https://assets.postman.com/postman-docs/v10/performance-test-compare-v10-24.jpg"/>

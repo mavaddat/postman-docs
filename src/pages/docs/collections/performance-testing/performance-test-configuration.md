@@ -90,7 +90,7 @@ You can change the name of a performance run while it's in progress, or you can 
 
 To rename a performance run, [start a new run](#configure-a-performance-test) or [open a past run](#view-past-performance-runs). Select the name of the performance run and enter a new name.
 
-SCREENSHOT
+<img alt="Rename a performance run" src="https://assets.postman.com/postman-docs/v10/performance-test-rename-v10-24.jpg" width="600px"/>
 
 ## View past performance runs
 
@@ -98,4 +98,4 @@ You can view a list of past performance runs for a collection. Open the collecti
 
 You can view metrics for each run, including the number of virtual users (VUs), duration, total number of requests, requests per second, average response time, and error rate. Select the run number to view a graph and full details for the performance run.
 
-![Performance runs tab](https://assets.postman.com/postman-docs/v10/performance-test-past-runs-v10-22.jpg)
+![Performance runs tab](https://assets.postman.com/postman-docs/v10/performance-test-past-runs-v10-24.jpg)
