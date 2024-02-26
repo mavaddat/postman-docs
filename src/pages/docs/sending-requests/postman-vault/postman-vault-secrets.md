@@ -36,7 +36,7 @@ Vault secrets are useful when:
 * You want to be the only user with access to your sensitive data.
 * You want to specify the domains and subdomains you're allowed to send your sensitive data to.
 * You want your sensitive data encrypted.
-* ([Enterprise teams only](https://www.postman.com/pricing/)) You want to store your secrets in an external vault, such as Azure Key Vault, and [integrate Postman Vault with your external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+* You want to store your secrets in an external vault, such as Azure Key Vault, and [integrate Postman Vault with your external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
 
 Vault secrets are created at the *vault* scope, which is the broadest scope compared to the [variable scopes](/docs/sending-requests/variables/variables/#variable-scopes) in Postman. This enables you to securely access and reuse vault secrets in your collections, requests, and environments throughout your workspaces.
 
@@ -215,8 +215,9 @@ A vault secret can be unresolved for the following reasons:
 * The secret is stored in an external vault you created an [integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) with:
     * The integration is configured with incorrect details.
     * The integration was disconnected.
-    * You must be assigned roles in your external vault that give you permission to retrieve the secret. Review the [instructions for your external vault provider](/docs/sending-requests/postman-vault/postman-vault-integrations/) for more details.
-    * You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](#/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
+    * You aren't sending requests from the Postman desktop app.
+    * You aren't assigned the required roles for retrieving secrets from your external vault provider.
+    * You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
 
 > Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
 
@@ -241,6 +242,8 @@ The following features require the Postman desktop app:
 * **Open Postman Vault from public workspaces** - You must use the Postman desktop app to open your Postman Vault from a [public workspace](/docs/collaborating-in-postman/using-workspaces/public-workspaces/), and reference vault secrets in a public workspace. If you're using the Postman web app, you must add new vault secrets to your Postman Vault if you're opening it from a public workspace.
 
 * **Preserve vault secrets when you join or leave a team** - You must use the Postman desktop app to preserve your encrypted vault secrets after you [join a new team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#joining-a-team) or [leave a team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#leaving-a-team). If you're using the Postman web app, vault secrets won't be available from your Postman Vault when you join a new team or leave a team. Then you can add new vault secrets to the team you joined from, or a team you rejoined if using the Postman web app.
+
+* **Create and manage Postman Vault integrations** ([Enterprise teams only](https://www.postman.com/pricing/)) - You must use the Postman desktop app to [create and manage Postman Vault integrations](/docs/sending-requests/postman-vault/postman-vault-integrations/). If you're using the Postman web app, Postman Vault integrations won't be available.
 
 The following features require the Postman web app:
 

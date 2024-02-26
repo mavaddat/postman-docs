@@ -9,7 +9,9 @@ plan: beta
 
 You can integrate your [Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/) with external vaults, such as Azure Key Vault. This enables you to retrieve secrets stored in external vaults and use them in your local instance of Postman. You must authenticate with external vaults to access and use stored secrets in your HTTP collections, environments, and requests.
 
-Before you integrate your Postman Vault with external vaults, make sure you understand how to [add vault secrets to your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
+You can create Postman Vault integration from the [Postman desktop app](/docs/getting-started/installation/installation-and-updates/).
+
+Before you integrate your Postman Vault with external vaults, make sure you understand how to [add vault secrets to your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets), and [reference vault secrets in Postman](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets).
 
 ## Contents
 
@@ -17,13 +19,13 @@ Before you integrate your Postman Vault with external vaults, make sure you unde
 * [Integrate with Azure Key Vault](#integrate-with-azure-key-vault)
 * [Integrate with HashiCorp Vault](#integrate-with-hashicorp-vault)
 * [Integrate with AWS Secrets Manager](#integrate-with-aws-secrets-manager)
-* [Edit a secret stored in an external vault](#edit-a-secret-stored-in-an-external-vault)
+* [Retrieve a different secret from an external vault](#retrieve-a-different-secret-from-an-external-vault)
 * [Reauthenticate with an external vault](#reauthenticate-with-an-external-vault)
 * [Disconnect an integration](#disconnect-an-integration)
 
 ## About Postman Vault integrations
 
-Postman Vault integrations enable you to [add sensitive data to your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets) that's stored in an external vault. Postman supports Postman Vault integrations with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), and [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
+Postman Vault integrations enable you to retrieve sensitive data that's stored in an external vault from your Postman Vault. You can then reference retrieved sensitive data in your local instance of Postman. Postman supports Postman Vault integrations with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), and [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
 
 You can only integrate your Postman Vault with one organization in an external vault provider at a time. If you want to integrate with a different organization in your external vault provider, you must [disconnect the integration](#disconnect-an-integration), then create a new integration that authenticates with a different organization. See the following details about creating and managing integrations with external vault providers:
 
@@ -34,16 +36,17 @@ You can only integrate your Postman Vault with one organization in an external v
 
 When setting up an integration with [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview), you need to authenticate with your Microsoft Azure account. Then you can retrieve secrets stored in Azure Key Vault using the secret identifier for each secret.
 
-You can follow the steps to [create and view a secret](https://learn.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal) from Azure Key Vault.
+You can follow the steps to [create a secret](https://learn.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) from Azure Key Vault. You can also follow the steps to [retrieve a secret](https://learn.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#retrieve-a-secret-from-key-vault), enabling you to view the secret's identifier.
 
 To integrate Postman Vault with Azure Key Vault, do the following:
 
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can create the integration when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
 1. Select **Connect** next to "Azure Key Vault".
-1. You'll be prompted to authorize Postman to access your Microsoft Azure account. After you grant access, you can close the browser tab and return to Postman. <!-- TODO: add fields for manually authorizing Postman -->
+1. You'll be prompted to authorize Postman to access your Microsoft Azure account. After you grant access, you can close the browser tab and return to Postman.
 
 To retrieve a secret's value from Azure Key Vault, do the following:
 
+1. In Azure, make sure you have the at least the [`Azure Vault Reader` role](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli). This enables you to retrieve secrets stored in Azure Key Vault from Postman Vault.
 1. Enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">.
 
     > To retrieve a secret from a different external vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px">, then select an external vault.
@@ -58,6 +61,8 @@ To retrieve a secret's value from Azure Key Vault, do the following:
 
 1. Select **Use**.
 1. You can [reference vault secrets](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets) in your local instance of Postman.
+
+To view details about a secret you've retrieved from Azure Key Vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret.
 
 ## Integrate with HashiCorp Vault
 
@@ -109,7 +114,7 @@ To integrate Postman Vault with HashiCorp Vault, do the following:
 1. Select **Set Up Integration** next to "Hashicorp Vault".
 1. Enter the following on the **Set up Hashicorp Integration** window:
 
-    * **OIDC Provider URL** - The OpenID Connect (OIDC) provider URL for the client application created in HashiCorp Vault.
+    * **OIDC Provider URL** - The OpenID Connect (OIDC) provider URL of the client application created in HashiCorp Vault.
     * **JWT Auth Path** - Enter `postman-jwt` as the path. <!-- TODO: explain why -->
     * **Client Id** - The OIDC client application's ID.
     * **Role** - Enter `postman` as the role. <!-- TODO: explain why -->
@@ -135,6 +140,8 @@ To retrieve a secret's value from HashiCorp Vault, do the following: <!-- TODO: 
 1. Select **Use**.
 1. You can [reference vault secrets](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets) in your local instance of Postman.
 
+To view details about a secret you've retrieved from HashiCorp Vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret.
+
 ## Integrate with AWS Secrets Manager
 
 When setting up an integration with [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/managing-secrets.html), you need to authenticate with your AWS account, entering the access key pair (access key ID and secret access key), region, and MFA token for your AWS account. Then you can retrieve secrets stored in AWS Secrets Manager using the secret ARN and role ARN for each secret.
@@ -155,26 +162,27 @@ To integrate Postman Vault with AWS Secrets Manager, do the following:
     * **Secret Key** - Enter the [secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for your AWS account.
     * **Region** - Enter the AWS [region](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) where your AWS account is located.
 
-    > You can instead autofill each field from the credentials file in your `home` directory. Select a field, then select <img alt="Documentation icon" src="https://assets.postman.com/postman-docs/documentation-icon-v8-10.jpg#icon" width="16px"> **Autofill from config file**. Postman checks the `main` and `default` profiles in that order for your credentials.
+    > You can instead autofill each field from the credentials file in your `home` directory. To create the credentials file, [install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html), then [configure the credentials file](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) with your access key, secret key, and region. Once the file is configured, select a field on the **Authenticate AWS Secrets Manager** window, then select <img alt="Documentation icon" src="https://assets.postman.com/postman-docs/documentation-icon-v8-10.jpg#icon" width="16px"> **Autofill from config file**.
     >
-    > You can learn more about the credentials [file format](https://docs.aws.amazon.com/sdkref/latest/guide/file-format.html) and [default location](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html) in your `home` directory.
+    > Postman checks the `main` and `default` profiles in that order in your credentials. You can learn more about the credentials [file format](https://docs.aws.amazon.com/sdkref/latest/guide/file-format.html) and [default location](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html) of the file in your `home` directory.
+    <!-- TODO: verify the credentials file instructions -->
 
 1. Select **Authenticate**.
 
-1. If your AWS account requires [multi-factor authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html), enter an **MFA Token**. Then select **Authenticate**.
+1. If your AWS account requires [multi-factor authentication](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html), enter an **MFA Token**.
 
-1. After you grant access, you can close the browser tab and return to Postman.
+1. Select **Authenticate**.
 
 To retrieve a secret's value from AWS Secrets Manager, do the following:
 
-1. In AWS, make sure you have the [`secretsmanager:GetSecretValue` permission](https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html) in the [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) associated with your AWS user. This enables you to retrieve secrets stored in AWS Secrets Manager from Postman Vault. Follow the steps to [create a policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) and [attach a policy to a user](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console).
+1. In AWS, make sure you have the [`secretsmanager:GetSecretValue` permission](https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html) in the [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) associated with your AWS user. This enables you to retrieve secrets stored in AWS Secrets Manager from Postman Vault. Follow the steps to [create a policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) and [attach a policy to a user](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console). <!-- TODO: consider removing these RBAC links -->
 1. In Postman, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">.
 
     > To retrieve a secret from a different external vault, select the new vault integration icon <img alt="New vault icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px">, then select an external vault.
 
 1. Enter the following on the **Link secret** window: <!-- TODO: improve definitions -->
 
-    * **Secret ARN** - Enter the unique [Amazon Resource Name (ARN)]((https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)) that identifies the secret.
+    * **Secret ARN** - Enter the unique [Amazon Resource Name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) that identifies the secret.
 
         ```txt
         arn:aws:secretsmanager:<region>:<account-id>:secret:<secret-name>-<six-random-characters>
@@ -193,9 +201,11 @@ To retrieve a secret's value from AWS Secrets Manager, do the following:
 1. Select **Use**.
 1. You can [reference vault secrets](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets) in your local instance of Postman.
 
-## Edit a secret stored in an external vault
+To view details about a secret you've retrieved from AWS Secrets Manager, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret.
 
-To edit a secret you've retrieved from an external vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to the secret you want to edit, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">.
+## Retrieve a different secret from an external vault
+
+You can retrieve a different secret stored in an external vault you've created an integration with. To retrieve a different secret, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">. Enter the required details on the **Link secret** window, then select **Use**.
 
 To update the value of a secret stored in an external vault, you must sign in to your external vault provider separately and update the secret's value there. You can't update the value of secrets stored in external vaults directly from Postman.
 
