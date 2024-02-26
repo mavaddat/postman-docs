@@ -82,7 +82,7 @@ To view details for a section of the graph, select a point on the graph. The tab
 
 ## Compare two performance runs
 
-APIs in service tend change with the addition of new features, improvements, and bug fixes. Over time, these changes can have an impact on the API's performance.
+APIs in service tend to change with the addition of new features, improvements, and bug fixes. Over time, these changes can have an impact on the API's performance.
 
 To understand how the performance of your API has changed over time, you can compare performance runs. Select two runs to compare, and Postman displays the difference between the two runs for various performance metrics.
 
