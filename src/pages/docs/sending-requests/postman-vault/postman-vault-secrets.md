@@ -176,6 +176,8 @@ To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.
 You can reference vault secrets in your HTTP collections and requests from the **URL builder**, the **Params** tab, the **Authorization** tab, the **Headers** tab, and the **Body** tab. You can reference vault secrets as the values of your [global](/docs/sending-requests/variables/variables/#defining-global-variables), [environment](/docs/sending-requests/variables/variables/#defining-environment-variables), and [collection](/docs/sending-requests/variables/variables/#defining-collection-variables) variables. You can also use the Collection Runner to [manually run collections](/docs/collections/running-collections/intro-to-collection-runs/) that reference vault secrets.
 
 > If you're using the Postman web app to send requests with references to vault secrets, you must use the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent).
+>
+> Also you must use the Postman desktop app to send requests with references to sensitive data you retrieved from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/).
 
 Enclose the vault secret in double curly braces (`{{ }}`) and prefix the secret's name with `vault:` to reference it throughout your Postman team. For example, to reference a secret named "postman-api-key", use the following syntax:
 
@@ -212,12 +214,15 @@ A vault secret can be unresolved for the following reasons:
 * The secret is turned off in your Postman Vault.
 * The secret isn't allowed to be in requests to the domain.
 * You haven't entered your vault key since you last signed in to Postman.
-* The secret is stored in an external vault you created an [integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) with:
-    * The integration is configured with incorrect details.
-    * The integration was disconnected.
-    * You aren't sending requests from the Postman desktop app.
-    * You aren't assigned the required roles for retrieving secrets from your external vault provider.
-    * You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
+
+Sensitive data you retrieved from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) can be unresolved for the following reasons:
+
+* The integration is configured with incorrect details.
+* Your computer isn't able to access your external vault instance.
+* The integration was disconnected.
+* You aren't sending requests from the Postman desktop app.
+* You aren't assigned the required roles for retrieving secrets from your external vault provider.
+* You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
 
 > Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
 
