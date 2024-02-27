@@ -51,7 +51,7 @@ To integrate Postman Vault with Azure Key Vault, do the following:
 To retrieve a secret's value from Azure Key Vault, do the following:
 
 1. In Azure, make sure you have the at least the [`Azure Vault Reader` role](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli). This enables you to retrieve secrets stored in Azure Key Vault from Postman Vault.
-1. Enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">.
+1. In Postman, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">.
 
     > To retrieve a secret from a different external vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px">, then select an external vault.
 
@@ -133,7 +133,7 @@ To retrieve a secret's value from HashiCorp Vault, do the following: <!-- TODO: 
 1. Enter the following on the **Link secret** window:
 
     * **Engine** - The name of the [KV secrets engine]((https://developer.hashicorp.com/vault/docs/secrets/kv)). <!-- TODO: confirm that this is the name -->
-    * **Path** - The path to the secret.
+    * **Path** - The path for the secret. This is the location of the secret in your KV secrets engine.
     * **Key** - The key name in the secret's key-value pair.
 
 1. Select **Use**.
