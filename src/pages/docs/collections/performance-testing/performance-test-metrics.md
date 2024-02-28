@@ -96,7 +96,7 @@ To compare two performance runs, do the following:
 1. Use the performance view to compare the selected runs:
 
     * The graph shows performance data for the reference run (solid lines) and the comparison run (dotted lines). Hover over a point on the graph to view more details.
-    * The table below the graph shows how values in the comparison run differ from the reference run. A value in green (<span style="color:green;">&#9660;</span>) indicates better performance and a value in red (<span style="color:red;">&#9650;</span>) indicates worse performance. Values in gray indicate differences that are not necessarily better or worse.
+    * The table below the graph shows how values in the comparison run differ from the reference run. A value in green (<span style="color:green;">&#9660;</span>) indicates better performance and a value in red (<span style="color:red;">&#9650;</span>) indicates worse performance. Values in gray indicate differences that aren't necessarily better or worse.
     * You can [customize the performance view](#customize-the-performance-view) to display the metrics or requests you're most interested in comparing.
     * At any time you, can choose another comparison run in the list.
 
