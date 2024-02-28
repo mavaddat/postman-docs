@@ -196,11 +196,9 @@ pm.variables.get("vault:variable-key");
 
 ![Reference vault secrets in Postman](https://assets.postman.com/postman-docs/v10/use-postman-vault-secrets-v10-23.jpg)
 
+Secrets stored in your Postman Vault are masked by default when you generate [code snippets](/docs/sending-requests/create-requests/generate-code-snippets/) and when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/). To edit whether secrets are masked, select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then turn the toggle on or off next to **Mask vault secrets**.
+
 > If you reference a vault secret as the initial value of a variable, such as an environment variable, the reference to the secret (for example `{{vault:secret-name}}`) is synced using Postman's cloud servers, and shared with anyone who has access to the workspace. The vault secret's value stored in your Postman Vault isn't synced or shared. Learn more about [initial and current values](/docs/sending-requests/variables/variables/#initial-and-current-values).
-
-<!-- -->
-
-> Secrets stored in your Postman Vault are masked when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/).
 
 ## Fix unresolved vault secrets
 

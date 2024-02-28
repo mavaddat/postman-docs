@@ -19,13 +19,14 @@ Before you integrate your Postman Vault with external vaults, make sure you unde
 * [Integrate with Azure Key Vault](#integrate-with-azure-key-vault)
 * [Integrate with HashiCorp Vault](#integrate-with-hashicorp-vault)
 * [Integrate with AWS Secrets Manager](#integrate-with-aws-secrets-manager)
+* [Set expiration duration for cached secrets](#set-expiration-duration-for-cached-secrets)
 * [Retrieve a different secret from an external vault](#retrieve-a-different-secret-from-an-external-vault)
 * [Reauthenticate with an external vault](#reauthenticate-with-an-external-vault)
 * [Disconnect an integration](#disconnect-an-integration)
 
 ## About Postman Vault integrations
 
-Postman Vault integrations enable you to retrieve sensitive data that's stored in an external vault from your Postman Vault. You can then reference retrieved sensitive data in your local instance of Postman. Postman supports Postman Vault integrations with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), and [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
+Postman Vault integrations enable you to retrieve secrets that's stored in an external vault from your Postman Vault. You can then reference retrieved secrets in your local instance of Postman. Postman supports Postman Vault integrations with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), and [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
 
 > You'll need to [reauthenticate with external vaults](#reauthenticate-with-an-external-vault) each time you sign in to Postman, or if your authentication session expires.
 
@@ -200,9 +201,19 @@ To retrieve a secret's value from AWS Secrets Manager, do the following:
 
 To view details about a secret you've retrieved from AWS Secrets Manager, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret.
 
+## Set expiration duration for cached secrets
+
+The value of secrets retrieved from external vaults are cached in memory for 1 hour by default. When secrets are cleared from your memory's cache, Postman retrieves your secrets' values from your external vault, caching them in memory again for the specified duration. You can customize the duration that values are cached in memory for, and you can manually reset the value cached in memory.
+
+You can customize the amount of time secrets' values are cached in memory for. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then specify the amount of time secrets are valid for (in minutes) next to **Secret expiry duration**.
+
+You can also manually reset secrets' values cached in memory. This ensures that Postman is caching the latest value in memory. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Manually Reset Cache**.
+
 ## Retrieve a different secret from an external vault
 
 You can retrieve a different secret stored in an external vault you've created an integration with. To retrieve a different secret, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> next to a secret, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">. Enter the required details on the **Link secret** window, then select **Use**.
+
+> Postman recommends that you [manually reset the value cached in memory](#set-expiration-duration-for-cached-secrets).
 
 To update the value of a secret stored in an external vault, you must sign in to your external vault provider separately and update the secret's value there. You can't update the value of secrets stored in external vaults directly from Postman.
 
