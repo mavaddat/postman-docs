@@ -36,7 +36,7 @@ Vault secrets are useful when:
 * You want to be the only user with access to your sensitive data.
 * You want to specify the domains and subdomains you're allowed to send your sensitive data to.
 * You want your sensitive data encrypted.
-* You want to store your secrets in an external vault, such as Azure Key Vault, and [integrate Postman Vault with your external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+* You want to retrieve secrets stored in an external vault, such as Azure Key Vault.
 
 Vault secrets are created at the *vault* scope, which is the broadest scope compared to the [variable scopes](/docs/sending-requests/variables/variables/#variable-scopes) in Postman. This enables you to securely access and reuse vault secrets in your collections, requests, and environments throughout your workspaces.
 
@@ -56,7 +56,7 @@ Both vault secrets and variables enable you to store and reference data in Postm
 
 ## Access your Postman Vault
 
-To access your Postman Vault, open a workspace then select <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> **Vault** from the Postman footer. You can also use **Control+Shift+V** or **Ctrl+Shift+V** to access your Postman Vault.
+To access your Postman Vault, open a workspace then select <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> **Vault** from the Postman footer. You can also use **Control+Shift+V** or **Ctrl+Shift+V** to access your Postman Vault.
 
 You can open your vault secrets in Postman Vault as follows:
 
@@ -121,7 +121,7 @@ To add secrets to your Postman Vault, do the following:
     * **Key** - The name of the vault secret. Use the name to [reference the secret](#use-vault-secrets).
     * **Value** - The value used when sending requests in your local instance of Postman. It's never synced to your account or shared with your team.
 
-        To connect Postman Vault with an external vault, enter a name for the vault secret, hover over the **Value** cell, then select the vault icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">. Select the external vault you want to create an integration for, then you'll be prompted to authorize Postman to access your external vault provider. Learn how to [connect your Postman Vault to an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+        To connect Postman Vault with an external vault, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">. Select the external vault you want to create an integration for, then you'll be prompted with next steps. Learn how to [integrate your Postman Vault with an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/).
 
         > To show or hide a vault secret's value, hover over the secret and select the eye icon <img alt="Unmask secret icon" src="https://assets.postman.com/postman-docs/icon-eye-crossed-out.jpg#icon" width="18px">.
 
@@ -158,7 +158,7 @@ You can also [reference vault secrets](#use-vault-secrets) that don't exist yet,
 
 You can edit secrets stored in your Postman Vault by updating secrets and their allowed domains, changing a secret's name, making secrets unavailable, or deleting secrets.
 
-To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px"> **Vault** from the Postman footer. You can take the following actions:
+To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> **Vault** from the Postman footer. You can take the following actions:
 
 * To filter the list of secrets by name, enter text in the **Filter secrets** box.
 * To sort the list of secrets, select a column header. You can toggle between ascending and descending order.
@@ -166,7 +166,7 @@ To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.
 * To delete a secret, hover over a secret and select the delete icon <img alt="Delete link icon" src="https://assets.postman.com/postman-docs/icon-delete-v9.jpg#icon" width="12px" />.
 * To update the list of allowed domains, select the empty cell or list of domains.
 * To make a secret unavailable without deleting it, clear the checkbox next to the secret. Any references to the secret will be unresolved. To make the secret available again, select the checkbox.
-* To [edit a secret you've retrieved from an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#edit-a-secret-stored-in-an-external-vault), select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault.jpg#icon" width="14px">  next to the secret you want to edit, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">.
+* To [retrieve a different secret from an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#retrieve-a-different-secret-from-an-external-vault), select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> next to the secret you want to update, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">.
 * Select <img alt="Save icon" src="https://assets.postman.com/postman-docs/icon-save.jpg#icon" width="16px"> **Save** to save any changes you've made.
 
 ![Edit vault secrets](https://assets.postman.com/postman-docs/v10/edit-postman-vault-secrets-v10-23-c.jpg)
@@ -177,7 +177,7 @@ You can reference vault secrets in your HTTP collections and requests from the *
 
 > If you're using the Postman web app to send requests with references to vault secrets, you must use the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent).
 >
-> Also you must use the Postman desktop app to send requests with references to sensitive data you retrieved from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+> Also you must use the Postman desktop app to send requests with references to secrets you retrieved from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/).
 
 Enclose the vault secret in double curly braces (`{{ }}`) and prefix the secret's name with `vault:` to reference it throughout your Postman team. For example, to reference a secret named "postman-api-key", use the following syntax:
 
@@ -196,7 +196,7 @@ pm.variables.get("vault:variable-key");
 
 ![Reference vault secrets in Postman](https://assets.postman.com/postman-docs/v10/use-postman-vault-secrets-v10-23.jpg)
 
-Secrets stored in your Postman Vault are masked by default when you generate [code snippets](/docs/sending-requests/create-requests/generate-code-snippets/) and when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/). To edit whether secrets are masked, select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then turn the toggle on or off next to **Mask vault secrets**.
+Secrets stored in your Postman Vault are masked by default when you generate [code snippets](/docs/sending-requests/create-requests/generate-code-snippets/) and when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/).<!-- To edit whether secrets are masked, select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then turn the toggle on or off next to **Mask vault secrets**. -->
 
 > If you reference a vault secret as the initial value of a variable, such as an environment variable, the reference to the secret (for example `{{vault:secret-name}}`) is synced using Postman's cloud servers, and shared with anyone who has access to the workspace. The vault secret's value stored in your Postman Vault isn't synced or shared. Learn more about [initial and current values](/docs/sending-requests/variables/variables/#initial-and-current-values).
 
@@ -216,7 +216,7 @@ A vault secret can be unresolved for the following reasons:
 Sensitive data you retrieved from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/) can be unresolved for the following reasons:
 
 * The integration is configured with incorrect details.
-* Your computer isn't able to access your external vault instance.
+* Your computer isn't able to access your external vault provider.
 * The integration was disconnected.
 * You aren't sending requests from the Postman desktop app.
 * You aren't assigned the required roles for retrieving secrets from your external vault provider.
