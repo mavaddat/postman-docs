@@ -51,7 +51,7 @@ To integrate with Azure Key Vault and authenticate with your Azure account, do t
 
 To retrieve a secret's value from Azure Key Vault, do the following:
 
-1. In Azure, make sure you have the at least the [`Azure Vault Reader` role](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli). This enables you to retrieve secrets stored in Azure Key Vault from Postman Vault.
+1. In Azure, make sure you have at least the [`Azure Vault Reader` role](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli). This enables you to retrieve secrets stored in Azure Key Vault from Postman Vault.
 1. In Postman, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">.
 
     <img src="https://assets.postman.com/postman-docs/v10/link-azure-vault-secret-v10-24.jpg" alt="Link Azure value" width="500px"/>
