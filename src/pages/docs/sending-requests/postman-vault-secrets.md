@@ -94,7 +94,7 @@ When Postman generates your vault key, you have the following options for saving
 
 1. Select **Open Vault** to [add vault secrets to your Postman Vault](#add-sensitive-data-as-vault-secrets).
 
-    ![Save vault key](https://assets.postman.com/postman-docs/v10/save-postman-vault-key-v10-23-b.jpg)
+    ![Save vault key](https://assets.postman.com/postman-docs/v10/save-postman-vault-key-v10-24.jpg)
 
 > If your Postman Vault is open, you can select the information icon <img alt="Information icon" src="https://assets.postman.com/postman-docs/icon-information-v9-5.jpg#icon" width="16px"> in the top right to copy or download your vault key.
 
@@ -114,7 +114,7 @@ You can reset your vault key if you lose it, but Postman will permanently delete
 
 After you [save your vault key](#save-your-vault-key), you can add sensitive data, such as API keys and passwords, to your Postman Vault and reuse them in your local instance of Postman. You can also add secrets from the HTTP request builder.
 
-> Vault secrets aren't preserved in your Postman Vault after signing out of Postman. This means that references to the secret will be [unresolved](#fix-unresolved-vault-secrets) when you sign in to Postman. You can fix this by adding the vault secrets back to your Postman Vault after you sign in.
+> Vault secrets aren't preserved in your Postman Vault after signing out of Postman. This means that references to the secret will be [unresolved](#fix-unresolved-vault-secrets) when you sign in to Postman. You can add your vault secrets back to your Postman Vault after you sign in.
 
 To add secrets to your Postman Vault, do the following:
 
