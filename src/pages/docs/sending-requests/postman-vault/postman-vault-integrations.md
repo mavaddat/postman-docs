@@ -172,7 +172,7 @@ To integrate with HashiCorp Vault, do the following:
 1. As a Postman Team or Super Admin, [open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right.
 1. Select **Set Up Integration** next to **Hashicorp Vault**.
 
-    <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="443px"/>
 
 1. Enter the following on the **Set up Hashicorp Integration** window:
 
@@ -196,7 +196,7 @@ To retrieve a secret's value from HashiCorp Vault, do the following:
 
 1. In Postman, enter a name for the vault secret, hover over the **Value** cell, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">, then select **Hashicorp Vault**.
 
-    <img src="https://assets.postman.com/postman-docs/v10/link-hashicorp-vault-secret-v10-24.jpg" alt="Link HashiCorp value" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/link-hashicorp-vault-secret-v10-24.jpg" alt="Link HashiCorp value" width="541px"/>
 
     > If you've already integrated with an external vault, you can retrieve a secret from a different external vault provider. Select the change external vault icon <img alt="Change vault icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px">, then select an external vault.
 
@@ -244,7 +244,7 @@ To retrieve a secret's value from AWS Secrets Manager, do the following:
 1. In AWS, make sure you have the [`secretsmanager:GetSecretValue` permission](https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html) in the [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) associated with your AWS user. This enables you to retrieve secrets stored in AWS Secrets Manager from Postman Vault.
 1. In Postman, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">.
 
-    <img src="https://assets.postman.com/postman-docs/v10/link-aws-vault-secret-v10-24.jpg" alt="Link AWS value" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/link-aws-vault-secret-v10-24.jpg" alt="Link AWS value" width="542px"/>
 
     > If you've already integrated with an external vault, you can retrieve a secret from a different external vault provider. Select the change external vault icon <img alt="Change vault icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px">, then select an external vault.
 
@@ -283,7 +283,7 @@ You can also manually reset secrets' values stored in a local cache. This ensure
 
 You can retrieve a different secret stored in an external vault you've created an integration with. To retrieve a different secret, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> next to a secret, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">. Enter the required details on the **Link secret** window, then select **Use**.
 
-<img src="https://assets.postman.com/postman-docs/v10/retrieve-different-vault-secret-v10-24.jpg" alt="Retrieve different secret value" width="500px"/>
+<img src="https://assets.postman.com/postman-docs/v10/retrieve-different-vault-secret-v10-24.jpg" alt="Retrieve different secret value" width="552px"/>
 
 > Postman recommends that you [manually reset the value stored in the local cache](#set-expiration-duration-for-cached-secrets).
 
@@ -299,7 +299,7 @@ To reauthenticate with an external vault, do the following:
 1. Select the vault integration icon <img alt="Reauthenticate Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-reauth-postman-vault.jpg#icon" width="22px"> in the **Value** cell with the integration that you need to reauthenticate with.
 1. Select **Re-Authenticate Vault**.
 
-    <img src="https://assets.postman.com/postman-docs/v10/reauth-external-vault-provider-v10-24.jpg" alt="Reauthenticate external vault" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/reauth-external-vault-provider-v10-24.jpg" alt="Reauthenticate external vault" width="555px"/>
 
 1. Follow the steps to reauthenticate with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), or [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
 
