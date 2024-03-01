@@ -46,7 +46,7 @@ You can follow the steps to [create a secret](https://learn.microsoft.com/en-us/
 To integrate with Azure Key Vault and authenticate with your Azure account, do the following:
 
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can create the integration when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
-1. Select **Connect** next to "Azure Key Vault".
+1. Select **Connect** next to **Azure Key Vault**.
 1. You'll be prompted to authorize Postman to access your Microsoft Azure account. After you grant access, you can close the browser tab and return to Postman.
 
 To retrieve a secret's value from Azure Key Vault, do the following:
@@ -170,7 +170,7 @@ To set up an OIDC identity provider in HashiCorp Vault, do the following:
 To integrate with HashiCorp Vault, do the following:
 
 1. As a Postman Team or Super Admin, [open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right.
-1. Select **Set Up Integration** next to "Hashicorp Vault".
+1. Select **Set Up Integration** next to **Hashicorp Vault**.
 
     <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="500px"/>
 
@@ -184,12 +184,12 @@ To integrate with HashiCorp Vault, do the following:
 
 1. Select **Set Up Hashicorp**.
 
-> Postman Team and Super Admins can edit the HashiCorp Vault integration later. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Edit** next to "Hashicorp Vault".
+> Postman Team and Super Admins can edit the HashiCorp Vault integration later. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Edit** next to **Hashicorp Vault**.
 
 To authenticate with your HashiCorp account, do the following:
 
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can authenticate when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
-1. Select **Connect** next to "Hashicorp Vault".
+1. Select **Connect** next to **Hashicorp Vault**.
 1. You'll be prompted to authorize Postman to access your HashiCorp account.  After you grant access, you can close the browser tab and return to Postman.
 
 To retrieve a secret's value from HashiCorp Vault, do the following:
@@ -222,7 +222,7 @@ You can follow the steps to [create a secret](https://docs.aws.amazon.com/secret
 To integrate with AWS Secrets Manager and authenticate with your AWS account, do the following:
 
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can create the integration when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
-1. Select **Connect** next to "AWS Secrets Manager".
+1. Select **Connect** next to **AWS Secrets Manager**.
 1. You'll be prompted to authorize Postman to access your AWS account. If you need to manually authorize Postman, enter the following on the **Authenticate AWS Secrets Manager** window:
 
     * **Access Key** - Enter the [access key ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for your AWS account.
