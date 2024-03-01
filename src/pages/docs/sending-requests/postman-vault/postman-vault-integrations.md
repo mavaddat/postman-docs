@@ -301,7 +301,7 @@ To reauthenticate with an external vault, do the following:
 
     <img src="https://assets.postman.com/postman-docs/v10/reauth-external-vault-provider-v10-24.jpg" alt="Reauthenticate external vault" width="500px"/>
 
-1. Follow the steps to recreate the integration with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), or [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
+1. Follow the steps to reauthenticate with [Azure Key Vault](#integrate-with-azure-key-vault), [HashiCorp Vault](#integrate-with-hashicorp-vault), or [AWS Secrets Manager](#integrate-with-aws-secrets-manager).
 
 ## Disconnect an integration
 
