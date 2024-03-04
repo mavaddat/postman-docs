@@ -102,4 +102,4 @@ To compare two performance runs, do the following:
 
 1. When you're finished comparing performance runs, select **Exit Comparison**.
 
-<img alt="Comparing performance runs" src="https://assets.postman.com/postman-docs/v10/performance-test-compare-v10-24.jpg"/>
+<img alt="Comparing performance runs" src="https://assets.postman.com/postman-docs/v10/performance-test-compare-v10-24a.jpg"/>
