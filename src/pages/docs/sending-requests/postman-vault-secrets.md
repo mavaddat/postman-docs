@@ -43,7 +43,7 @@ Vault secrets are created at the *vault* scope, which is the broadest scope comp
 
 <!-- -->
 
-> If you're using the Postman web app with Safari as your web browser, it deletes vault secrets from your local instance of Postman after seven days of inactivity. You must use a different web browser if you want your vault secrets available for more than seven days without inactivity. Learn about the [browser requirements](/docs/getting-started/installation/installation-and-updates/#browser-requirements) for the Postman web app.
+> If you're using the Postman web app with Safari as your web browser, it deletes vault secrets from your local instance of Postman after seven days of inactivity. Use a different web browser if you want your vault secrets available for more than seven days without activity in the Postman web app. Learn about the [browser requirements](/docs/getting-started/installation/installation-and-updates/#browser-requirements) for the Postman web app.
 
 ### Compare vault secrets and variables
 
