@@ -73,7 +73,9 @@ To view details about a secret you've retrieved from Azure Key Vault, select the
 
 ## Integrate with HashiCorp Vault
 
-You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up an OpenID Connect (OIDC) identity provider in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, OIDC client ID, and namespace for your OIDC identity provider.
+You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up a public OpenID Connect (OIDC) identity provider in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, OIDC client ID, and namespace for your OIDC identity provider.
+
+You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up a public OIDC identity provider. You can enter commands using the Vault Browser CLI, or [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) on your computer.
 
 Once a Postman Team or Super Admin sets up the integration, you need to authenticate with your HashiCorp account. Then you can retrieve secrets stored in HashiCorp Vault using the path to the KV (key-value) secrets engine, path to the secret, and key name for each secret.
 
@@ -81,12 +83,9 @@ Once a Postman Team or Super Admin sets up the integration, you need to authenti
 
 You can also follow the steps to [create a KV secrets engine](https://developer.hashicorp.com/vault/docs/secrets/kv), and store [static key-value secrets](https://developer.hashicorp.com/vault/tutorials/secrets-management/static-secrets) or [versioned key-value secrets](https://developer.hashicorp.com/vault/tutorials/secrets-management/versioned-kv) in it. Postman only supports KV secrets engines.
 
-To set up an OIDC identity provider in HashiCorp Vault, do the following:
+To set up a public OIDC identity provider in HashiCorp Vault using the CLI, do the following:
 
-1. In HashiCorp Vault, go to the [public address](https://developer.hashicorp.com/vault/tutorials/cloud/get-started-vault#vault-cluster-overview) for your HashiCorp Vault cluster.
-
-    > You can use the HashiCorp Vault Browser CLI in your public cluster to set up an OIDC identity provider. Use the [`write` command](https://developer.hashicorp.com/vault/docs/commands/write) to write data to HashiCorp Vault, and use the [`read` command](https://developer.hashicorp.com/vault/docs/commands/read) to read data from HashiCorp Vault.
-
+1. If entering the commands in the Vault Browser CLI, go to the [public address](https://developer.hashicorp.com/vault/tutorials/cloud/get-started-vault#vault-cluster-overview) for your HashiCorp Vault cluster, then open the Vault Browser CLI.
 1. Make sure you have permission to set up an [OIDC identity provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider). You must at least have the permissions specified in the following [HashiCorp Vault policy](https://developer.hashicorp.com/vault/tutorials/policies/policies):
 
     ```json
@@ -117,43 +116,43 @@ To set up an OIDC identity provider in HashiCorp Vault, do the following:
     * `/auth/*` - Allows you to update the JWT auth method, and create a new role in the JWT auth method.
     * `/sys/policy/*` - Allows you to create a policy. The policy will be used to attach to the new role.
 
-1. Create a public [OIDC client application](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#client-applications). Learn about the [endpoint for creating a client application](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-client). Example using the `write` command in the Browser CLI:
+1. Create a public [OIDC client application](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#client-applications). Learn about the [endpoint for creating a client application](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-client). Example:
 
     ```shell
     vault write identity/oidc/client/<client-application-name> client_type=public assignments=allow_all
     ```
 
-1. Get the client ID of the OIDC client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example using the `read` command in the Browser CLI:
+1. Get the client ID of the OIDC client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example:
 
     ```shell
     vault read -field=client_id identity/oidc/client/<client-application-name>
     ```
 
-1. Create an [OIDC provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#oidc-providers). Learn about the [endpoint for creating an OIDC provider](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-provider). Example using the `write` command in the Browser CLI:
+1. Create an [OIDC provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#oidc-providers). Learn about the [endpoint for creating an OIDC provider](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-provider). Example:
 
     ```shell
     vault write identity/oidc/provider/<client-application-name> allowed_client_ids="<oidc-client-id>" issuer="<vault-url>"
     ```
 
-1. Get the OIDC provider URL for the client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example using the `read` command in the Browser CLI:
+1. Get the OIDC provider URL for the client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example:
 
     ```shell
     vault read -field=issuer identity/oidc/client/<client-application-name>
     ```
 
-1. Create a [JSON Web Token (JWT) auth method](https://developer.hashicorp.com/vault/docs/auth/jwt) named "postman-jwt". Learn about the [endpoint for creating auth methods](https://developer.hashicorp.com/vault/api-docs/system/auth#enable-auth-method). Example using the `write` command in the Browser CLI:
+1. Create a [JSON Web Token (JWT) auth method](https://developer.hashicorp.com/vault/docs/auth/jwt) named "postman-jwt". Learn about the [endpoint for creating auth methods](https://developer.hashicorp.com/vault/api-docs/system/auth#enable-auth-method). Example:
 
     ```shell
     vault write /sys/auth/postman-jwt type="jwt"
     ```
 
-1. Configure a role named "postman" with permission to authenticate using the "postman-jwt" auth method. Learn about the [endpoint for configuring the role](https://developer.hashicorp.com/vault/api-docs/auth/jwt#configure). Example using the `write` command in the Browser CLI:
+1. Configure a role named "postman" with permission to authenticate using the "postman-jwt" auth method. Learn about the [endpoint for configuring the role](https://developer.hashicorp.com/vault/api-docs/auth/jwt#configure). Example:
 
     ```shell
     vault write auth/postman-jwt/config oidc_discovery_url="<oidc-provider-url>" default_role=postman
     ```
 
-1. Create a HashiCorp Vault policy that allows you to read data from all secrets engines, and save the policy name for later. This policy will be attached to the "postman" role. Learn about the [endpoint for creating a policy](https://developer.hashicorp.com/vault/api-docs/system/policy#create-update-policy). Example using the `write` command in the Browser CLI:
+1. Create a HashiCorp Vault policy that allows you to read data from all secrets engines, and save the policy name for later. This policy will be attached to the "postman" role. Learn about the [endpoint for creating a policy](https://developer.hashicorp.com/vault/api-docs/system/policy#create-update-policy). Example:
 
     ```shell
     vault write sys/policy/<policy-name> policy='path "*" { capabilities=["read"] } path "sys/*" { capabilities=["deny"] } path "auth/*" { capabilities=["deny"] }'
@@ -161,7 +160,7 @@ To set up an OIDC identity provider in HashiCorp Vault, do the following:
 
     > You can update the policy to restrict the "postman" role from accessing specific secrets engines. At a minimum, the policy must allow the "postman" role to access the secrets engine that stores secrets you'll retrieve in Postman.
 
-1. Create a role named "postman" and attach the policy to it. Learn about the [endpoint for creating a role](https://developer.hashicorp.com/vault/api-docs/auth/jwt#create-update-role). Example using the `write` command in the Browser CLI:
+1. Create a role named "postman" and attach the policy to it. Learn about the [endpoint for creating a role](https://developer.hashicorp.com/vault/api-docs/auth/jwt#create-update-role). Example:
 
     ```shell
     vault write auth/postman-jwt/role/postman bound_audiences="<oidc-client-id>" user_claim=sub token_policies=<policy-name> role_type=jwt
