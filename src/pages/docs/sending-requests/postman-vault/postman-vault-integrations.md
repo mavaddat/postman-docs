@@ -73,9 +73,9 @@ To view details about a secret you've linked from Azure Key Vault, select the va
 
 ## Integrate with HashiCorp Vault
 
-You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up a public OpenID Connect (OIDC) identity provider in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, OIDC client ID, and namespace for your OIDC identity provider.
+You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up an [OpenID Connect (OIDC) identity provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider) in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, OIDC client ID, and namespace for your OIDC identity provider.
 
-You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up a public OIDC identity provider. If you're using HashiCorp Vault in [HashiCorp Cloud Platform](https://developer.hashicorp.com/hcp/docs/hcp), go to the [public address](https://developer.hashicorp.com/vault/tutorials/cloud/get-started-vault#vault-cluster-overview) for your HashiCorp Vault cluster, then enter commands in the Vault Browser CLI. If you're using HashiCorp Vault in a self-hosted instance, [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) on your computer, then enter commands in the terminal.<!-- You can instead run a [script that executes the setup commands](#download-and-run-the-hashicorp-vault-setup-script). -->
+You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up an OIDC identity provider. If you're using HashiCorp Vault in [HashiCorp Cloud Platform](https://developer.hashicorp.com/hcp/docs/hcp), go to the [public address](https://developer.hashicorp.com/vault/tutorials/cloud/get-started-vault#vault-cluster-overview) for your HashiCorp Vault cluster, then enter commands in the Vault Browser CLI. If you're using HashiCorp Vault in a self-hosted instance, [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) on your computer, then enter commands in the terminal.<!-- You can instead run a [script that executes the setup commands](#download-and-run-the-hashicorp-vault-setup-script). -->
 
 Once a Postman Team or Super Admin sets up the integration, you need to authenticate with your HashiCorp account. Then you can link secrets stored in HashiCorp Vault using the path to the KV (key-value) secrets engine, path to the secret, and key name for each secret.
 
@@ -83,9 +83,9 @@ Once a Postman Team or Super Admin sets up the integration, you need to authenti
 
 You can also follow the steps to [create a KV secrets engine](https://developer.hashicorp.com/vault/docs/secrets/kv), and store [static key-value secrets](https://developer.hashicorp.com/vault/tutorials/secrets-management/static-secrets) or [versioned key-value secrets](https://developer.hashicorp.com/vault/tutorials/secrets-management/versioned-kv) in it. Postman only supports KV secrets engines.
 
-To set up a public OIDC identity provider in HashiCorp Vault using the CLI, do the following:
+To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the following:
 
-1. Make sure you have permission to set up an [OIDC identity provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider). You must at least have the permissions specified in the following [HashiCorp Vault policy](https://developer.hashicorp.com/vault/tutorials/policies/policies):
+1. Make sure you have permission to set up an OIDC identity provider. You must at least have the permissions specified in the following [HashiCorp Vault policy](https://developer.hashicorp.com/vault/tutorials/policies/policies):
 
     ```json
     path "/identity/oidc/client/*" {
@@ -111,14 +111,14 @@ To set up a public OIDC identity provider in HashiCorp Vault using the CLI, do t
 
     * `/identity/oidc/client/*` - Allows you to create and read any client application in your HashiCorp instance that understands the OIDC protocol.
     * `/identity/oidc/provider/*` - Allows you to create and read any OIDC provider in your HashiCorp instance.
-    * `/sys/auth/*` - Allows you to create a new auth method. You'll use this permission to create a new JSON Web Token (JWT) auth method.
+    * `/sys/auth/*` - Allows you to create a new auth method. This permission enables you to create a new JSON Web Token (JWT) auth method.
     * `/auth/*` - Allows you to update the JWT auth method, and create a new role in the JWT auth method.
     * `/sys/policy/*` - Allows you to create a policy. The policy will be used to attach to the new role.
 
 1. Create a public [OIDC client application](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#client-applications). Learn about the [endpoint for creating a client application](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-client). Example:
 
     ```shell
-    vault write identity/oidc/client/<client-application-name> redirect_uris="http://127.0.0.1:10545/,http://127.0.0.1:10535/" client_type=public assignments=allow_all
+    vault write identity/oidc/client/<client-application-name> redirect_uris="http://127.0.0.1:10545/,http://127.0.0.1:10534/" client_type=public assignments=allow_all
     ```
 
 1. Get the client ID of the OIDC client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example:
@@ -211,7 +211,7 @@ To view details about a secret you've linked from HashiCorp Vault, select the va
 
 <!-- ### Download and run the HashiCorp Vault setup script
 
-Instead of entering commands in the HashiCorp Vault CLI, you can optionally download a script from [GitHub](#) that will set up your public OIDC identity provider in HashiCorp Vault. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) before running the script.
+Instead of entering commands in the HashiCorp Vault CLI, you can optionally download a script from [GitHub](#) that will set up your OIDC identity provider in HashiCorp Vault. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) before running the script.
 
 > If your HashiCorp Vault instance isn't self-hosted, it's recommended that you create a separate namespace for the integration.
 
