@@ -112,7 +112,7 @@ Here are a few things that may be going on:
 * Permission issues that prevent the LCA from seeing traffic.
 * Encrypted traffic. See [What do I do if my traffic is encrypted?](#what-do-i-do-if-my-traffic-is-encrypted) for solutions.
 * Data formats that the LCA doesn't recognize.
-* ECS on EC2 with bridge networking. You can install LCA as a daemon service only. For instructions, see the [installation instructions](/docs/live-insights/insights-gs/#install-lca-as-a-daemon-service).
+* ECS on EC2 with bridge networking. You can install LCA as a daemon service only. For instructions, see the [installation instructions](/docs/insights/insights-gs/#configure-lca-as-a-daemon-service).
 
 In many of these cases, there is a solution. Currently, the Live Collections Agent doesn't support these three cases:
 
