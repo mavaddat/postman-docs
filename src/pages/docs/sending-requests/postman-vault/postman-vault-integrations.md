@@ -242,7 +242,7 @@ TODO: verify details about the redirect URIs
 
 ## Integrate with AWS Secrets Manager
 
-When setting up an integration with [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/managing-secrets.html), you need to authenticate with your AWS account, entering the access key pair (access key ID and secret access key), region, and MFA token for your AWS account. Then you can link secrets stored in AWS Secrets Manager using the secret Amazon Resource Name (ARN), role ARN, and version for each secret.
+When setting up an integration with [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/managing-secrets.html), you need to authenticate with your AWS account, entering the access key pair (access key ID and secret access key), region, and multi-factor authentication (MFA) token for your AWS account. Then you can link secrets stored in AWS Secrets Manager using the secret Amazon Resource Name (ARN), role ARN, and version for each secret.
 
 > Your computer must be able to access your Amazon Web Services instance.
 
@@ -250,6 +250,7 @@ You can follow the steps to [create a secret](https://docs.aws.amazon.com/secret
 
 To integrate with AWS Secrets Manager and authenticate with your AWS account, do the following:
 
+1. If your AWS account requires an MFA token to authenticate, make sure you have the [`iam:listMFADevices` permission](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html) in the [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) associated with your AWS user. This enables Postman to check if your AWS account has MFA enabled, and then prompt you to enter your MFA token.
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can create the integration when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
 1. Select **Connect** next to **AWS Secrets Manager**.
 1. You'll be prompted to authorize Postman to access your AWS account. If you need to manually authorize Postman, enter the following on the **Authenticate AWS Secrets Manager** window:
@@ -270,7 +271,7 @@ To integrate with AWS Secrets Manager and authenticate with your AWS account, do
 
 To link a secret's value from AWS Secrets Manager, do the following:
 
-1. In AWS, make sure you have the [`secretsmanager:GetSecretValue` permission](https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html) in the [identity-based policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) associated with your AWS user. This enables you to retrieve secrets stored in AWS Secrets Manager from your local instance of Postman.
+1. In AWS, make sure you have the [`secretsmanager:GetSecretValue` permission](https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html) in the identity-based policy associated with your AWS user. This enables you to retrieve secrets stored in AWS Secrets Manager from your local instance of Postman.
 1. In Postman, enter a name for the vault secret, hover over the **Value** cell, then select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">.
 
     <img src="https://assets.postman.com/postman-docs/v10/link-aws-vault-secret-v10-24.jpg" alt="Link AWS value" width="542px"/>
