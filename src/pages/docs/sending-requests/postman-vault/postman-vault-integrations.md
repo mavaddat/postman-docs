@@ -233,7 +233,7 @@ $ hashicorp-setup-script [vault-endpoint] [options]
 | `VAULT_ADDR` | **Required** The address of your Vault server as a URL and port. |
 | `VAULT_NAMESPACE` | The namespace where you want your users to manage their sensitive data. Default: `""` |
 | `OIDC_CLIENT_NAME` | The name of the OIDC client application. Default: `postman-integration-client` |
-| `REDIRECT_URI` | The redirect URIs for the OIDC client application. Default: `http://127.0.0.1:10545/,http://127.0.0.1:10535/` The default redirect URIs are for the Postman Canary build and the Postman desktop app. |
+| `REDIRECT_URI` | The redirect URIs for the OIDC client application. Default: `http://127.0.0.1:10545/,http://127.0.0.1:10534/` The default redirect URIs are for the Postman Canary build and the Postman desktop app. |
 
 TODO: verify details about the redirect URIs
 
