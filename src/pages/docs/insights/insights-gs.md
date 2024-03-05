@@ -104,7 +104,7 @@ Following are instructions for installing the LCA as a sidecar container. If you
 
     ![Live collection enabled](https://assets.postman.com/postman-docs/v10/live-insights-live-enabled-v10-19.jpg)
 
-You are ready to [check your LCA connection](#check-your-lca-connection), [navigate your collection](#navigate-live-collections), and [observe live insights](#observe-live-insights) about your endpoints. You can also [review any traffic errors](/docs/live-insights/live-insights-troubleshoot/).
+You are ready to [check your LCA connection](#check-your-lca-connection), [navigate your collection](#navigate-live-collections), and [observe live insights](#observe-live-insights) about your endpoints. You can also [review any traffic errors](/docs/insights/insights-troubleshoot/).
 
 ### Configure LCA as a daemon service
 
@@ -150,7 +150,7 @@ Following are instructions for attaching the LCA to the host network in ECS. Thi
 
     ![Live collection enabled](https://assets.postman.com/postman-docs/v10/live-insights-live-enabled-v10-19.jpg)
 
-You are ready to [check your LCA connection](#check-your-lca-connection), [navigate your collection](#navigate-live-collections), and [observe live insights](#observe-live-insights) about your endpoints. You can also [review any traffic errors](/docs/live-insights/live-insights-troubleshoot/).
+You are ready to [check your LCA connection](#check-your-lca-connection), [navigate your collection](#navigate-live-collections), and [observe live insights](#observe-live-insights) about your endpoints. You can also [review any traffic errors](/docs/insights/insights-troubleshoot/).
 
 ### Uninstall
 
@@ -279,7 +279,7 @@ The **Errors** tab displays per-endpoint error states in a chronological order a
 
 ## Next steps
 
-* [About Live Insights Early Access](/docs/live-insights/live-insights-early-access/)
-* [Live Insights overview](/docs/live-insights/live-insights-overview/)
-* [Diagnose and troubleshoot errors](/docs/live-insights/live-insights-troubleshoot/)
-* [Live Collections Agent reference](/docs/live-insights/live-insights-reference/)
+* [About Insights Early Access](/docs/insights/insights-early-access/)
+* [Insights overview](/docs/insights/insights-overview/)
+* [Diagnose and troubleshoot errors](/docs/insights/insights-troubleshoot/)
+* [Live Collections Agent reference](/docs/insights/insights-reference/)
