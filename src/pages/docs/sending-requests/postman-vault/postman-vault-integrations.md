@@ -75,7 +75,7 @@ To view details about a secret you've retrieved from Azure Key Vault, select the
 
 You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up a public OpenID Connect (OIDC) identity provider in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, OIDC client ID, and namespace for your OIDC identity provider.
 
-You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up a public OIDC identity provider. You can enter commands using the Vault Browser CLI, or [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) on your computer.
+You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up a public OIDC identity provider. Enter the commands using the Vault Browser CLI, or [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) on your computer.<!-- You can instead run a [script that executes the setup commands](#download-and-run-the-hashicorp-vault-setup-script). -->
 
 Once a Postman Team or Super Admin sets up the integration, you need to authenticate with your HashiCorp account. Then you can retrieve secrets stored in HashiCorp Vault using the path to the KV (key-value) secrets engine, path to the secret, and key name for each secret.
 
@@ -119,7 +119,7 @@ To set up a public OIDC identity provider in HashiCorp Vault using the CLI, do t
 1. Create a public [OIDC client application](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#client-applications). Learn about the [endpoint for creating a client application](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-client). Example:
 
     ```shell
-    vault write identity/oidc/client/<client-application-name> client_type=public assignments=allow_all
+    vault write identity/oidc/client/<client-application-name> redirect_uris="http://127.0.0.1:10545/,http://127.0.0.1:10535/" client_type=public assignments=allow_all
     ```
 
 1. Get the client ID of the OIDC client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options). Example:
@@ -209,6 +209,36 @@ To retrieve a secret's value from HashiCorp Vault, do the following:
 1. You can [reference the vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets) in your local instance of Postman.
 
 To view details about a secret you've retrieved from HashiCorp Vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> next to a secret.
+
+<!-- ### Download and run the HashiCorp Vault setup script
+
+Instead of entering commands in the HashiCorp Vault CLI, you can optionally download a script from [GitHub](#) that will set up your public OIDC identity provider in HashiCorp Vault. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) before running the script.
+
+> If your HashiCorp Vault instance isn't self-hosted, it's recommended that you create a separate namespace for the integration.
+
+The script provides options you can use to test and customize the commands. You can add options after you specify the script's filename on your computer:
+
+```bash
+$ hashicorp-setup-script [vault-endpoint] [options]
+```
+
+| Option | Details |
+|:--|:--|
+| `-d`, `--dry-run` | Only print the commands |
+| `--help` | Output usage information |
+| `-y` | Don't prompt before executing each command |
+
+| Environment Variables | Details |
+|:--|:--|
+| `VAULT_TOKEN` | **Required** An [authentication token](https://developer.hashicorp.com/vault/docs/concepts/tokens) with permission to create an OIDC identity policy, OIDC provider, auth method, policy, and role. Learn more about the [minimum permissions required to set up an OIDC identity provider](#integrate-with-hashicorp-vault). |
+| `VAULT_ADDR` | **Required** The address of your Vault server as a URL and port. |
+| `VAULT_NAMESPACE` | The namespace where you want your users to manage their sensitive data. Default: `""` |
+| `OIDC_CLIENT_NAME` | The name of the OIDC client application. Default: `postman-integration-client` |
+| `REDIRECT_URI` | The redirect URIs for the OIDC client application. Default: `http://127.0.0.1:10545/,http://127.0.0.1:10535/` The default redirect URIs are for the Postman Canary build and the Postman desktop app. |
+
+TODO: verify details about the redirect URIs
+
+> You can update the policy (`POLICY_CONTENT`) specified in the script to restrict the "postman" role from accessing specific secrets engines. At a minimum, the policy must allow the "postman" role to access the secrets engine that stores secrets you'll retrieve in Postman. -->
 
 ## Integrate with AWS Secrets Manager
 
