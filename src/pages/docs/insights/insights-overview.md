@@ -18,7 +18,7 @@ contextual_links:
 
 The goal of the Postman Live Insights is to be the source of truth for your production APIs. With Live Insights, Postman's vision is to be able to guide a developer with little previous experience, in both the system being monitored and the Live Insights tool, to productively find and fix issues.
 
-> These docs feature onboarding for Amazon Elastic Container Service (ECS) users. See [Get started with Live Insights](/docs/live-insights/live-insights-gs/) for more information.
+> These docs feature onboarding for Amazon Elastic Container Service (ECS) users. See [Get started with Insights](/docs/insights/insights-gs/) for more information.
 
 ## Contents
 
@@ -102,7 +102,7 @@ The LCA client drops all data values from the observed traffic before sending it
 
 ## Next steps
 
-* [About Live Insights Early Access](/docs/live-insights/live-insights-early-access/)
-* [Get started with Live Insights](/docs/live-insights/live-insights-gs/)
-* [Diagnose and troubleshoot errors](/docs/live-insights/live-insights-troubleshoot/)
-* [Live Collections Agent reference](/docs/live-insights/live-insights-reference/)
+* [About Live Insights Early Access](/docs/insights/insights-early-access/)
+* [Get started with Live Insights](/docs/insights/insights-gs/)
+* [Diagnose and troubleshoot errors](/docs/insights/insights-troubleshoot/)
+* [Live Collections Agent reference](/docs/insights/insights-reference/)
