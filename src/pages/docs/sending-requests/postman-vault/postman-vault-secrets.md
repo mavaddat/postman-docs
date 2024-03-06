@@ -177,7 +177,8 @@ You can reference vault secrets in your HTTP collections and requests from the *
 
 > If you're using the Postman web app to send requests with references to vault secrets, you must use the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent).
 >
-> Also you must use the Postman desktop app to send requests with references to secrets you linked from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+> If you're referencing vault secrets linked with secrets stored in an external vault, you must use the [Canary build](https://www.postman.com/downloads/canary/) of the Postman desktop app. Learn about [external vault integrations](/docs/sending-requests/postman-vault/postman-vault-integrations/).
+<!-- Also you must use the Postman desktop app to send requests with references to secrets you linked from an [external vault integration](/docs/sending-requests/postman-vault/postman-vault-integrations/). -->
 
 Enclose the vault secret in double curly braces (`{{ }}`) and prefix the secret's name with `vault:` to reference it throughout your Postman team. For example, to reference a secret named "postman-api-key", use the following syntax:
 
@@ -218,7 +219,7 @@ If you linked sensitive data from an [external vault integration](/docs/sending-
 * The integration isn't configured with correct details.
 * Your computer isn't able to access your external vault provider.
 * The integration was disconnected.
-* You aren't sending requests from the Postman desktop app.
+<!-- You aren't sending requests from the Postman desktop app. -->
 * You aren't assigned the required roles for retrieving secrets from your external vault provider.
 * You haven't reauthenticated with your external vault since you last signed in to Postman, or since the authentication session expired. Learn how to [reauthenticate with an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#reauthenticate-with-an-external-vault).
 
@@ -246,7 +247,7 @@ The following features require the Postman desktop app:
 
 * **Preserve vault secrets when you join or leave a team** - You must use the Postman desktop app to preserve your encrypted vault secrets after you [join a new team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#joining-a-team) or [leave a team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#leaving-a-team). If you're using the Postman web app, vault secrets won't be available from your Postman Vault when you join a new team or leave a team. Then you can add new vault secrets to the team you joined from, or a team you rejoined if using the Postman web app.
 
-* **Create and manage Postman Vault integrations** ([Enterprise teams only](https://www.postman.com/pricing/)) - You must use the Postman desktop app to [create and manage Postman Vault integrations](/docs/sending-requests/postman-vault/postman-vault-integrations/). If you're using the Postman web app, Postman Vault integrations won't be available.
+* **Create and manage Postman Vault integrations** ([Enterprise teams only](https://www.postman.com/pricing/)) - You must use the [Canary build](https://www.postman.com/downloads/canary/) of the Postman desktop app to [create and manage Postman Vault integrations](/docs/sending-requests/postman-vault/postman-vault-integrations/). <!-- If you're using the Postman web app, Postman Vault integrations won't be available. --> Postman Vault integrations won't be available if you're using the Postman web app, or if the feature isn't enabled for your Enterprise team.
 
 The following features require the Postman web app:
 
