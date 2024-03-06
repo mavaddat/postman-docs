@@ -54,7 +54,7 @@ Filter your traffic using optional flags to return the information you’re inte
 
 ## Next steps
 
-* [About Live Insights Early Access](/docs/live-insights/live-insights-early-access/)
-* [Live Insights overview](/docs/live-insights/live-insights-overview/)
-* [Get started with Live Insights](/docs/live-insights/live-insights-gs/)
-* [Diagnose and troubleshoot errors](/docs/live-insights/live-insights-troubleshoot/)
+* [About Live Insights Early Access](/docs/insights/insights-early-access/)
+* [Live Insights overview](/docs/insights/insights-overview/)
+* [Get started with Live Insights](/docs/insights/insights-gs/)
+* [Diagnose and troubleshoot errors](/docs/insights/insights-troubleshoot/)

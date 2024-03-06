@@ -38,10 +38,10 @@ The Live Insights team is hoping you will try out the new features and send your
 
 Just like Live Insights, this documentation set is in alpha stage. Use the links bellow to jump to the next topic of interest. For easier navigation, you'll find the list of other topics in this set at the bottom of each page.
 
-* [Live Insights overview](/docs/live-insights/live-insights-overview/)
-* [Get started with Live Insights](/docs/live-insights/live-insights-gs/)
-* [Diagnose and troubleshoot errors](/docs/live-insights/live-insights-troubleshoot/)
-* [Live Collections Agent reference](/docs/live-insights/live-insights-reference/)
+* [Insights overview](/docs/insights/insights-overview/)
+* [Get started with Insights](/docs/insights/insights-gs/)
+* [Diagnose and troubleshoot errors](/docs/insights/insights-troubleshoot/)
+* [Postman Insights Agent reference](/docs/insights/insights-reference/)
 
 ## Feedback
 

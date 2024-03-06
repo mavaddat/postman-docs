@@ -112,7 +112,7 @@ Here are a few things that may be going on:
 * Permission issues that prevent the LCA from seeing traffic.
 * Encrypted traffic. See [What do I do if my traffic is encrypted?](#what-do-i-do-if-my-traffic-is-encrypted) for solutions.
 * Data formats that the LCA doesn't recognize.
-* ECS on EC2 with bridge networking. You can install LCA as a daemon service only. For instructions, see the [installation instructions](/docs/live-insights/live-insights-gs/#install-lca-as-a-daemon-service).
+* ECS on EC2 with bridge networking. You can install LCA as a daemon service only. For instructions, see the [installation instructions](/docs/insights/insights-gs/#configure-lca-as-a-daemon-service).
 
 In many of these cases, there is a solution. Currently, the Live Collections Agent doesn't support these three cases:
 
@@ -236,7 +236,7 @@ This removes all endpoints whose host is given by a dotted-quad IP address.
 
 ## Next steps
 
-* [About Live Insights Early Access](/docs/live-insights/live-insights-early-access/)
-* [Live Insights overview](/docs/live-insights/live-insights-overview/)
-* [Get started with Live Insights](/docs/live-insights/live-insights-gs/)
-* [Live Collections Agent reference](/docs/live-insights/live-insights-reference/)
+* [About Live Insights Early Access](/docs/insights/insights-early-access/)
+* [Live Insights overview](/docs/insights/insights-overview/)
+* [Get started with Live Insights](/docs/insights/insights-gs/)
+* [Live Collections Agent reference](/docs/insights/insights-reference/)

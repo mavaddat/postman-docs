@@ -1,5 +1,25 @@
 [
   {
+    "from": "/docs/live-insights/live-insights-early-access/",
+    "to": "/docs/insights/insights-early-access/"
+  },
+  {
+    "from": "/docs/live-insights/live-insights-overview/",
+    "to": "/docs/insights/insights-overview/"
+  },
+  {
+    "from": "/docs/live-insights/live-insights-gs/",
+    "to": "/docs/insights/insights-gs/"
+  },
+  {
+    "from": "/docs/live-insights/live-insights-troubleshoot/",
+    "to": "/docs/insights/insights-troubleshoot/"
+  },
+  {
+    "from": "/docs/live-insights/live-insights-reference/",
+    "to": "/docs/insights/insights-reference/"
+  },
+  {
     "from": "/docs/collections/live-collections/update-live-collections/",
     "to": "/docs/collections/collections-overview/"
   },
