@@ -10,7 +10,7 @@ plan: beta
 You can integrate your [Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/) with external vaults, such as Azure Key Vault. This enables you to add a vault secret that's linked to a secret in your external vault. You must authenticate with external vaults to link a secret and retrieve its value when you send HTTP requests.
 
 <!-- You can create Postman Vault integrations from the [Postman desktop app](/docs/getting-started/installation/installation-and-updates/). -->
-If Postman Vault integrations is enabled for your Enterprise team, you can create integrations from the [Canary build](https://www.postman.com/downloads/canary/) of the Postman desktop app.
+If Postman Vault integrations are enabled for your Enterprise team, you can create integrations from the [Canary build](https://www.postman.com/downloads/canary/) of the Postman desktop app.
 
 Before you integrate your Postman Vault with external vaults, make sure you understand how to [add vault secrets to your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets), and [reference vault secrets in Postman](/docs/sending-requests/postman-vault/postman-vault-secrets/#use-vault-secrets).
 
