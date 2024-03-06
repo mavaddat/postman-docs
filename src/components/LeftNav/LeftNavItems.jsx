@@ -601,8 +601,12 @@ export const leftNavItems = [
       {
         name: 'Scripting reference',
         subParentSlug: 'script-references',
-        slug: '/docs/writing-scripts/script-references/test-examples/',
+        slug: '/docs/writing-scripts/script-references/script-reference-overview/',
         subMenuItems2: [
+          {
+            name: 'Overview',
+            url: '/docs/writing-scripts/script-references/script-reference-overview/',
+          },
           {
             name: 'Script examples',
             url: '/docs/writing-scripts/script-references/test-examples/',

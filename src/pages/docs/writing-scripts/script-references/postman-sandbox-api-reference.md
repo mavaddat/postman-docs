@@ -22,35 +22,30 @@ contextual_links:
     url: "https://blog.postman.com/adding-external-libraries-in-postman/"
 ---
 
-Postman provides JavaScript APIs that you can use in your request scripts. The `pm` object provides functionality for testing your request and response data, with the `postman` object providing additional workflow control.
+The Postman JavaScript API functionality enables you to programmatically access and alter request and response data and variables using the `pm` object. You can also dynamically alter execution order to build request workflows for the Collection Runner using the `postman` object.
 
 ## Contents
 
-* [The pm object](#the-pm-object)
-    * [Using variables in scripts](#using-variables-in-scripts)
-        * [Environment variables](#using-environment-variables-in-scripts)
-        * [Collection variables](#using-collection-variables-in-scripts)
-        * [Global variables](#using-global-variables-in-scripts)
-        * [Data variables](#using-data-variables-in-scripts)
-    * [Scripting with request and response data](#scripting-with-request-and-response-data)
-        * [Request data](#scripting-with-request-data)
-        * [Response data](#scripting-with-response-data)
-        * [Request info](#scripting-with-request-info)
-        * [Cookies](#scripting-with-request-cookies)
-    * [Sending requests from scripts](#sending-requests-from-scripts)
-    * [Get the path and name of a request](#get-the-path-and-name-of-a-request)
-    * [Skip request execution from pre-request scripts](#skip-request-execution-from-pre-request-scripts)
+* [Using variables in scripts](#using-variables-in-scripts)
+    * [Environment variables](#using-environment-variables-in-scripts)
+    * [Collection variables](#using-collection-variables-in-scripts)
+    * [Global variables](#using-global-variables-in-scripts)
+    * [Data variables](#using-data-variables-in-scripts)
+* [Scripting with request and response data](#scripting-with-request-and-response-data)
+    * [Request data](#scripting-with-request-data)
+    * [Response data](#scripting-with-response-data)
+    * [Request info](#scripting-with-request-info)
+    * [Cookies](#scripting-with-request-cookies)
+* [Sending requests from scripts](#sending-requests-from-scripts)
+* [Get the path and name of a request](#get-the-path-and-name-of-a-request)
+* [Skip request execution from pre-request scripts](#skip-request-execution-from-pre-request-scripts)
 * [Scripting workflows](#scripting-workflows)
 * [Scripting Postman Visualizations](#scripting-postman-visualizations)
 * [Building response data into Postman Visualizations](#building-response-data-into-postman-visualizations)
 * [Writing test assertions](#writing-test-assertions)
 * [Using external libraries](#using-external-libraries)
 
-## The pm object
-
-You will carry out most of the Postman JavaScript API functionality using `pm.*`, which provides access to request and response data, and variables.
-
-### Using variables in scripts
+## Using variables in scripts
 
 You can access and manipulate [variables](/docs/sending-requests/variables/variables/) at each scope in Postman using the `pm` API.
 
@@ -126,7 +121,7 @@ console.log(pm.variables.get('score'));//outputs 2
 
 You can also access variables defined in the individual scopes with [pm.environment](#using-environment-variables-in-scripts), [pm.collectionVariables](#using-collection-variables-in-scripts), and [pm.globals](#using-global-variables-in-scripts).
 
-#### Using environment variables in scripts
+### Using environment variables in scripts
 
 Your scripts can use the `pm.environment` methods to access and manipulate variables in the active (currently selected) environment.
 
@@ -188,7 +183,7 @@ pm.environment.clear():function
 
 > Note that your ability to edit variables depends on your [access level](/docs/sending-requests/variables/team-environments/#manage-environment-roles) in the workspace.
 
-#### Using collection variables in scripts
+### Using collection variables in scripts
 
 Your scripts can use the `pm.collectionVariables` methods to access and manipulate variables in the collection.
 
@@ -242,7 +237,7 @@ pm.collectionVariables.unset(variableName:String):function
 pm.collectionVariables.clear():function
 ```
 
-#### Using global variables in scripts
+### Using global variables in scripts
 
 Your scripts can use the `pm.globals` methods to access and manipulate variables at global scope within the workspace.
 
@@ -298,7 +293,7 @@ pm.globals.clear():function
 
 > Note that your ability to edit variables depends on your [access level](/docs/sending-requests/variables/team-environments/#manage-environment-roles) in the workspace.
 
-#### Using data variables in scripts
+### Using data variables in scripts
 
 Your scripts can use the `pm.iterationData` methods to access and manipulate variables from [data files during a collection run](/docs/collections/running-collections/working-with-data-files/).
 
@@ -332,11 +327,11 @@ pm.iterationData.toJSON():function → *
 pm.iterationData.unset(key:String):function
 ```
 
-### Scripting with request and response data
+## Scripting with request and response data
 
 A variety of methods provide access to request and response data in Postman scripts, including [pm.request](#scripting-with-request-data), [pm.response](#scripting-with-response-data), [pm.info](#scripting-with-request-info), and [pm.cookies](#scripting-with-request-cookies). Additionally you can send requests using [pm.sendRequest](#sending-requests-from-scripts).
 
-#### Scripting with request data
+### Scripting with request data
 
 The `pm.request` object provides access to the data for the request the script is running within. For a **Pre-request Script** this is the request that's about to run, and for a **Test** script this is the request that has already run.
 
@@ -397,7 +392,7 @@ pm.request.headers.upsert({key: headerName:String, value: headerValue:String}):f
 
 > See the Postman [Collection SDK Request reference](https://www.postmanlabs.com/postman-collection/Request.html) for more detail.
 
-#### Scripting with response data
+### Scripting with response data
 
 The `pm.response` object provides access to the data returned in the response for the current request in scripts added to the **Tests**.
 
@@ -447,7 +442,7 @@ pm.response.json():Function → Object
 
 > See the Postman [Collection SDK Response reference](https://www.postmanlabs.com/postman-collection/Response.html) for more detail.
 
-#### Scripting with request info
+### Scripting with request info
 
 The `pm.info` object provides data related to the request and the script itself, including name, request ID, and iteration count.
 
@@ -483,7 +478,7 @@ pm.info.requestName:String
 pm.info.requestId:String
 ```
 
-#### Scripting with request cookies
+### Scripting with request cookies
 
 The `pm.cookies` object provides access to the list of cookies associated with the request.
 
@@ -577,7 +572,7 @@ jar.clear(URL:String, callback (error)):Function → Object
 
 > See the Postman [Collection SDK Cookie reference](https://www.postmanlabs.com/postman-collection/Cookie.html) for more detail.
 
-### Sending requests from scripts
+## Sending requests from scripts
 
 You can use the `pm.sendRequest` method to send a request asynchronously from a **Pre-request** or **Test** script. This allows you to execute logic in the background if you are carrying out computation or sending multiple requests at the same time without waiting for each to complete. You can avoid blocking issues by adding a callback function so that your code can respond when Postman receives a response. You can then carry out any additional processing you need on the response data.
 
@@ -626,7 +621,7 @@ pm.sendRequest('https://postman-echo.com/get', (error, response) => {
 
 See the [Request definition](http://www.postmanlabs.com/postman-collection/Request.html#~definition) and [Response structure](http://www.postmanlabs.com/postman-collection/Response.html) reference docs for more detail.
 
-### Get the path and name of a request
+## Get the path and name of a request
 
 The `pm.execution.location` property enables you to get the complete path of a request, including the folder and collection, in array format. For example, for a request named **R1** in folder **F1** in collection **C1**, the following test script code will return `["C1", "F1", "R1"]`:
 
@@ -646,7 +641,7 @@ console.log(pm.execution.location.current);
 
 You can use the `pm.execution.location` and `pm.execution.location.current` properties in your scripts to understand what items are being executed when a request is sent. This information enables you to implement logic and actions in your scripts tailored to the current location within your API testing or collection structure.
 
-### Skip request execution from pre-request scripts
+## Skip request execution from pre-request scripts
 
 The `pm.execution.skipRequest` method enables you to stop the execution of a request from a [pre-request script](/docs/writing-scripts/pre-request-scripts/).
 
