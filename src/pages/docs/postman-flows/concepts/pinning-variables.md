@@ -11,4 +11,4 @@ You can pin variables in Postman Flows so they keep their values across loop ite
 
 Unpinned variables offer flexibility for Flows that use dynamic data processing, so that each iteration or run can adapt based on new inputs or changes in the workflow context. Unpinning is useful in loops where each pass requires fresh data or where the variable's value is updated often.
 
-If a pinned variable is defined outside of a loop but used inside the loop, each time it's used in the loop, it will have the same value as the variable defined outside the loop. However, if the pinned variable is both defined and used inside the loop, each time it's used in the loop, it will receive a new value.
+A pinned variable that is defined outside of a loop retains the same value in every iteration of the loop. But the value of a pinned variable that is defined and used inside a loop can change, because the variable is destroyed and recreated with each iteration of the loop.
