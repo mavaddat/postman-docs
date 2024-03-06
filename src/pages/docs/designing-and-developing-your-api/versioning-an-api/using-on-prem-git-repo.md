@@ -86,7 +86,6 @@ To create an installed app for GitHub Enterprise Server or GitLab Self-Managed, 
 
     * **Homepage URL** - Enter the Postman homepage URL: `https://www.postman.com`
     * **Authorization callback URL** or **Redirect URI** - Enter the authorization callback URL provided in Postman: `https://integration-oauth.pstmn.io/v1/api-git-callback.html`
-    * **Scope** - For GitLab Self-Managed, make sure to select the `api` scope when creating the OAuth app to enable Postman to read and write to your repository.
 
 1. After registering the OAuth app, copy the app's **Client ID** and **Client secret** and enter them in Postman.
 1. Select **Save** to finish creating the installed app.
