@@ -5,7 +5,7 @@ early_access: true
 plan: beta
 ---
 
-You can pin variables in Postman Flows so they keep their values across loop iterations. When a variable is pinned, its value doesn't change until it receives a new value. When a variable is unpinned, you can update or reinitialize its value with each iteration or run of the Flow.
+You can pin variables in Postman Flows so they keep their values across loop iterations. When a variable is pinned, its value persists until it receives a new value. When a variable is unpinned, you can update or reinitialize its value with each iteration or run of the Flow.
 
 <img alt="Pinned variable" src="https://assets.postman.com/postman-docs/v10/pinned-variable-v10.jpg" width="127px"/>
 
