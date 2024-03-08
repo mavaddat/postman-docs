@@ -92,6 +92,7 @@ Following are instructions for installing the Insights Agent as a sidecar contai
     --service <ECS_service_ARN> \
     --task <task-name>
     ```
+
     Observe the deployment progress.
 
     ![ECS sidecar configuration](https://assets.postman.com/postman-docs/v11/insights-sidecar-shell-v11.jpg)
