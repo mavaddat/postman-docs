@@ -1,5 +1,5 @@
 ---
-title: "Live Collections Agent reference"
+title: "Postman Insights Agent reference"
 updated: 2024-01-26
 early_access: true
 plan: alpha
@@ -16,7 +16,7 @@ contextual_links:
     url: "https://www.postman.com/product/live-insights/"
 ---
 
-Use functions and parameters to customize your Live Collections Agent (LCA) deployment and filter the HTTP requests in your Postman Collection.
+Use functions and parameters to customize your Postman Insights Agent deployment and filter the HTTP requests in your Insights Project.
 
 ## apidump
 
@@ -24,9 +24,7 @@ Capture and store a sequence of requests and responses to a service by observing
 
 ### Required flags
 
-* `--collection collectionID` - The collection with which to associate the captured traffic. The traffic is sent to the Live Collections Agent. You can find the collection ID by selecting your collection and then **Info** in the right sidebar.
-
-    ![Get the collection ID](https://assets.postman.com/postman-docs/v10/live-insights-collectionID-v10-19.jpg)
+* `--project <projectID>` - The Insights Project with which to associate the captured traffic. The traffic is sent to the Postman Insights Agent.
 
 ### Optional flags
 
@@ -43,18 +41,12 @@ Filter your traffic using optional flags to return the information you’re inte
 * Capture all traffic from your collection and send it to the Live Collections Agent.
 
     ```bash
-    postman-lc-agent apidump --collection collectionID
-    ```
-
-* Run `my_tests.sh` as `${USER}` and capture traffic on port 80. Send the captured traffic to the Live Collections Agent. The agent will automatically terminate once the script finishes.
-
-    ```bash
-    postman-lc-agent apidump --collection collectionID --filter "port 80" -c ./my_tests.sh -u ${USER}
+    postman-insights-agent apidump --project <projectID>
     ```
 
 ## Next steps
 
-* [About Live Insights Early Access](/docs/insights/insights-early-access/)
-* [Live Insights overview](/docs/insights/insights-overview/)
-* [Get started with Live Insights](/docs/insights/insights-gs/)
+* [About Postman Insights Early Access](/docs/insights/insights-early-access/)
+* [Postman Insights overview](/docs/insights/insights-overview/)
+* [Get started with Postman Insights](/docs/insights/insights-gs/)
 * [Diagnose and troubleshoot errors](/docs/insights/insights-troubleshoot/)
