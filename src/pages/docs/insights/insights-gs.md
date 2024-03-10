@@ -256,7 +256,7 @@ The **Insights** tab returns a list of error categories for endpoints, selectabl
 * Endpoints with most errors in the past week, based on the HTTP status code of the response.
 * Endpoints with the highest proportion of requests that resulted in an error in the past week, based on the HTTP status code of the response.
 * Endpoints with new errors in the past day for endpoints that were previously error free for 6 days, based on the HTTP status code of the response.
-* Endpoints with the highest p90 value in the past week.
+* Endpoints with the highest p90 latency in the past week.
 
 <img alt="Insights tab" src="https://assets.postman.com/postman-docs/v11/insights-collection-insights-v11.jpg" width="513px">
 
