@@ -35,7 +35,7 @@ See [Get started with Postman Insights](/docs/insights/insights-gs/) for more in
 * To use the Insights alpha, you need to be part of a team workspace. If you don’t already have a team in Postman, see [Collaboration overview](/docs/collaborating-in-postman/working-with-your-team/collaboration-overview/#creating-a-team) for instructions on how to set it up. Postman Free provides team setup with up to three users. Once your team workspace is set up, contact the [Insights Alpha team](mailto:live.insights.alpha@postman.com) to get access to the Insights alpha in Postman.
 * To help the Insights team quickly improve the solution, add the [Insights Alpha Team](mailto:live.insights.alpha@postman.com) as a guest to your team. (There is no need to add the Insights team as a full member.)
 * If you'd like, add the [Insights Alpha team](mailto:live.insights.alpha@postman.com) as a viewer to your Insights Project and collections. See [Allowing external users to view collections](/docs/collaborating-in-postman/sharing/#allowing-external-users-to-view-collections) for more information. This will enable the Insights team to directly see your endpoints to improve your experience.
-* If you're working with multiple teams, make sure the Insights team is aware and gives you access to the team you want to use.
+* If you're working with multiple teams, make sure the Insights team is aware and gives you access to the team you want to use with the alpha.
 * Log in with the email address confirmed with you in the alpha invite email. If you aren't sure which email to use, contact the [Insights Alpha team](mailto:live.insights.alpha@postman.com).
 * You can install the Postman Insights Agent after you create a new Insights Project. For more information, see [Get started with Insights](#get-started).
 
@@ -60,12 +60,12 @@ The following actions are currently unavailable but may be supported in the futu
 
 ## Sensitive data protection
 
-The Insights Agent client drops all data values from the observed traffic before sending it to Postman. All data format inference happens on the client side, before the data is removed. The Postman cloud doesn't see the initial values. Uploads of the obfuscated data to Postman are performed over HTTPS using TLS.
+The Insights Agent client drops all data values from the observed traffic before sending it to Postman. All data-format inference happens on the client side, before the data is removed. The Postman cloud doesn't see the initial values. Uploads of the obfuscated data to Postman are performed over HTTPS using TLS.
 
 ### Limitations
 
 * Any literal values that appear in the payload are obfuscated before being sent to Postman, but path parameters are sent in their original form. If the path to your API includes sensitive data (for example, email, first/last names, or phone numbers), it's transmitted to Postman first. Postman applies heuristics on the backend to remove it. If you have APIs that include sensitive data, contact Postman support to adjust the Insights Agent to pre-filter it.
-* Postman’s data sanitizing doesn't apply to the keys. For example, the sanitizing works if your JSON document is structured as follows:
+* Postman’s data sanitizing doesn't apply to the JSON object keys. For example, the sanitizing works if your JSON document is structured as follows:
 
     ```json
     {
@@ -84,7 +84,7 @@ The Insights Agent client drops all data values from the observed traffic before
     }
     ```
 
-* Sanitization also applies to HTTP header values, not keys. For example, if your header looks like:
+* Sanitization also applies to HTTP header values, but not the names of those headers. For example, if your header looks like:
 
     ```json
     Authentication: <secret token>
@@ -98,7 +98,7 @@ The Insights Agent client drops all data values from the observed traffic before
     User-<user id>: ...
     ```
 
-    Then the header is sent to Postman and appears in your collection.
+    Then the header name is sent to Postman and appears in your collection.
 
 ## Next steps
 

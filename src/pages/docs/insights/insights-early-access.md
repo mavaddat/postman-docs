@@ -16,7 +16,7 @@ contextual_links:
     url: "https://www.postman.com/product/live-insights/"
 ---
 
-Thanks to the rise of APIs and service-oriented architectures, web applications are more complex than ever before. This means there is more surface area for unforeseen customer-impacting bugs than ever before. Using today’s solutions, monitoring is manual. In practice, this means even the most well-maintained monitoring systems have gaps; every gap in monitoring means a customer might report an issue first, or longer mean time to recovery from an incident.
+Thanks to the rise of APIs and service-oriented architectures, web applications are more complex than ever before. This means there is more surface area for unforeseen customer-impacting bugs. Using today’s solutions, monitoring is manual. In practice, this means even the most well-maintained monitoring systems have gaps; every gap in monitoring means a customer might report an issue first, or longer mean time to recovery from an incident.
 
 Postman Insights provides a layer of reliability across your entire system. There are three main benefits of using Postman Insights:
 
@@ -49,4 +49,4 @@ The Live Insights team would love to talk to you in Slack to get questions, bug 
 
 ## Support
 
-If you experience any issues, please reach out on Slack or contact [Support](mailto:observability-support@postman.com).
+If you experience any issues, please reach out on Slack or contact [Support](mailto:live.insights.alpha@postman.com).
