@@ -127,7 +127,7 @@ Following are instructions for attaching the Insights Agent to the host network 
 
 1. Configure logging (optional), then expand the **Docker configuration** section.
 
-    Replace the entry point with this string, followed by your collection ID: `/postman-insights-agent,apidump,--project`.
+    Replace the entry point with this string, followed by your collection ID: `/postman-insights-agent,apidump,--project,`.
 
     ![ECS daemon logging configuration](https://assets.postman.com/postman-docs/v11/insights-agent-daemon-logging-v11.jpg)
 
