@@ -196,7 +196,7 @@ Attach the following policy to your AWS profile.
 }
 ```
 
-The Postman Insights Agent CLI needs access to the following permissions in order to install the Insights Agent in ECS. If the profile you selected lacks any of these permissions, the CLI output will show an error message with which action it was attempting to perform.
+The Postman Insights Agent CLI needs the following permissions in order to install the Insights Agent in ECS. If the profile you selected lacks any of these permissions, the CLI output will show an error message indicating which action it was attempting to perform.
 
 The `AmazonECS_FullAccess` policy provided by Amazon is a superset of these actions; you could add that entire policy as an easy way to ensure your permissions are sufficient, if they're not already.
 
