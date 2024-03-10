@@ -211,7 +211,7 @@ The `AmazonECS_FullAccess` policy provided by Amazon is a superset of these acti
 | `ecs:ListServices`               | \*                                                                           | Find the available services.                                                                        |
 | `ecs:DescribeServices`           | \*, or restricted to your account, or restricted to the cluster you selected | Identify which services are using the task definition you selected.                                 |
 | `ecs:UpdateService`              | \*, or restricted to your account, or restricted to the cluster you selected | Update and restart the service using the new task definition.                                       |
-| `ecs:TagResource`                | \*, or restricted to your account, or restricted to the cluster you selected | Mark the service as having been updated by the LCA.                                                 |
+| `ecs:TagResource`                | \*, or restricted to your account, or restricted to the cluster you selected | Mark the service as having been updated by the Insights Agent.                                               |
 
 ## Check your Insights Agent connection
 
