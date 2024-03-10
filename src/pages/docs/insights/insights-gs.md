@@ -107,7 +107,7 @@ Following are instructions for installing the Insights Agent as a sidecar contai
 
 1. Return to Postman and observe an Insights Project populated for your services.
 
-    > Directories can take a few minutes to populate.
+    > Your Insights Project can take a few minutes to populate.
 
 You are ready to [check your Insights Agent connection](#check-your-insights-agent-connection), [curate your endpoints](#curate-your-endpoints), and [observe insights](#observe-insights) about your endpoints. You can also [review any traffic errors](/docs/insights/insights-troubleshoot/).
 
