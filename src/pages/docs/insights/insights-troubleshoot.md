@@ -28,7 +28,7 @@ As you work with the Postman Insights Agent, you may encounter errors and receiv
     * [Why isn't my API traffic showing up?](#why-isnt-my-api-traffic-showing-up)
     * [What do I do if my traffic is encrypted?](#what-do-i-do-if-my-traffic-is-encrypted)
     * [What does the Insights Agent do with sensitive data?](#what-does-the-insights-agent-do-with-sensitive-data)
-    * [I can't update my collection.](#i-cant-update-my-collection)
+    * [I can't update my Insights Project.](#i-cant-update-my-insights-project)
     * [I'm not seeing the traffic I'm looking for in my API model.](#im-not-seeing-the-traffic-im-looking-for-in-my-api-model)
     * [My API model is mostly health checks and infrastructure endpoints.](#my-api-model-is-mostly-health-checks-and-infrastructure-endpoints)
 
