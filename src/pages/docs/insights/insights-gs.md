@@ -103,7 +103,7 @@ Following are instructions for installing the Insights Agent as a sidecar contai
     postman-lc-agent ecs --help
     ```
 
-    > The time it takes for the deployment to complete depends on the number of tasks running in a service. Therefore, while the process might take a while, the CLI will run until it’s finished because the processing is handled by AWS.
+    > The time it takes for the deployment to complete depends on the number of tasks running in a service. Therefore, while the process might take a while, the CLI will run until the deployment is finished because the processing is handled by AWS.
 
 1. Return to Postman and observe an Insights Project populated for your services.
 
