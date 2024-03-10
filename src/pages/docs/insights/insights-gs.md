@@ -69,7 +69,6 @@ Configuring ECS requires:
 * AWS credentials at `~/.aws/credentials` with edit access to ECS cluster, service and task definition. For more information, see [Set up AWS ECS permissions](#set-up-aws-ecs-permissions).
 * Cluster ARN. Navigate to the cluster in the AWS console and find the ARN in the cluster overview.
 * Service ARN. The ARN of the service on which you want to install the Postman Insights Agent.
-* Insights Project ID. The API will automatically be populated in the install script. You can also find it in your [API keys](https://go.postman.co/settings/me/api-keys) page.
 
 ### Configure the Insights Agent as a sidecar
 
@@ -123,17 +122,17 @@ Following are instructions for attaching the Insights Agent to the host network 
 
 1. Add a single container in this task definition, running `docker.postman.com/postman-insights-agent`. Delete the port mapping. The Insights Agent doesn't need to expose any services to your network. Add the `POSTMAN_API_KEY` environment variable with your Postman API key set as the value.
 
-    ![ECS daemon container configuration](https://assets.postman.com/postman-docs/v11/insights-agent-daemon-container-v11.jpg)
+    ![ECS daemon container configuration](https://assets.postman.com/postman-docs/v11/insights-agent-daemon-container-v11-1.jpg)
 
 1. Configure logging (optional), then expand the **Docker configuration** section.
 
     Replace the entry point with this string, followed by your collection ID: `/postman-insights-agent,apidump,--project,`.
 
-    ![ECS daemon logging configuration](https://assets.postman.com/postman-docs/v11/insights-agent-daemon-logging-v11.jpg)
+    ![ECS daemon logging configuration](https://assets.postman.com/postman-docs/v11/insights-agent-daemon-logging-v11-1.jpg)
 
     If you use a particular port number per service, you can specify additional arguments to only capture traffic destined for port `NNNN`: `...,--filter,port NNNN`.
 
-    Or you can use the extra argument to filter by the hostname you use to access the service: `...,-host-allow,HOSTNAME`.
+    Or you can use the extra argument to filter by the hostname you use to access the service: `...,--host-allow,HOSTNAME`.
 
     This parameter can take multiple comma-separated regular expressions if the task is more complicated than a single host.
 
@@ -145,7 +144,7 @@ Following are instructions for attaching the Insights Agent to the host network 
 
 1. For **Application type** select _Service_, then select the task definition you created in steps 1–3. For **Service type** select _Daemon_.
 
-    <img alt="ECS daemon deployment configuration" src="https://assets.postman.com/postman-docs/v11/insights-agent-daemon-deployment-v11.jpg" width="879px">
+    <img alt="ECS daemon deployment configuration" src="https://assets.postman.com/postman-docs/v11/insights-agent-daemon-deployment-v11.jpg">
 
 1. Return to Postman and observe the endpoints in your Insights Project.
 
@@ -219,7 +218,7 @@ The Insights Project shows you the properties of your system based on real-time 
 
 You can observe traffic error states and messages in the Insights Project’s **Diagnostics** tab.
 
-<img alt="Insights Diagnostics error" src="https://assets.postman.com/postman-docs/v11/insights-diagnostics-error-v11.jpg" width="879px">
+<img alt="Insights Diagnostics error" src="https://assets.postman.com/postman-docs/v11/insights-diagnostics-error-v11.jpg">
 
 ## Curate your endpoints
 
@@ -227,11 +226,11 @@ The Postman Insights Agent watches your API traffic to automatically populate yo
 
 1. See all endpoints, with summary information about each. You can search, sort, and filter the endpoints. Filter endpoints by host, method, category, or status code.
 
-    <img alt="Insights endpoints" src="https://assets.postman.com/postman-docs/v11/insights-endpoints-v11.jpg" width="551px">
+    <img alt="Insights endpoints" src="https://assets.postman.com/postman-docs/v11/insights-endpoints-v11.jpg">
 
 1. Find endpoints that you would like to monitor and add them to a curated collection. For example, select all health and metrics endpoints and select **Save to Collection**.
 
-    <img alt="Insights curation" src="https://assets.postman.com/postman-docs/v11/insights-curation-v11.jpg" width="563px">
+    <img alt="Insights curation" src="https://assets.postman.com/postman-docs/v11/insights-curation-v11.jpg">
 
 1. Access your curated collection and check the Insights and Errors tabs for the selected endpoints. See [Observe Insights](#observe-insights) for more information.
 
@@ -258,7 +257,7 @@ The **Insights** tab returns a list of error categories for endpoints, selectabl
 * Endpoints with new errors in the past day for endpoints that were previously error free for 6 days, based on the HTTP status code of the response.
 * Endpoints with the highest p90 latency in the past week.
 
-<img alt="Insights tab" src="https://assets.postman.com/postman-docs/v11/insights-collection-insights-v11.jpg" width="513px">
+<img alt="Insights tab" src="https://assets.postman.com/postman-docs/v11/insights-collection-insights-v11.jpg">
 
 The **Errors** tab displays per-endpoint error states in a chronological order as well as a graphical representation of the seven-day trend.
 
