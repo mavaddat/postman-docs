@@ -47,7 +47,7 @@ For more information, see [How Amazon ECS manages CPU and memory resources](http
 
 ### Out of memory
 
-If you have specified a task-level memory limit (which is required for ECS Fargate, but optional for ECS on EC2 instance) then the CLI `ecs add` command doesn't specify a memory size for the LCA. This means it shares memory with other containers in the task.
+If you have specified a task-level memory limit (which is required for ECS Fargate, but optional for ECS on EC2 instance) then the CLI `ecs add` command doesn't specify a memory size for the Insights Agent. This means it shares memory with other containers in the task.
 
 If the instance runs out of memory, one of the containers may stop operating. If you see instances restarting after an `OutOfMemory` outage, you may wish to either increase the hard limit for the task, or impose a hard limit on the agent. If you're performing the latter, set the **Memory hard limit** value in the container definition to at least 700 MB.
 
@@ -79,7 +79,7 @@ The following topics can help you get traffic in the right state and get API mod
 
 * [What does the Insights Agent do with sensitive data?](#what-does-the-insights-agent-do-with-sensitive-data)
 
-* [I can’t update my Insights Project.](#i-cant-update-my-collection)
+* [I can’t update my Insights Project.](#i-cant-update-my-insights-project)
 
 * [I'm not seeing the traffic I'm looking for in my API model.](#im-not-seeing-the-traffic-im-looking-for-in-my-api-model)
 
@@ -91,10 +91,10 @@ You've set up the Insights Agent, and you've been running API traffic across the
 
 Here are a few things that may be going on:
 
-* Permission issues that prevent the LCA from seeing traffic.
+* Permission issues that prevent the Insights Agent from seeing traffic.
 * Encrypted traffic. See [What do I do if my traffic is encrypted?](#what-do-i-do-if-my-traffic-is-encrypted) for solutions.
 * Data formats that the Insights Agent doesn't recognize.
-* ECS on EC2 with bridge networking. You can install Insights Agent as a daemon service only. For instructions, see the [installation instructions](/docs/insights/insights-gs/#configure-lca-as-a-daemon-service).
+* ECS on EC2 with bridge networking. You can install Insights Agent as a daemon service only. For instructions, see the [installation instructions](/docs/insights/insights-gs/#configure-the-insights-agent-as-a-daemon-service).
 
 In many of these cases, there is a solution. Currently, the Insights Agent doesn't support these three cases:
 
@@ -111,7 +111,7 @@ Postman provides more information about how to debug what's going on:
 
 #### Check your CLI output
 
-If your traffic is getting jammed up in a way that the Insights Agent recognizes, your CLI shows error output describing what's gone wrong. If you would like help resolving your issues, email your log output to [Support](mailto:observability-support@postman.com).
+If your traffic is getting jammed up in a way that the Insights Agent recognizes, your CLI shows error output describing what's gone wrong. If you would like help resolving your issues, email your log output to [Support](mailto:live.insights.alpha@postman.com).
 
 #### Check the Insights Project diagnostics
 
@@ -141,7 +141,7 @@ The Insights Agent sends salted hashes of request/response payload data. The Pos
 
 ### I can’t update my Insights Project.
 
-You may come across the following error message when you attempt to update your collection.
+You may come across the following error message when you attempt to update your Insights Project.
 
 ```shell
 [ERROR] You cannot send traffic to the to the service with ID svc_01234AaBbCcDd. Ensure that your collection ID is correct and that you have edit permissions on the collection. If you do not have edit permissions, please contact the workspace administrator to add you as a collection editor.
@@ -149,7 +149,7 @@ You may come across the following error message when you attempt to update your 
 
 This issue can occur if you:
 
-* Don’t have the right service or project ID. To locate the project ID, select your Insights Project and then select the **Diagnostics** tab. The project ID is the alphanumeric string that begins with `svc_`.
+* Don’t have the right project ID. To locate the project ID, select your Insights Project and then select the **Diagnostics** tab. The project ID is the alphanumeric string that begins with `svc_`.
 
   ![Get the project ID](https://assets.postman.com/postman-docs/v11/insights-projectID-v11.jpg)
 
@@ -177,24 +177,24 @@ If this is the case, the solution is to set up filters on the Insights Agent. Th
 
 #### Filter out endpoints by path
 
-One way to filter out traffic is using the `-path-exclusions` flag.
+One way to filter out traffic is using the `--path-exclusions` flag.
 
-To remove a health check endpoint, for instance, use the `-path-exclusions` command line parameter with `apidump`, specifying the path part of the health check. For example,
+To remove a health check endpoint, for instance, use the `--path-exclusions` command line parameter with `apidump`, specifying the path part of the health check. For example,
 
 ```shell
-apidump --project <projectID> –path-exclusions ^/health$
+apidump --project <projectID> –-path-exclusions ^/health$
 ```
 
-causes all the `/health` endpoints on all hosts to be ignored by the LCA.
+causes all the `/health` endpoints on all hosts to be ignored by the Insights Agent.
 
 The argument to `--path-exclusions` is a Go regular expression, which may match anywhere within the path. The special characters `^` and `$` signal _start of string_ and _end of string_; this prevents the filter from matching other paths that include the string `/health`, like `/employee/health-benefits`.
 
 #### Filter out endpoints by IP address
 
-A similar problem can arise when your model is littered with API calls to unnamed infrastructure services accessed by IP address. To remove these from your model, you can use a regular expression in the `-host-exclusions` command line parameter, as follows:
+A similar problem can arise when your model is littered with API calls to unnamed infrastructure services accessed by IP address. To remove these from your model, you can use a regular expression in the `--host-exclusions` command line parameter, as follows:
 
 ```shell
-apidump --project <projectID> –host-exclusions ^(\d)+\.(\d)+\.(\d)+\.(\d)+$
+apidump --project <projectID> –-host-exclusions ^(\d)+\.(\d)+\.(\d)+\.(\d)+$
 ```
 
 This removes all endpoints whose host is given by a dotted-quad IP address.
