@@ -81,7 +81,7 @@ Following are instructions for installing the Insights Agent as a sidecar contai
 
 1. In the **New insights** page, select **Add API Key** to generate or use an API key.
 
-1. Copy the script and run it in your shell, substituting your values.
+1. Copy the script and run it in your shell, substituting your values. The script on the page should have your API key and project ID filled in for you.
 
     ```bash
     POSTMAN_API_KEY=<your_api_key> postman-insights-agent ecs add \
