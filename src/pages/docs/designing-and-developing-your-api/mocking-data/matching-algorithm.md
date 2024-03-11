@@ -55,7 +55,7 @@ The matching algorithm checks any custom headers passed in the incoming request 
 1. If the `x-mock-response-id` header is provided, the algorithm selects the example with the matching response ID and returns the example as the response. If no example is found with a matching ID, the matching process stops and Postman returns an error.
 1. If the `x-mock-response-name` header is provided, the algorithm selects the example with the matching name and returns the example as the response.
 
-    * If more than one example has the same name, Postman sorts the examples by ID and returns the first example in the list with a `200` response status code.
+    * If more than one example in the mocked collection has the same name, Postman sorts the examples by ID and returns the first example in the list with a `200` response status code.
     * If none of the matching examples has a `200` response status code, Postman returns the first example in the sorted list.
     * If no example is found with a matching name, the matching process stops and Postman returns an error.
 
@@ -148,4 +148,5 @@ If the mock server isn't returning the example you expect for a request, try the
 
 * **Add different path variables to your examples.** Two examples with the same path variables will be assigned the same matching score. In this case, Postman will return one of the examples. To make sure more than one example isn't assigned the same matching score, use different path variables for each of your examples.
 * **Use optional headers to return a specific example.** You can make sure the mock server returns a specific example by using the `x-mock-response-name` or `x-mock-response-id` header in your request. Postman will return the example with the matching name or UID.
+* **Make sure to use unique names for all saved examples in the mocked collection.** If more than one example in the collection has the same name, you may not get the expected response when using the `x-mock-response-name` header. Alternatively, you can use the `x-mock-response-id` header to get the correct response. To find the ID of a saved example, select it in the sidebar, then select the information icon <img alt="Information icon" src="https://assets.postman.com/postman-docs/icon-information-v9-5.jpg#icon" width="16px"> in the right sidebar.
 * **Filter out examples by response status code.** You can use the `x-mock-response-code` header in your request to specify the response status code you want. Any examples that don't have the matching response status code are removed from the matching process.
