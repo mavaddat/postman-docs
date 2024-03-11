@@ -45,7 +45,6 @@ The Insights team appreciates your patience as they build out the alpha features
 
 * Insights currently works only for REST APIs and not for gRPC or GraphQL.
 * Insights is currently focused on first-party APIs.
-* Postman generates a maximum of 10 folders per Insights Project, and 300 requests per folder. The Insights team is working on expanding this.
 * The Postman Insights Agent updates every 10 minutes, which means new endpoints won't be seen for up to 10 minutes. The Insights team would love your feedback on whether you would like more frequent updates.
 * Once an endpoint is added to a curated collection, it is not updated again. To see a revised version, add it to a different curated collection.
 
