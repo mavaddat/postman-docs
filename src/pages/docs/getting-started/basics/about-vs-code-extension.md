@@ -31,7 +31,6 @@ The VS Code extension enables you to:
 
 * Create and send HTTP, raw WebSocket, and gRPC requests.
 * Import collections and environments exported from Postman, and import requests from cURL commands.
-* Collaborate with team members by sharing collections, environments, and workspaces.
 * Write and view collection documentation.
 * Edit and send requests from a workspace's request history.
 * Create cookies and send them with requests.
