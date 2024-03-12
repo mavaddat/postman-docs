@@ -25,6 +25,12 @@ contextual_links:
   - type: link
     name: "PayPal uses workspaces for private views"
     url: "https://www.postman.com/case-studies/paypal/"
+  - type: link
+    name: "Axis Bank reduces communication time with workspaces"
+    url: "https://www.postman.com/case-studies/axis-bank/"
+  - type: link
+    name: "Amadeus uses workspaces to drive innovation"
+    url: "https://www.postman.com/case-studies/amadeus/"
 ---
 
 Use workspaces to organize your work in Postman and collaborate with teammates ([or the world](/docs/collaborating-in-postman/using-workspaces/public-workspaces/)). Workspaces group together various elements such as collections, APIs, environments, mock servers, and monitors. A particular element can exist in a single workspace at most. Access to elements in a workspace is controlled by [workspace roles](#managing-workspace-roles).
@@ -101,12 +107,12 @@ The visibility setting for a workspace determines who can access it. You must be
 1. On the workspace's **Overview** tab, select **Workspace Settings**.
 1. Select a **Visibility** for the workspace:
     * **Private** - Only invited team members can access ([Professional and Enterprise plans only](https://www.postman.com/pricing)).
-    * **Team** - All team members can access.
     * **Partner** - Only invited team members and [partners](/docs/collaborating-in-postman/using-workspaces/partner-workspaces/) can access ([Enterprise Ultimate plans only](https://www.postman.com/pricing)).
+    * **Team** - All team members can access.
     * **Public** - Everyone can view.
 1. Select **Update**.
 
-<img alt="Changing workspace visibility" src="https://assets.postman.com/postman-docs/v10/edit-workspace-visibility-1-v10.jpg" width="450px"/>
+<img alt="Changing workspace visibility" src="https://assets.postman.com/postman-docs/v10/workspace-settings-visibility-v10.23.jpg" width="450px"/>
 
 > You always have one personal workspace in Postman. If you change the visibility of all of your personal workspaces to private, team, or public, Postman creates a new personal workspace for you.
 
@@ -119,6 +125,9 @@ You can invite team members, [groups](/docs/collaborating-in-postman/user-groups
 Your ability to share workspaces with teammates depends on your [workspace role](/docs/collaborating-in-postman/roles-and-permissions/#workspace-roles):
 
 * **Workspace Admin** - Can invite Postman teammates or external users to personal, private, team, and public workspaces, and assign them a workspace role. If a Workspace Admin invites an external user to a workspace, Postman will share this request with [Team Admins](https://learning.postman.com/docs/collaborating-in-postman/roles-and-permissions/#team-roles). Once approved, an invite to join the team will be sent to the individual.
+
+    > Workspace Admins can also use the [Postman VS Code extension](/docs/getting-started/basics/about-vs-code-extension/) to invite Postman teammates to workspaces, and assign them a workspace role.
+
 * **Workspace Editor** - Can invite external users to team and public workspaces, but can't assign them workspace roles. For private workspaces, Workspace Editors using the [Postman web app](/docs/getting-started/installation/installation-and-updates/#use-the-postman-web-app) can copy and share a link to the workspace with a teammate, who can then [request access to the workspace](#accessing-private-workspaces).
 * **Workspace Viewer** - Can't invite teammates to private, team, or public workspaces. For private workspaces, Workspace Viewers using the [Postman web app](/docs/getting-started/installation/installation-and-updates/#use-the-postman-web-app) can copy and share a link to the workspace with a teammate, who can then [request access to the workspace](#accessing-private-workspaces).
 
@@ -162,8 +171,6 @@ To change the role of people in a workspace, or to remove someone from a workspa
     * **Editor** - Can create and edit workspace resources.
     * **Viewer** - Can view, fork, and export workspace resources.
     * **Remove** - Removes the person from the workspace. (You can [invite the user](#sharing-workspaces) again in the future.)
-
-<img alt="Changing workspace role" src="https://assets.postman.com/postman-docs/v10/workspace-change-role-v10-2.jpg" width="720px"/>
 
 ## Tagging a workspace
 

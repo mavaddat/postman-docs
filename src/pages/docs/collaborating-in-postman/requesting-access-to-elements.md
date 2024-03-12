@@ -59,11 +59,13 @@ Team members with Admin access for the workspace or Editor access for an element
 
 1. Select **Update Roles** to save your changes.
 
+> You can also use the [Postman VS Code extension](/docs/getting-started/basics/about-vs-code-extension/) to manage collection and environment roles assigned to team members.
+
 ## Requesting role access for workspaces
 
 You can request Editor access for a workspace to gain [additional permissions](/docs/collaborating-in-postman/roles-and-permissions/#workspace-roles).
 
-To request an Editor role, open the workspace overview, then select **Request to Edit** in the upper-right corner. Alternatively, you can request access when you attempt to create an element in the workspace by selecting the create new icon <img alt="Create new icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px"> in the left sidebar.
+To request an Editor role, open the workspace overview, then select **Request to Edit** in the upper-right corner. You can also request access when you try to create an element in the workspace by selecting the create new icon <img alt="Create new icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px"> in the left sidebar.
 
 <img alt="Request workspace editor role" src="https://assets.postman.com/postman-docs/v10/request-workspace-editor-role-v10.14.0.jpg" width="400">
 
@@ -95,7 +97,7 @@ If you can view an element in a workspace but can't edit it, there is a lock ico
 
 1. Select **Request Access**.
 
-Postman will send an in-app and email notification to the person you selected. Once they approve your request, you will also get notified in-app and by email. Your request will expire after 15 days, after which you can request access again.
+Postman will send an in-app and email notification to the person you selected. Once they approve your request, you will also get notified in-app and by email. Your request will expire after 30 days, after which you can request access again.
 
 ### Requesting Editor role access for a collection as an external user
 
@@ -115,6 +117,6 @@ Postman will send in-app and email notifications to team members with Editor rol
 
 If you're an Admin of a workspace or an Editor of an API, collection, environment, mock server, or monitor, you may receive a request to give a teammate role access.
 
-When a teammate requests Editor role access for an API, collection, environment, mock server, or monitor, you'll receive an in-app and email notification that details the request. Select **Approve Request** if you want to give your teammate Editor role access to the collection, API, environment, mock server, or monitor. If you don't want to give Editor access, you can ignore the request. The request will expire after 15 days.
+When a teammate requests Editor role access for an API, collection, environment, mock server, or monitor, you'll receive an in-app and email notification that details the request. Select **Approve Request** if you want to give your teammate Editor role access to the collection, API, environment, mock server, or monitor. If you don't want to give Editor access, you can ignore the request. The request will expire after 30 days.
 
 When a teammate requests Editor role access for a workspace, you'll receive an in-app and email notification detailing the request. Select **Respond to Request** to open the workspace settings. You can select the role you'd like to give the user, then **Approve** or **Deny** the request.

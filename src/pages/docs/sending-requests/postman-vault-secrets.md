@@ -7,9 +7,9 @@ plan: beta
 
 *Postman Vault* enables you to store sensitive data as vault secrets in your local instance of Postman. This enables you to securely reuse sensitive data in your HTTP collections, environments, and requests. Only you can access and use your vault secrets, and secrets aren't synced to the Postman cloud.
 
-When you first open your Postman Vault, Postman generates a [vault key](#manage-your-vault-key) that enables you to access your encrypted vault secrets. Once you store your vault key in a secure location, you can [add sensitive data as vault secrets](#add-sensitive-data-as-vault-secrets) in your Postman Vault. Then you can [reference your vault secrets](#use-vault-secrets) in your HTTP collections, requests, and more.
+When you first open your Postman Vault, Postman generates a [vault key](#manage-your-vault-key) that enables you to access your Postman Vault later. Once you store your vault key in a secure location, you can [add sensitive data as vault secrets](#add-sensitive-data-as-vault-secrets) in your Postman Vault. Then you can [reference your vault secrets](#use-vault-secrets) in your HTTP collections, requests, and more.
 
-You can use your Postman Vault from the [Postman desktop app](/docs/getting-started/installation/installation-and-updates/) or the [Postman web app](/docs/getting-started/installation/installation-and-updates/#use-the-postman-web-app). Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
+You can use your Postman Vault from the [Postman desktop app](/docs/getting-started/installation/installation-and-updates/) or the [Postman web app](/docs/getting-started/installation/installation-and-updates/#use-the-postman-web-app). Learn about Postman Vault [features that require the Postman desktop app](#feature-availability).
 
 ## Contents
 
@@ -37,9 +37,13 @@ Vault secrets are useful when:
 * You want to specify the domains and subdomains you're allowed to send your sensitive data to.
 * You want your sensitive data encrypted.
 
-Vault secrets are created at the *vault* scope, which is the broadest scope compared to the [variable scopes](/docs/sending-requests/variables/#variable-scopes) in Postman. This enables you to securely access and reuse vault secrets in your collections, requests, and environments throughout your workspaces.
+Vault secrets are created at the *vault* scope, which is the broadest scope compared to the [variable scopes](/docs/sending-requests/variables/variables/#variable-scopes) in Postman. This enables you to securely access and reuse vault secrets in your collections, requests, and environments throughout your workspaces.
 
 > If a variable in a different scope has the same name as a vault secret, the value stored in a narrower scope won't be used. For example, if there is a collection variable named `postman-api-key` and a vault secret also named `postman-api-key`, the collection value won't be used when the request runs. Learn how to [reference vault secrets](#use-vault-secrets) in Postman.
+
+<!-- -->
+
+> If you're using the Postman web app with Safari as your web browser, it deletes vault secrets from your local instance of Postman after seven days of inactivity. Use a different web browser if you want your vault secrets available for more than seven days without activity in the Postman web app. Learn about the [browser requirements](/docs/getting-started/installation/installation-and-updates/#browser-requirements) for the Postman web app.
 
 ### Compare vault secrets and variables
 
@@ -47,11 +51,11 @@ Both vault secrets and variables enable you to store and reference data in Postm
 
 [Vault secrets](#about-vault-secrets) enable you to store and reuse sensitive data only in your local instance of Postman, and they aren't synced to the Postman cloud. This enables you to keep your sensitive data hidden from collaborators, and prevent collaborators from using your vault secrets. Vault secrets are masked by default, and only you can unmask them. Your sensitive data is also encrypted in your Postman Vault.
 
-[Variables](/docs/sending-requests/variables/) enable you to store and reuse the same value, such as URLs, in multiple places. The following are some options for storing data in variables:
+[Variables](/docs/sending-requests/variables/variables/) enable you to store and reuse the same value, such as URLs, in multiple places. The following are some options for storing data in variables:
 
-* You can add data as the [current value](/docs/sending-requests/variables/#initial-and-current-values) of a variable. This means the value is local to your instance of Postman and it isn't synced to the Postman cloud. You can choose to [persist a variable](/docs/sending-requests/variables/#sharing-and-persisting-data), which syncs the current value to the Postman cloud and shares it with collaborators.
+* You can add data as the [current value](/docs/sending-requests/variables/variables/#initial-and-current-values) of a variable. This means the value is local to your instance of Postman and it isn't synced to the Postman cloud. You can choose to [persist a variable](/docs/sending-requests/variables/variables/#sharing-and-persisting-data), which syncs the current value to the Postman cloud and shares it with collaborators.
 
-* You can set the variable type as [secret type](/docs/sending-requests/variables/#variable-types) in global and environment variables. This enables you to mask sensitive data in the initial and current values. Collaborators with access to the workspace can [view a secret type variable's values](/docs/sending-requests/variables/#viewing-and-changing-secret-variable-values). Also, collaborators with additional permissions can [change the variable type](/docs/sending-requests/variables/#changing-from-secret-to-default-variable-type), unmasking it for collaborators.
+* You can set the variable type as [secret type](/docs/sending-requests/variables/variables/#variable-types) in global and environment variables. This enables you to mask sensitive data in the initial and current values. Collaborators with access to the workspace can [view a secret type variable's values](/docs/sending-requests/variables/variables/#viewing-and-changing-secret-variable-values). Also, collaborators with additional permissions can [change the variable type](/docs/sending-requests/variables/variables/#changing-from-secret-to-default-variable-type), unmasking it for collaborators.
 
 ## Access your Postman Vault
 
@@ -64,18 +68,18 @@ You can open your vault secrets in Postman Vault as follows:
 
     > If you stored your vault key in your system's password manager, Postman automatically gets your vault key. You must use the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) if you're using the Postman web app so Postman can get your vault key.
 
-> Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
+> Learn about Postman Vault [features that require the Postman desktop app](#feature-availability).
 
 ## Manage your vault key
 
-When you open Postman Vault for the first time, Postman generates a [vault key](#save-your-vault-key) that's used to access your encrypted vault secrets. You can [reset your vault key](#reset-your-vault-key) if you lose it, but Postman will permanently delete your vault secrets. Once you save your vault key, you can [add vault secrets to your Postman Vault](#add-sensitive-data-as-vault-secrets).
+When you open Postman Vault for the first time, Postman generates a [vault key](#save-your-vault-key) that's used to access your Postman Vault later. You can [reset your vault key](#reset-your-vault-key) if you lose it, but Postman will permanently delete your vault secrets. Once you save your vault key, you can [add vault secrets to your Postman Vault](#add-sensitive-data-as-vault-secrets).
 
 Your vault secrets are encrypted using the AES-256-GCM encryption algorithm.
 
 When Postman generates your vault key, you have the following options for saving your key:
 
-* Save your vault key in a secure location. Each time you sign in to Postman, you'll need to manually enter your vault key, enabling you to access your Postman Vault and vault secrets.
-* Postman can store your vault key in your system's password manager, such as Keychain Access on macOS. This enables Postman to automatically get your vault key, giving you access to your Postman Vault and vault secrets when you sign in to Postman.
+* Save your vault key in a secure location. Each time you sign in to Postman, you'll need to manually enter your vault key, enabling you to access your Postman Vault.
+* Postman can store your vault key in your system's password manager, such as Keychain Access on macOS. This enables Postman to automatically get your vault key, giving you access to your Postman Vault when you sign in to Postman.
 
 ### Save your vault key
 
@@ -90,7 +94,7 @@ When Postman generates your vault key, you have the following options for saving
 
 1. Select **Open Vault** to [add vault secrets to your Postman Vault](#add-sensitive-data-as-vault-secrets).
 
-    ![Save vault key](https://assets.postman.com/postman-docs/v10/save-postman-vault-key-v10-23-b.jpg)
+    ![Save vault key](https://assets.postman.com/postman-docs/v10/save-postman-vault-key-v10-24.jpg)
 
 > If your Postman Vault is open, you can select the information icon <img alt="Information icon" src="https://assets.postman.com/postman-docs/icon-information-v9-5.jpg#icon" width="16px"> in the top right to copy or download your vault key.
 
@@ -109,6 +113,8 @@ You can reset your vault key if you lose it, but Postman will permanently delete
 ## Add sensitive data as vault secrets
 
 After you [save your vault key](#save-your-vault-key), you can add sensitive data, such as API keys and passwords, to your Postman Vault and reuse them in your local instance of Postman. You can also add secrets from the HTTP request builder.
+
+> Vault secrets aren't preserved in your Postman Vault after signing out of Postman. This means that references to the secret will be [unresolved](#fix-unresolved-vault-secrets) when you sign in to Postman. You can add your vault secrets back to your Postman Vault after you sign in.
 
 To add secrets to your Postman Vault, do the following:
 
@@ -167,7 +173,7 @@ To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.
 
 ## Use vault secrets
 
-You can reference vault secrets in your HTTP collections and requests from the **URL builder**, the **Params** tab, the **Authorization** tab, the **Headers** tab, and the **Body** tab. You can reference vault secrets as the values of your [global](/docs/sending-requests/variables/#defining-global-variables), [environment](/docs/sending-requests/variables/#defining-environment-variables), and [collection](/docs/sending-requests/variables/#defining-collection-variables) variables. You can also use the Collection Runner to [manually run collections](/docs/collections/running-collections/intro-to-collection-runs/) that reference vault secrets.
+You can reference vault secrets in your HTTP collections and requests from the **URL builder**, the **Params** tab, the **Authorization** tab, the **Headers** tab, and the **Body** tab. You can reference vault secrets as the values of your [global](/docs/sending-requests/variables/variables/#defining-global-variables), [environment](/docs/sending-requests/variables/variables/#defining-environment-variables), and [collection](/docs/sending-requests/variables/variables/#defining-collection-variables) variables. You can also use the Collection Runner to [manually run collections](/docs/collections/running-collections/intro-to-collection-runs/) that reference vault secrets.
 
 > If you're using the Postman web app to send requests with references to vault secrets, you must use the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent).
 
@@ -188,11 +194,9 @@ pm.variables.get("vault:variable-key");
 
 ![Reference vault secrets in Postman](https://assets.postman.com/postman-docs/v10/use-postman-vault-secrets-v10-23.jpg)
 
-> If you reference a vault secret as the initial value of a variable, such as an environment variable, the reference to the secret (for example `{{vault:secret-name}}`) is synced using Postman's cloud servers, and shared with anyone who has access to the workspace. The vault secret's value stored in your Postman Vault isn't synced or shared. Learn more about [initial and current values](/docs/sending-requests/variables/#initial-and-current-values).
+Secrets stored in your Postman Vault are masked when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/).
 
-<!-- -->
-
-> Secrets stored in your Postman Vault are masked when they're logged to the [Postman Console](/docs/sending-requests/troubleshooting-api-requests/).
+> If you reference a vault secret as the initial value of a variable, such as an environment variable, the reference to the secret (for example `{{vault:secret-name}}`) is synced using Postman's cloud servers, and shared with anyone who has access to the workspace. The vault secret's value stored in your Postman Vault isn't synced or shared. Learn more about [initial and current values](/docs/sending-requests/variables/variables/#initial-and-current-values).
 
 ## Fix unresolved vault secrets
 
@@ -205,9 +209,8 @@ A vault secret can be unresolved for the following reasons:
 * You aren't using the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent) to send requests from the Postman web app.
 * The secret is turned off in your Postman Vault.
 * The secret isn't allowed to be in requests to the domain.
-* You haven't entered your vault key since you last signed in to Postman.
 
-> Learn about Postman Vault [features that require the Postman desktop app or the Postman web app](#feature-availability).
+> Learn about Postman Vault [features that require the Postman desktop](#feature-availability).
 
 If the vault secret exists in your Postman Vault and it's turned off, hover over the reference to the secret, then select **Enable Secret**.
 
@@ -223,16 +226,8 @@ If a vault secret is referenced in your request and you haven't entered your vau
 
 ## Feature availability
 
-Some Postman Vault features require the Postman desktop app or the Postman web app.
-
 The following features require the Postman desktop app:
 
 * **Open Postman Vault from public workspaces** - You must use the Postman desktop app to open your Postman Vault from a [public workspace](/docs/collaborating-in-postman/using-workspaces/public-workspaces/), and reference vault secrets in a public workspace. If you're using the Postman web app, you must add new vault secrets to your Postman Vault if you're opening it from a public workspace.
 
 * **Preserve vault secrets when you join or leave a team** - You must use the Postman desktop app to preserve your encrypted vault secrets after you [join a new team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#joining-a-team) or [leave a team](/docs/collaborating-in-postman/working-with-your-team/team-collaboration/#leaving-a-team). If you're using the Postman web app, vault secrets won't be available from your Postman Vault when you join a new team or leave a team. Then you can add new vault secrets to the team you joined from, or a team you rejoined if using the Postman web app.
-
-The following features require the Postman web app:
-
-* **Preserve vault secrets after signing out of Postman** - You must use the Postman web app to preserve your encrypted vault secrets after signing out of Postman. If you're using the Postman desktop app, vault secrets won't be available from your Postman Vault after signing out of Postman. Then you can add new vault secrets when you sign in to Postman with the desktop app.
-
-    > If you're using the Postman web app with Safari as your web browser, it deletes vault secrets from your local instance of Postman after seven days of inactivity. You must use a different web browser if you want your vault secrets available for more than seven days without inactivity. Learn about the [browser requirements](/docs/getting-started/installation/installation-and-updates/#browser-requirements) for the Postman web app.

@@ -27,11 +27,36 @@ contextual_links:
     url: "https://www.postman.com/postman/workspace/test-examples-in-postman/overview"
 ---
 
-You can use the following test script examples to write your own test scripts for requests, folders, and collections. Test scripts execute when Postman receives a response from the API you sent the request to. When you add tests to a folder or collection, they execute after each request inside it.
+This page provides test script examples for various API testing scenarios in Postman. You can use these test scripts in your request to parse respond data and make assertions. You can also use these scripts to validate response structure and troubleshoot common test errors.
+
+To write your first test script, open a request in Postman, then select the **Tests** tab. Enter the following JavaScript code:
+
+```js
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+```
+
+This code uses the `pm` library to run the `test` method. The text string will appear in the test output. The function inside the test represents an assertion. Postman tests can use [Chai Assertion Library BDD](https://www.chaijs.com/api/bdd/) syntax, which provides options to optimize how readable your tests are to you and your collaborators. In this case, the code uses BDD-style `to.have` chains to express the assertion.
+
+This test checks the response code returned by the API. If the response code is `200`, the test will pass, otherwise it will fail. Select **Send** and go to the **Test Results** tab in the response area.
+
+![Test output](https://assets.postman.com/postman-docs/v10/example-test-assertion-result-v10-4.jpg)
+
+To learn what test results look like when they pass or fail, change the status code in the assertion code and send the request again.
+
+You can structure your test assertions in a variety of ways, depending on how you want the results to output. The following code is an alternative way of achieving the same test as the one above using the `expect` syntax:
+
+```js
+pm.test("Status code is 200", () => {
+  pm.expect(pm.response.code).to.eql(200);
+});
+```
+
+> Refer to the [Chai Assertion Library Docs](https://www.chaijs.com/api/bdd/) for a complete overview of assertion syntax options.
 
 ## Contents
 
-* [Get started with tests](#get-started-with-tests)
 * [Use multiple assertions](#use-multiple-assertions)
 * [Parse response body data](#parse-response-body-data)
     * [Handle responses that don't parse](#handle-responses-that-dont-parse)
@@ -58,34 +83,6 @@ You can use the following test script examples to write your own test scripts fo
 * [Send an asynchronous request](#send-an-asynchronous-request)
 * [Previous style of writing Postman tests (deprecated)](#previous-style-of-writing-postman-tests-deprecated)
 * [Next steps](#next-steps)
-
-## Get started with tests
-
-To write your first test script, open a request in Postman, then select the **Tests** tab. Enter the following JavaScript code:
-
-```js
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status(200);
-});
-```
-
-This code uses the `pm` library to run the `test` method. The text string will appear in the test output. The function inside the test represents an assertion. Postman tests can use [Chai Assertion Library BDD](https://www.chaijs.com/api/bdd/) syntax, which provides options to optimize how readable your tests are to you and your collaborators. In this case, the code uses BDD chains `to.have` to express the assertion.
-
-This test checks the response code returned by the API. If the response code is `200`, the test will pass, otherwise it will fail. Select **Send** and go to the **Test Results** tab in the response area.
-
-![Test output](https://assets.postman.com/postman-docs/v10/example-test-assertion-result-v10-4.jpg)
-
-To learn what test results look like when they pass or fail, change the status code in the assertion code and send the request again.
-
-You can structure your test assertions in a variety of ways, depending on how you want the results to output. The following code is an alternative way of achieving the same test as the one above using the `expect` syntax:
-
-```js
-pm.test("Status code is 200", () => {
-  pm.expect(pm.response.code).to.eql(200);
-});
-```
-
-> Refer to the [Chai Assertion Library Docs](https://www.chaijs.com/api/bdd/) for a complete overview of assertion syntax options.
 
 ## Use multiple assertions
 
@@ -119,7 +116,7 @@ To parse XML, use the following:
 const responseJson = xml2Json(pm.response.text());
 ```
 
-> If you're dealing with complex XML responses you may find [Console logging](/docs/sending-requests/troubleshooting-api-requests/#debugging-in-the-console) useful.
+> If you're dealing with complex XML responses you may find [Console logging](/docs/sending-requests/response-data/troubleshooting-api-requests/#debugging-in-the-console) useful.
 
 To parse CSV, use the [CSV parse (csv-parse/lib/sync)](https://csv.js.org/parse/) utility:
 
@@ -266,7 +263,7 @@ pm.test("Response property matches environment variable", function () {
 });
 ```
 
-> See [Using variables](/docs/sending-requests/variables/) to learn more about using variables in your test scripts.
+> See [Using variables](/docs/sending-requests/variables/variables/) to learn more about using variables in your test scripts.
 
 ### Assert a value type
 
@@ -402,7 +399,7 @@ Using `.deep` causes all `.equal`, `.include`, `.members`, `.keys`, and `.proper
 
 ### Assert the current environment
 
-Check the [active environment](/docs/sending-requests/environments/managing-environments/#switch-between-environments) in Postman:
+Check the [active environment](/docs/sending-requests/variables/managing-environments/#switch-between-environments) in Postman:
 
 ```js
 pm.test("Check the active environment", () => {
@@ -412,7 +409,7 @@ pm.test("Check the active environment", () => {
 
 ## Troubleshoot common test errors
 
-When you encounter errors or unexpected behavior in your test scripts, [the Postman Console](/docs/sending-requests/troubleshooting-api-requests/) can help you to identify the source. By combining `console.log()`, `console.info()`, `console.warn()`, and `console.error()` debug statements with your test assertions, you can examine the content of the HTTP requests and responses, and Postman data items such as variables. You can also use the `console.clear()` method to clear information from the console. Select <img alt="Console icon" src="https://assets.postman.com/postman-docs/icon-console-v9.jpg#icon" width="16px"> **Console** from the Postman footer to open it.
+When you encounter errors or unexpected behavior in your test scripts, [the Postman Console](/docs/sending-requests/response-data/troubleshooting-api-requests/) can help you to identify the source. By combining `console.log()`, `console.info()`, `console.warn()`, and `console.error()` debug statements with your test assertions, you can examine the content of the HTTP requests and responses, and Postman data items such as variables. You can also use the `console.clear()` method to clear information from the console. Select <img alt="Console icon" src="https://assets.postman.com/postman-docs/icon-console-v9.jpg#icon" width="16px"> **Console** from the Postman footer to open it.
 
 ![Console info](https://assets.postman.com/postman-docs/v10/console-logs-in-pane-v10-2.jpg)
 

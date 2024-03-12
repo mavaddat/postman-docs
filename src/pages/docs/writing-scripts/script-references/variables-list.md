@@ -20,9 +20,7 @@ warning: false
 
 ---
 
-Postman uses the [faker library](https://www.npmjs.com/package/@faker-js/faker) to generate sample data, including random names, addresses, email addresses, and much more. You can use these pre-defined variables multiple times to return different values per request.
-
-You can use these variables like any other variable in Postman. Their values are generated at the time of execution and their names start with a `$` symbol, for example `$guid` or `$timestamp`.
+The [Faker](https://www.npmjs.com/package/@faker-js/faker) library enables you to generate sample data in Postman using predefined variables. Use these variables just like you would any other variable in Postman. Their values are generated at the time of execution, and their names start with a `$` symbol, for example, `$guid` or `$timestamp`.
 
 > <img alt="Collections icon" src="https://assets.postman.com/postman-docs/Collections.png#icon" width="24px"> See how to use dynamic variables to create randomized mock data. To try out this collection template, select [Mock data generation](https://www.postman.com/templates/da8ceebc-d4da-478c-ab8a-37634faefc74/Mock-data-generation).
 
@@ -30,7 +28,27 @@ The following is a list of dynamic variables whose values are randomly generated
 
 > To use dynamic variables in pre-request or test scripts, you need to use `pm.variables.replaceIn()`, for example `pm.variables.replaceIn('{{$randomFirstName}}')`.
 
-### Common
+## Contents
+
+* [Common](#common)
+* [Text, numbers, and colors](#text-numbers-and-colors)
+* [Internet and IP addresses](#internet-and-ip-addresses)
+* [Names](#names)
+* [Profession](#profession)
+* [Phone, address, and location](#phone-address-and-location)
+* [Images](#images)
+* [Finance](#finance)
+* [Business](#business)
+* [Catchphrases](#catchphrases)
+* [Databases](#databases)
+* [Dates](#dates)
+* [Domains, emails, and usernames](#domains-emails-and-usernames)
+* [Files and directories](#files-and-directories)
+* [Stores](#stores)
+* [Grammar](#grammar)
+* [Lorem ipsum](#lorem-ipsum)
+
+## Common
 
 | **Variable Name**         | **Description**                               | **Examples**                               |
 |:--------------------------|:----------------------------------------------|:-------------------------------------------|
@@ -45,7 +63,7 @@ The following is a list of dynamic variables whose values are randomly generated
 |                           |                                               | `"53151b27-034f-45a0-9f0a-d7b6075b67d0"`   |
 |                           |                                               | `"727131a2-2717-44ad-ab02-006587e947dc"`   |
 
-### Text, numbers, and colors
+## Text, numbers, and colors
 
 | **Variable Name**         | **Description**                               | **Examples**                               |
 |:--------------------------|:----------------------------------------------|:-------------------------------------------|
@@ -56,7 +74,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomHexColor`**     | A random hex value                            | `"#47594a"`, `"#431e48"`, `"#106f21"`      |
 | **`$randomAbbreviation`** | A random abbreviation                         | `SQL`, `PCI`, `JSON`                       |
 
-### Internet and IP addresses
+## Internet and IP addresses
 
 | **Variable Name**         | **Description**                               | **Examples**                                                                 |
 |:--------------------------|:----------------------------------------------|:-----------------------------------------------------------------------------|
@@ -73,7 +91,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomProtocol`**     | A random internet protocol                    | `"http"`, `"https"`                                                          |
 | **`$randomSemver`**       | A random semantic version number              | `7.0.5`, `2.5.8`, `6.4.9`                                                    |
 
-### Names
+## Names
 
 | **Variable Name**             | **Description**               | **Examples**                                              |
 |:------------------------------|:------------------------------|:----------------------------------------------------------|
@@ -83,7 +101,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomNamePrefix`**       | A random name prefix          | `Dr.`, `Ms.`, `Mr.`                                       |
 | **`$randomNameSuffix`**       | A random name suffix          | `I`, `MD`, `DDS`                                          |
 
-### Profession
+## Profession
 
 | **Variable Name**             | **Description**               | **Examples**                                              |
 |:------------------------------|:------------------------------|:----------------------------------------------------------|
@@ -94,7 +112,7 @@ The following is a list of dynamic variables whose values are randomly generated
 |                               |                               | `Future Interactions Executive`                           |
 | **`$randomJobType`**          | A random job type             | `Supervisor`, `Manager`, `Coordinator`                    |
 
-### Phone, address, and location
+## Phone, address, and location
 
 | **Variable Name**             | **Description**                | **Examples**                                              |
 |:------------------------------|:-------------------------------|:----------------------------------------------------------|
@@ -108,7 +126,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomLatitude`**         | A random latitude coordinate   | `55.2099`, `27.3644`, `-84.7514`                          |
 | **`$randomLongitude`**        | A random longitude coordinate  | `40.6609`, `171.7139`, `-159.9757`                        |
 
-### Images
+## Images
 
 | **Variable Name**         | **Description**                              | **Examples**                                                             |
 |:--------------------------|:---------------------------------------------|:-------------------------------------------------------------------------|
@@ -130,7 +148,7 @@ The following is a list of dynamic variables whose values are randomly generated
 |**`$randomTransportImage`**| A URL of a random transportation image       | `http://lorempixel.com/640/480/transport`                                |
 | **`$randomImageDataUri`** | A random image data URI                      | `data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20baseProfile%3D%22full%22%20width%3D%22undefined%22%20height%3D%22undefined%22%3E%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22grey%22%2F%3E%20%20%3Ctext%20x%3D%220%22%20y%3D%2220%22%20font-size%3D%2220%22%20text-anchor%3D%22start%22%20fill%3D%22white%22%3Eundefinedxundefined%3C%2Ftext%3E%20%3C%2Fsvg%3E`                                                          |
 
-### Finance
+## Finance
 
 | **Variable Name**          | **Description**                               | **Examples**                                                                    |
 |:---------------------------|:----------------------------------------------|:--------------------------------------------------------------------------------|
@@ -149,7 +167,7 @@ The following is a list of dynamic variables whose values are randomly generated
 |                            |                                               | `1GY5TL5NEX3D1EA0TCWPLGVPQF5EAF`                                                |
 |                            |                                               | `14IIEXV2AKZAHSCY2KNYP213VRLD`                                                  |
 
-### Business
+## Business
 
 | **Variable Name**         | **Description**                               | **Examples**                               |
 |:--------------------------|:----------------------------------------------|:-------------------------------------------|
@@ -162,7 +180,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomBsBuzz`**       | A random business speak buzzword              | `repurpose`, `harness`, `transition`       |
 | **`$randomBsNoun`**       | A random business speak noun                  | `e-services`, `markets`, `interfaces`      |
 
-### Catchphrases
+## Catchphrases
 
 | **Variable Name**                 | **Description**                       | **Examples**                                        |
 |:----------------------------------|:--------------------------------------|:----------------------------------------------------|
@@ -173,7 +191,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomCatchPhraseDescriptor`**| A random catchphrase descriptor       | `bandwidth-monitored`, `needs-based`, `homogeneous` |
 | **`$randomCatchPhraseNoun`**      | Randomly generates a catchphrase noun | `secured line`, `superstructure`,`installation`     |
 
-### Databases
+## Databases
 
 | **Variable Name**             | **Description**                           | **Examples**                                        |
 |:------------------------------|:------------------------------------------|:----------------------------------------------------|
@@ -182,7 +200,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomDatabaseCollation`**| A random database collation               | `cp1250_bin`, `utf8_general_ci`, `cp1250_general_ci`|
 | **`$randomDatabaseEngine`**   | A random database engine                  | `MyISAM`, `InnoDB`, `Memory`                        |
 
-### Dates
+## Dates
 
 | **Variable Name**             | **Description**                 | **Examples**                                              |
 |:------------------------------|:--------------------------------|:----------------------------------------------------------|
@@ -198,7 +216,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomWeekday`**          | A random weekday                | `Thursday`, `Friday`, `Monday`                            |
 | **`$randomMonth`**            | A random month                  | `February`, `May`, `January`                              |
 
-### Domains, emails, and usernames
+## Domains, emails, and usernames
 
 | **Variable Name**             | **Description**                                 | **Examples**                                                                  |
 |:------------------------------|:------------------------------------------------|:------------------------------------------------------------------------------|
@@ -210,7 +228,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomUserName`**         | A random username                               | `Jarrell.Gutkowski`, `Lottie.Smitham24`, `Alia99`                             |
 | **`$randomUrl`**              | A random URL                                    | `https://anais.net`, `https://tristin.net`, `http://jakob.name`               |
 
-### Files and directories
+## Files and directories
 
 | **Variable Name**             | **Description**                                       | **Examples**                                          |
 |:------------------------------|:------------------------------------------------------|:------------------------------------------------------|
@@ -232,7 +250,7 @@ The following is a list of dynamic variables whose values are randomly generated
 |                               |                                                       | `application/vnd.groove-identity-message`,            |
 |                               |                                                       | `application/vnd.oasis.opendocument.graphics-template`|
 
-### Stores
+## Stores
 
 | **Variable Name**             | **Description**                          | **Examples**                                   |
 |:------------------------------|:-----------------------------------------|:-----------------------------------------------|
@@ -243,7 +261,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | **`$randomProductName`**      | A random product name                    | `Handmade Concrete Tuna`, `Refined Rubber Hat` |
 | **`$randomDepartment`**       | A random commerce category               | `Tools`, `Movies`, `Electronics`               |
 
-### Grammar
+## Grammar
 
 | **Variable Name**             | **Description**                          | **Examples**                                                                |
 |:------------------------------|:-----------------------------------------|:----------------------------------------------------------------------------|
@@ -259,7 +277,7 @@ The following is a list of dynamic variables whose values are randomly generated
 | | | `overriding the capacitor won't do anything, we need to compress the optical SMS transmitter!`, |
 | | | `I'll generate the virtual AI program, that should microchip the RAM monitor!` |
 
-### Lorem ipsum
+## Lorem ipsum
 
 | **Variable Name**             | **Description**                             | **Examples**                                                                          |
 |:------------------------------|:--------------------------------------------|:--------------------------------------------------------------------------------------|
