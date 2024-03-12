@@ -76,7 +76,7 @@ To view details about a secret you've linked from Azure Key Vault, select the va
 
 You must be a Postman [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) to set up an integration with Postman Vault and [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault). You need to set up an [OpenID Connect (OIDC) identity provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider) in HashiCorp Vault, enabling Postman to access your HashiCorp Vault instance. To set up the integration in Postman, you need to enter the OIDC client URL, JWT auth path, OIDC client ID, role name, and namespace for your OIDC identity provider.
 
-You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up an OIDC identity provider from the Vault Browser CLI or your [local installation of Vault](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install). If you're using HashiCorp Vault in [HashiCorp Cloud Platform](https://developer.hashicorp.com/hcp/docs/hcp), make sure to use the [public cluster URL](https://developer.hashicorp.com/vault/tutorials/cloud/vault-access-cluster) for your HashiCorp Vault.<!-- You can instead run a [script that executes the setup commands](#download-and-run-the-hashicorp-vault-setup-script). -->
+You can use the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to set up an OIDC identity provider from the Vault Browser CLI or your [local installation of Vault](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install). If you're using HashiCorp Vault in [HashiCorp Cloud Platform](https://developer.hashicorp.com/hcp/docs/hcp), make sure to use the [public cluster URL](https://developer.hashicorp.com/vault/tutorials/cloud/vault-access-cluster) for your HashiCorp Vault. Instead of manually executing each command, you can [run a script that executes the setup commands](#download-and-run-the-hashicorp-vault-setup-script).
 
 Once a Postman Team or Super Admin sets up the integration, you need to authenticate with your HashiCorp account. Then you can link secrets stored in HashiCorp Vault using the path to the KV (key-value) secrets engine, path to the secret, and key name for each secret.
 
@@ -86,36 +86,7 @@ You can also follow the steps to [create a KV secrets engine](https://developer.
 
 To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the following:
 
-1. Make sure you have permission to set up an OIDC identity provider. You must at least have the permissions specified in the following [HashiCorp Vault policy](https://developer.hashicorp.com/vault/tutorials/policies/policies):
-
-    ```json
-    path "/identity/oidc/client/*" {
-      capabilities=["create", "read"]
-    }
-
-    path "/identity/oidc/provider/*" {
-      capabilities=["create", "read"]
-    }
-
-    path "/sys/auth/*" {
-      capabilities=["sudo", "update"]
-    }
-
-    path "/auth/*" {
-      capabilities=["update", "create"]
-    }
-
-    path "/sys/policy/*" {
-      capabilities=["update"]
-    }
-    ```
-
-    * `/identity/oidc/client/*` - Allows you to create and read any client application in your HashiCorp instance that understands the OIDC protocol.
-    * `/identity/oidc/provider/*` - Allows you to create and read any OIDC provider in your HashiCorp instance.
-    * `/sys/auth/*` - Allows you to create a new auth method. This permission enables you to create a new JSON Web Token (JWT) auth method.
-    * `/auth/*` - Allows you to update the JWT auth method, and create a new role in the JWT auth method.
-    * `/sys/policy/*` - Allows you to create a policy. The policy will be used to attach to the new role.
-
+1. Make sure you have permission to set up an OIDC identity provider. This includes permission to create an OIDC client application, OIDC provider, auth method, policy, and role. Learn more about the [minimum permissions required to set up an OIDC identity provider](#permissions-to-set-up-an-oidc-identity-provider).
 1. Create a public [OIDC client application](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#client-applications). Learn about the [endpoint for creating a client application](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-client).
 
     ```shell
@@ -216,9 +187,41 @@ To link a secret's value from HashiCorp Vault, do the following:
 
 To view details about a secret you've linked from HashiCorp Vault, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> next to a secret.
 
-<!-- ### Download and run the HashiCorp Vault setup script
+### Permissions to set up an OIDC identity provider
 
-You can optionally download a script from [GitHub](#) that will set up your OIDC identity provider in HashiCorp Vault, instead of manually entering each command. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Before you run the script, make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) and set the required environment variables.
+To set up an OIDC identity provider, you must at least have the permissions specified in the following [HashiCorp Vault policy](https://developer.hashicorp.com/vault/tutorials/policies/policies):
+
+```json
+path "/identity/oidc/client/*" {
+    capabilities=["create", "read"]
+}
+
+path "/identity/oidc/provider/*" {
+    capabilities=["create", "read"]
+}
+
+path "/sys/auth/*" {
+    capabilities=["sudo", "update"]
+}
+
+path "/auth/*" {
+    capabilities=["update", "create"]
+}
+
+path "/sys/policy/*" {
+    capabilities=["update"]
+}
+```
+
+* `/identity/oidc/client/*` - Allows you to create and read any OIDC client application in your HashiCorp instance.
+* `/identity/oidc/provider/*` - Allows you to create and read any OIDC provider in your HashiCorp instance.
+* `/sys/auth/*` - Allows you to create a new auth method. This permission enables you to create a new JSON Web Token (JWT) auth method.
+* `/auth/*` - Allows you to update the JWT auth method, and create a new role in the JWT auth method.
+* `/sys/policy/*` - Allows you to create a policy. The policy will be used to attach to the new role.
+
+### Download and run the HashiCorp Vault setup script
+
+You can optionally download a script that will set up your OIDC identity provider in HashiCorp Vault, so you don't have to manually execute each command. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Before you run the script, make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) and set the required environment variables.
 
 After the script runs, it prints the values you need to share with Postman to complete the HashiCorp Vault integration.
 
@@ -240,7 +243,7 @@ The script also provides environment variables you can set to authenticate with 
 
 | Environment variable | Details |
 |:--|:--|
-| `VAULT_TOKEN` | **Required** An [authentication token](https://developer.hashicorp.com/vault/docs/concepts/tokens) with permission to create an OIDC identity policy, OIDC provider, auth method, policy, and role. Learn more about the [minimum permissions required to set up an OIDC identity provider](#integrate-with-hashicorp-vault). |
+| `VAULT_TOKEN` | **Required** An [authentication token](https://developer.hashicorp.com/vault/docs/concepts/tokens) with permission to create an OIDC client application, OIDC provider, auth method, policy, and role. Learn more about the [minimum permissions required to set up an OIDC identity provider](#permissions-to-set-up-an-oidc-identity-provider). |
 | `VAULT_ADDR` | **Required** The address of your Vault cluster as a URL and port, such as `https://192.0.2.255:8300`. If you're using HashiCorp Cloud Platform, the value must be the public cluster URL. |
 | `VAULT_NAMESPACE` | The namespace where you want your users to manage their sensitive data. If you're already using namespaces, Postman recommends creating a new namespace for this integration. Default: `""` |
 | `OIDC_CLIENT_NAME` | The name of the OIDC client application. Default: `postman-integration-client` |
@@ -251,7 +254,9 @@ The script also provides environment variables you can set to authenticate with 
 
 > Don't change the default value for `REDIRECT_URI`.
 
-> You can update the policy (`POLICY_CONTENT`) specified in the script to restrict the "postman" role from accessing specific secrets engines. At a minimum, the policy must allow the "postman" role to access the secrets engine that stores secrets you'll retrieve in Postman. -->
+<!-- -->
+
+> You can update the policy (`POLICY_CONTENT`) specified in the script to restrict the "postman" role from accessing specific secrets engines. At a minimum, the policy must allow the "postman" role to access the secrets engine that stores secrets you'll retrieve in Postman.
 
 ## Integrate with AWS Secrets Manager
 
