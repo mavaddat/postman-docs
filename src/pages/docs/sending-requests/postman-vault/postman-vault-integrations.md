@@ -122,7 +122,7 @@ To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the fol
     vault write identity/oidc/client/<client-application-name> redirect_uris="http://127.0.0.1:10545/,http://127.0.0.1:10534/" client_type=public assignments=allow_all
     ```
 
-1. Get the client ID of the OIDC client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options).
+1. Get the client ID of the OIDC client application, then save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options).
 
     ```shell
     vault read -field=client_id identity/oidc/client/<client-application-name>
@@ -131,15 +131,15 @@ To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the fol
 1. Create an [OIDC provider](https://developer.hashicorp.com/vault/docs/concepts/oidc-provider#oidc-providers). The value of `issuer` is the address of your Vault cluster as a URL and port, such as `https://192.0.2.255:8300`. Learn about the [endpoint for creating an OIDC provider](https://developer.hashicorp.com/vault/api-docs/secret/identity/oidc-provider#create-or-update-a-provider).
 
     ```shell
-    vault write identity/oidc/provider/<client-application-name> allowed_client_ids="<oidc-client-id>" issuer="<vault-cluster-url>"
+    vault write identity/oidc/provider/<oidc-provider-name> allowed_client_ids="<oidc-client-id>" issuer="<vault-cluster-url>"
     ```
 
     > If you're using HashiCorp Cloud Platform, the value of `issuer` must be the public cluster URL.
 
-1. Get the OIDC provider URL for the client application, and save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options).
+1. Get the URL for the OIDC provider, then save this value for later. Learn about the [output options for printing a specific field](https://developer.hashicorp.com/vault/docs/commands/read#output-options).
 
     ```shell
-    vault read -field=issuer identity/oidc/client/<client-application-name>
+    vault read -field=issuer identity/oidc/provider/<oidc-provider-name>
     ```
 
 1. Create a [JSON Web Token (JWT) auth method](https://developer.hashicorp.com/vault/docs/auth/jwt) named "postman-jwt". Learn about the [endpoint for creating auth methods](https://developer.hashicorp.com/vault/api-docs/system/auth#enable-auth-method).
@@ -158,7 +158,7 @@ To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the fol
 
     > You can use a different role name. Make sure to save this name for later.
 
-1. Create a HashiCorp Vault policy that allows you to read data from all secrets engines, and save the policy name for later. This policy will be attached to the "postman" role. Learn about the [endpoint for creating a policy](https://developer.hashicorp.com/vault/api-docs/system/policy#create-update-policy).
+1. Create a HashiCorp Vault policy that allows you to read data from all secrets engines, then save the policy name for later. This policy will be attached to the "postman" role. Learn about the [endpoint for creating a policy](https://developer.hashicorp.com/vault/api-docs/system/policy#create-update-policy).
 
     ```shell
     vault write sys/policy/<policy-name> policy='path "*" { capabilities=["read"] } path "sys/*" { capabilities=["deny"] } path "auth/*" { capabilities=["deny"] }'
