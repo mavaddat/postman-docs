@@ -10,9 +10,6 @@ contextual_links:
     name: "Navigating the Postman App Interface | The Exploratory"
     url: "https://youtu.be/Kr8OVXjzw4k"
   - type: link
-    name: "Find Related Collections | Postman Level Up"
-    url: "https://youtu.be/d7Nq7Vo4nHc"
-  - type: link
     name: "Customize Sidebar | Postman Level Up"
     url: "https://youtu.be/UEL7HyWqTm4"
   - type: subtitle
@@ -241,7 +238,7 @@ Tool | Available for | Description
 **Documentation** <img alt="Documentation icon" src="https://assets.postman.com/postman-docs/documentation-icon-v8-10.jpg#icon" width="16px"> | Requests | View the [documentation](/docs/publishing-your-api/document-a-collection/) for a specific request.
 **Comments** <img alt="Comments icon" src="https://assets.postman.com/postman-docs/icon-comments-v9.jpg#icon" width="18px"> | Collections, requests, APIs | Leave [comments](/docs/collaborating-in-postman/working-with-your-team/discussing-your-work/) on a specific part of a request or an API.
 **Code** <img alt="Code snippet icon" src="https://assets.postman.com/postman-docs/icon-code-snippet.jpg#icon" width="16px"> | Requests, APIs, history | Generate [code snippets](/docs/sending-requests/create-requests/generate-code-snippets/) in a variety of languages and frameworks that you can use in other apps.
-**Related collections** <img alt="Related Collections icon" src="https://assets.postman.com/postman-docs/collection-rec-lightbulb-icon2.jpg#icon" width="16px"/> | Requests, history | View public collections from the [Public API Network](/docs/getting-started/first-steps/exploring-public-api-network/) that share the same base URL as your request and include API documentation.
+**Related requests** <img alt="Related requests icon" src="https://assets.postman.com/postman-docs/v11/icon-related-request.jpg#icon" width="16px"/> | Requests, history | View public requests from verified or popular collections on the [Public API Network](/docs/getting-started/first-steps/exploring-public-api-network/) that are related to your request.
 **Info** <img alt="Information icon" src="https://assets.postman.com/postman-docs/icon-information-v9-5.jpg#icon" width="16px"> | Collections, requests, APIs, environments, mock servers, monitors, Flows | See details about the element, including its ID, when it was created, who created it, and more.
 **Changelog** <img alt="Changelog icon" src="https://assets.postman.com/postman-docs/icon-changelog-v9.jpg#icon" width="18px"> | Collections, APIs | Use the [changelog](/docs/collaborating-in-postman/using-workspaces/changelog-and-restoring-collections/#viewing-collection-activity) to see changes that you and your collaborators have made. Available on [Postman paid plans](https://www.postman.com/pricing/).
 **Pull requests** <img alt="Pull request icon" src="https://assets.postman.com/postman-docs/icon-pull-request.jpg#icon" width="16px"> | Collections, environments | View any [pull requests](/docs/collaborating-in-postman/version-control/#creating-pull-requests) for a Postman element.
