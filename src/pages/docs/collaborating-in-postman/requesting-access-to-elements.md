@@ -59,6 +59,8 @@ Team members with Admin access for the workspace or Editor access for an element
 
 1. Select **Update Roles** to save your changes.
 
+> You can also use the [Postman VS Code extension](/docs/getting-started/basics/about-vs-code-extension/) to manage collection and environment roles assigned to team members.
+
 ## Requesting role access for workspaces
 
 You can request Editor access for a workspace to gain [additional permissions](/docs/collaborating-in-postman/roles-and-permissions/#workspace-roles).
