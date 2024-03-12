@@ -1,16 +1,11 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import '../../styles/config/normalize.css';
-import { theme } from '../../styles/theme';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import upcomingEvents from '../../bff-data/events.json';
 import { LandingCard } from '../components/MarketingPages/Cards';
 import '../../styles/config/_pm-icons.css';
-import { BaseLink, BaseLinkStyles, BaseButton, SectionStyles, VideoComponent } from 'aether-marketing';
+import { BaseLink, BaseButton, SectionStyles, VideoComponent } from 'aether-marketing';
 
 const HeroWrapper = styled.section`
   background-color: rgba(173, 205, 251, .2);
