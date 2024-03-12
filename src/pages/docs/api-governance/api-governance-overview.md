@@ -35,7 +35,7 @@ contextual_links:
 
 > **[API Governance and API Security are available on Postman Enterprise plans.](https://www.postman.com/pricing)**
 
-The Postman API Governance and Postman API Security features identify inconsistencies or weaknesses in your APIs and recommend possible fixes or improvements, so you can create better and more secure APIs that follow industry best practices. These features enable you to automate your organization's governance and security review processes instead of relying on manual reviews.
+The Postman API Governance and Postman API Security features identify inconsistencies or weaknesses in your APIs and recommend possible fixes or improvements that follow industry best practices. These features enable you to automate your organization's governance and security review processes instead of relying on manual reviews.
 
 [API governance](https://www.postman.com/api-platform/api-governance/) is the practice of defining and applying development rules that promote consistent API behaviors across your organization's API landscape. And a robust [API security](https://www.postman.com/api-platform/api-security/) posture means that your organization has development rules that promote security-first API behaviors.
 
