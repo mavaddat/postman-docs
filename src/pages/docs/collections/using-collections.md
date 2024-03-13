@@ -63,7 +63,7 @@ There are several ways to create a new collection:
 To customize and configure a new collection, do the following:
 
 1. Select the collection name to give your new collection a name.
-1. You can optionally enter a [description](/docs/publishing-your-api/authoring-your-documentation/) for your collection in the **Overview**tab. This description will appear in its documentation and in the workspace when anyone opens it.
+1. You can optionally enter a [description](/docs/publishing-your-api/authoring-your-documentation/) for your collection in the **Overview** tab. This description will appear in its documentation and in the workspace when anyone opens it.
 1. Select **Authorization** to configure authorization details for the collection.
 1. Select **Pre-request Script** to define a [pre-request script](/docs/writing-scripts/pre-request-scripts/) for your collection, which will run before requests are sent to the server.
 1. Select **Tests** to define a [test script](/docs/writing-scripts/test-scripts/) for your collection, which will run after a response is received.

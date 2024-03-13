@@ -55,7 +55,7 @@ For more details on setting up each type of authorization, go to [Authorization 
 
 ## View authorization details
 
-After your select and set up an authorization type, you auth data will appear in the relevant parts of the request, for example in the __Headers__ tab. To show headers that were added automatically, select __hidden__.
+After you select and set up an authorization type, your auth data will appear in the relevant parts of the request, for example in the __Headers__ tab. To show headers that were added automatically, select __hidden__.
 
 <img alt="Hidden headers" src="https://assets.postman.com/postman-docs/v10/hidden-headers-button-v10-21.jpg" width="439px" />
 
