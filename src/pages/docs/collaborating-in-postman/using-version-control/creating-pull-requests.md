@@ -59,7 +59,7 @@ When you have made the changes that you want to a forked collection or environme
 
 [Postman notifies the reviewers](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#reviewing-pull-requests) you selected about your pull request. You will receive a notification if the reviewers [comment on](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#adding-comments), [approve](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#approving-a-pull-request), or [merge](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#merging-changes-from-a-pull-request) the pull request.
 
-> A reviewer or group must have an Editor role for the element to merge changes. If you add a user or group that doesn't have Editor access as a reviewer, there will be a warning icon next to the name.
+> A reviewer or group must have the Editor role for the element to merge changes. If you add a user or group that doesn't have Editor access as a reviewer, there will be a warning icon next to the name. Reviewers and groups with the Viewer role can approve PRs, but can't merge PRs.
 >
 > <img alt="Reviewer permission" src="https://assets.postman.com/postman-docs/pull-request-reviewer-permission.jpg" width="350px"/>
 
