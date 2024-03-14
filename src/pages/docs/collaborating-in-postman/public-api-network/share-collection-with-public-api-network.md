@@ -113,9 +113,9 @@ To create a public workspace:
 
 1. Name your workspace. Selecting the right workspace name is important for SEO, readability, and discoverability. The workspace name should denote the services users can find inside. Examples of useful workspace names are:
 
- * [Your Org Name]'s API Collections
- * [Your Org Name]'s Public Workspace
- * [Your Org Name]'s [Service] Collections
+    * [Your Org Name]'s API Collections
+    * [Your Org Name]'s Public Workspace
+    * [Your Org Name]'s [Service] Collections
 
 1. Set the access level of your new workspace to public. Under Who can access your workspace?, select Anyone on the internet.
 
