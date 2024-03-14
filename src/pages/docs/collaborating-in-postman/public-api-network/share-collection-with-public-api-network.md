@@ -1,6 +1,6 @@
 ---
 title: "Share your collections with API consumers"
-updated: 2024-01-18
+updated: 2024-03-15
 contextual_links:
   - type: section
     name: "Additional resources"
@@ -44,7 +44,7 @@ Ready to get started? Following is a step-by-step tutorial to help you craft a h
 
 To host workspaces, you need a public team profile. The public team profile serves as the all-encompassing hub for any publicly listed assets on the Postman API Network. It's a place to introduce your organization and present all the public workspaces, collections, and Flows you’ve made available.
 
-When you create a Postman account, you’re given the option to join any of the existing teams that share your work email domain (if they have turned on [team discovery](/docs/collaborating-in-postman/working-with-your-team/enabling-team-discovery/#finding-teams-within-your-organization). If you intend to share your public API assets on behalf of your organization, join your company’s primary team. If a team does not exist yet, you can create it.
+When you create a Postman account, you’re given the option to join any of the existing teams that share your work email domain (if they have turned on [team discovery](/docs/collaborating-in-postman/working-with-your-team/enabling-team-discovery/#finding-teams-within-your-organization). If you intend to share your public API assets on behalf of your organization, join your company’s primary team. If a team doesn't exist yet, you can create it.
 
 ### Create a new team
 
@@ -70,11 +70,11 @@ You can manage your profile picture and banner directly from your profile page, 
 1. Select your team profile picture from your home page and then select **Team Settings**.
 1. Select the **Team Profile** tab and then select to upload your profile picture, banner, and favicon.
 
-To ensure quality, the files should fit these resolutions:
+To ensure quality, use the following resolutions for your files:
 
 * Profile picture: 2 MB max (official company logo or name)
-* Banner: 720x96 px <2 MB (official company colors, logo, or name)
-* Image size: 16x16 px or 32x32 px (official company colors, logo, or name)
+* Banner: 720x96px <2 MB (official company colors, logo, or name)
+* Image size: 16x16px or 32x32px (official company colors, logo, or name)
 
 Other settings you can manage in this area include:
 
@@ -136,9 +136,9 @@ For example, if you only want to share collections but don’t need to make your
 
 <img alt="Workspace access and sidebar settings" src="https://assets.postman.com/postman-docs/v11/workspace-settings-v11.jpg"  width="565px" />
 
-Workspaces dynamically evolve as you update your APIs, and the user experience improves as you curate the content you create for your users. Therefore, your workspace does not have to be perfect to be shared. Changes can be made later, and collections can be improved. Continuously manage your workspace to help provide the best possible user experience for your API consumers. Learn more about how to [prepare your public workspaces for the Public API Network](/docs/collaborating-in-postman/public-api-network/organizing-your-workspace/).
+Workspaces dynamically evolve as you update your APIs, and the user experience improves as you curate the content you create for your users. Therefore, your workspace doesn't have to be perfect to be shared. Changes can be made later, and collections can be improved. Continuously manage your workspace to help provide the best possible user experience for your API consumers. Learn more about how to [prepare your public workspaces for the Public API Network](/docs/collaborating-in-postman/public-api-network/organizing-your-workspace/).
 
-Now that your workspace is ready to be populated, it is time to add your first collection.
+Now that your workspace is ready to be populated, it's time to add your first collection.
 
 ## Add your first collection
 
@@ -150,7 +150,7 @@ In this example, you’ll generate your first collection by importing an OpenAPI
 
 1. From the top of your workspace sidebar, select **Import** and then select the API specification you’d like to import or drag the file into the import section.
 
-1. Select to import your specification as a collection only or as your full reference with a Postman collection. Check the options in **View Import Settings**. Including your API reference can be useful, but in the interest of getting your first collection set up, select the first option.
+1. Select to import your specification as a collection only or as your full reference with a Postman Collection. Check the options in **View Import Settings**. Including your API reference can be useful, but in the interest of getting your first collection set up, select the first option.
 
     <img alt="API definition import options" src="https://assets.postman.com/postman-docs/v10/import-definition-options-v10-19.jpg" width="651px" />
 
@@ -172,7 +172,7 @@ To help you in your curating process, consider these best practices compiled bas
 
 Adding response examples can be a big help to first-time users. Being able to preview what a response may look like can prepare users to know what to expect when testing your API and can even aid in troubleshooting if something goes wrong.
 
-You should add response examples everywhere you can. All you need to do is send a request, get a response, and click on the **Save as example** button. Learn more about how to create examples of request responses to illustrate API use cases.
+You should add response examples everywhere you can. All you need to do is send a request, get a response, and select the **Save as example** button. Learn more about how to create examples of request responses to illustrate API use cases.
 
 #### Provide get started workflows
 
@@ -189,7 +189,7 @@ These description fields accept markdown and enable you to include rich assets l
 
 #### Use variables
 
-Make use of variables throughout your collection. As you’re reviewing your automatically generated collection and the metadata, include variables to make it easy to change values when necessary:
+Make use of variables throughout your collection. As you’re reviewing your automatically generated collection and the metadata, include variables to make it simple to change values when necessary:
 
 * At the collection level for values that need to be linked to the collection itself.
 * In the **Environments** tab. These variables can be decoupled from the collection and used with other collections. This is particularly useful for auth tokens and other configurations.
@@ -206,7 +206,7 @@ If your API specifications live in a repository on one of the [major version con
 
 Another way publishers are able to maintain their collections as new changes are made is by using the [Postman API](/docs/collaborating-in-postman/public-api-network/maintain-api-in-workspace/#the-postman-api).
 
-The Postman API allows Postman users to programmatically access data stored in their Postman account.
+The Postman API enables Postman users to programmatically access data stored in their Postman account.
 
 Therefore, you can leverage the Postman API by making changes to your existing collections in private or team workspaces and then using the Postman API to update your public collections without having to toggle them private first.
 
