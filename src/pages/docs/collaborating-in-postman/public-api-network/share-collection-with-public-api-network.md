@@ -86,7 +86,7 @@ Other settings you can manage in this area include:
 
 Personalize your profile by filling out your team description, team summary, social media links, and highlights.
 
-1. Navigate to your profile page while logged in. Either go to your Postman URL directly (go.postman.com/your-team-URL) or select your profile picture on the left side of your home page. Then select **Team Settings > View Team Profile**.
+1. Navigate to your profile page while logged in. Either go to your Postman URL directly (`go.postman.com/your-team-URL`) or select your profile picture on the left side of your home page. Then select **Team Settings > View Team Profile**.
 
 Edit each section available on your team profile while following the best practices described below.
 
