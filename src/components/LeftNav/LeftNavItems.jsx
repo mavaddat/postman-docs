@@ -1091,7 +1091,7 @@ export const leftNavItems = [
             url: '/docs/collaborating-in-postman/public-api-network/sync-api-with-workspace/',
           },
           {
-            name: 'Share your collection',
+            name: 'Share your collections',
             url: '/docs/collaborating-in-postman/public-api-network/share-collection-with-public-api-network/',
           },
         ],
