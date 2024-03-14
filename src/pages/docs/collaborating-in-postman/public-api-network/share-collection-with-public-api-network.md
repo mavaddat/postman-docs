@@ -1,5 +1,5 @@
 ---
-title: "Share your collections with API consumers"
+title: "Share your collections with API consumers on the Postman Public API Network"
 updated: 2024-01-18
 contextual_links:
   - type: section
