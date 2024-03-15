@@ -232,6 +232,8 @@ The Postman Insights Agent watches your API traffic to automatically populate yo
 
     <img alt="Insights curation" src="https://assets.postman.com/postman-docs/v11/insights-curation-v11.jpg">
 
+1. Choose to add the selected endpoints to an existing curated collection or create a new collection. Select **Add**.
+
 1. Access your curated collection and check the Insights and Errors tabs for the selected endpoints. See [Observe Insights](#observe-insights) for more information.
 
 Just like with the ordinary collections in Postman, an Insights collection has these elements:
