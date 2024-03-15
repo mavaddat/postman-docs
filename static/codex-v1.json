@@ -17,10 +17,12 @@
       "subSectionID": "#variable-types"
   },
   "PMLC_COLLECTION_VARIABLE_INITIALVALUE_V1": {
-      "filePath": "/docs/sending-requests/variables/variables/"
+      "filePath": "/docs/sending-requests/variables/variables/",
+      "subSectionID": "#initial-and-current-values"
   },
   "PMLC_COLLECTION_VARIABLE_CURRENTVALUE_V1": {
-    "filePath": "/docs/sending-requests/variables/variables/"
+    "filePath": "/docs/sending-requests/variables/variables/",
+    "subSectionID": "#initial-and-current-values"
   },
   "PMLC_VARIABLE_TYPE_OVERVIEW_V1": {
       "filePath": "/docs/sending-requests/variables/variables/",
