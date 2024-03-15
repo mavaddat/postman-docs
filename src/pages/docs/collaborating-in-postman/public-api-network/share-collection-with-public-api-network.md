@@ -55,7 +55,7 @@ Using this tutorial, you’ll set up a public profile and implement best practic
 To create a team profile:
 
 1. Navigate to your account settings and select Create Free Team.
-1. Name your team and enter a URL. As an SEO best practice, name your team after your organization and change your URL to your organization’s name.
+1. Name your team and enter a URL. As a discoverability best practice, name your team after your organization and change your URL to your organization’s name.
 
     > If your chosen URL is taken, contact Support. In the meantime, append `-apis` to the organization name. You can change the URL later.
 
@@ -210,9 +210,9 @@ The Postman API enables Postman users to programmatically access data stored in 
 
 Therefore, you can leverage the Postman API by making changes to your existing collections in private or team workspaces and then using the Postman API to update your public collections without having to toggle them private first.
 
-#### Set up easier authentication
+#### Set up guided authentication
 
-Lastly, auth issues tend to be one of the biggest blockers new users encounter when testing new APIs. You can simplify this process by leveraging Postman’s [easier authentication feature](/docs/sending-requests/authorization/authentication-for-public-apis/) to help guide your users to provision access when using your APIs.
+Lastly, auth issues tend to be one of the biggest blockers new users encounter when testing new APIs. You can simplify this process by leveraging Postman’s [guided authentication feature](/docs/sending-requests/authorization/authentication-for-public-apis/) to help guide your users to provision access when using your APIs.
 
 You are able to configure authentication details for multiple APIs (as long as they have different URLs).
 
