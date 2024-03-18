@@ -793,6 +793,10 @@ export const leftNavItems = [
             url: '/docs/postman-flows/concepts/selecting-information/',
           },
           {
+            name: 'Pin variables',
+            url: '/docs/postman-flows/concepts/pinning-variables/',
+          },
+          {
             name: 'Send data between blocks',
             url: '/docs/postman-flows/concepts/passing-information-between-blocks/',
           },
@@ -1089,6 +1093,10 @@ export const leftNavItems = [
           {
             name: 'Sync APIs with your public workspace',
             url: '/docs/collaborating-in-postman/public-api-network/sync-api-with-workspace/',
+          },
+          {
+            name: 'Share your collections',
+            url: '/docs/collaborating-in-postman/public-api-network/share-collection-with-public-api-network/',
           },
         ],
       },
