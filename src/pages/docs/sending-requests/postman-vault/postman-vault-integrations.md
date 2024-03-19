@@ -150,7 +150,7 @@ To integrate with HashiCorp Vault, do the following:
 
     <!-- <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="443px"/> -->
 
-1. Enter the following on the **Set up Hashicorp Integration** window:
+1. Enter the following on the **Set up HashiCorp Integration** window:
 
     * **OIDC Provider URL** - Enter the OIDC provider URL of the client application.
     * **JWT Auth Path** - Enter the JWT auth path. If you used the recommended JWT auth path, enter "postman-jwt".
