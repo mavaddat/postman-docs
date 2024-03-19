@@ -148,7 +148,7 @@ To integrate with HashiCorp Vault, do the following:
 1. As a Postman Team or Super Admin, [open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right.
 1. Select **Set Up Integration** next to **Hashicorp Vault**.
 
-    <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="443px"/>
+    <!-- <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="443px"/> -->
 
 1. Enter the following on the **Set up Hashicorp Integration** window:
 
@@ -158,7 +158,7 @@ To integrate with HashiCorp Vault, do the following:
     * **Role** - Enter the role name. If you used the recommended role name, enter "postman".
     * **Namespace (optional)** - Optionally, enter the [namespace](https://developer.hashicorp.com/vault/docs/enterprise/namespaces) where you want users to manage their sensitive data. If you're already using namespaces, Postman recommends creating a new namespace for this integration.
 
-1. Select **Set Up Hashicorp**.
+1. Select **Set Up HashiCorp**.
 
 > Postman Team and Super Admins can edit the HashiCorp Vault integration later. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Edit** next to **Hashicorp Vault**.
 
@@ -221,14 +221,14 @@ path "/sys/policy/*" {
 
 ### Download and run the HashiCorp Vault setup script
 
-You can optionally download a script that will set up your OIDC identity provider in HashiCorp Vault, so you don't have to manually execute each command. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Before you run the script, make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) and set the required environment variables.
+You can optionally [download the HashiCorp Vault setup script](https://voyager.postman.com/script/hashicorp-setup-script-postman.sh) that will set up your OIDC identity provider in HashiCorp Vault, so you don't have to manually execute each command. The script uses the [HashiCorp Vault CLI](https://developer.hashicorp.com/vault/docs/commands) to execute the commands. Before you run the script, make sure you [install Vault locally](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install) and set the required environment variables.
 
 After the script runs, it prints the values you need to share with Postman to complete the HashiCorp Vault integration.
 
 The script provides options you can use to test and customize the commands. You can add options after you specify the script's filename and Vault cluster URL:
 
 ```bash
-$ hashicorp-setup-script <vault-cluster-url> [options]
+$ hashicorp-setup-script-postman <vault-cluster-url> [options]
 ```
 
 > Replace `<vault-cluster-url>` with the address of your Vault cluster URL and port. If you're using HashiCorp Cloud Platform, replace `<vault-cluster-url>` with the public cluster URL.
@@ -323,7 +323,7 @@ To view details about a secret you've retrieved from AWS Secrets Manager, select
 
 The value of secrets retrieved from external vaults are stored in a local cache for 1 hour by default. When secrets are cleared from the local cache, Postman retrieves your secrets' values from your external vaults, storing them in a local cache again for the specified duration. You can customize the duration that values are stored in the local cache, and you can manually reset the value stored in the local cache.
 
-You can customize the amount of time secrets' values are stored in a local cache for. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then specify the amount of time secrets are valid for (in minutes) next to **Secret expiry duration**.
+You can customize the amount of time secrets' values are stored in a local cache for. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then specify the amount of time secrets are valid for (in minutes) next to **Secret expiration duration**.
 
 You can also manually reset secrets' values stored in a local cache. This ensures that Postman is using the latest value for your secret. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Manually Reset Cache**.
 
