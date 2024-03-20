@@ -51,7 +51,7 @@ This example will create and execute a unary request. To learn about invoking th
 
 1. In Postman, select  **New > gRPC** to open a request in a new tab. (In the Postman desktop app, you can also select **⌘+N** or **Ctrl+N**, then select **gRPC**.)
 
-    <img src="https://assets.postman.com/postman-docs/v10/create-new-grpc-v10-2.jpg" alt="New gRPC request" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/create-new-grpc-v10-3.jpg" alt="New gRPC request" width="500px"/>
 
 1. Enter a URL into **Server URL**. For this example, use the Postman gRPC echo service, which is `grpc.postman-echo.com`.
 

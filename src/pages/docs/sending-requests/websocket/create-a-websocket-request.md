@@ -29,7 +29,7 @@ You can create a WebSocket request from the sidebar in Postman.
 
 1. Select **New > WebSocket** to open a raw WebSocket request in a new tab. You can also select **New > Socket.IO** to open a [Socket.IO request](/docs/sending-requests/websocket/create-a-socketio-request/) in a new tab. (In the Postman desktop app, you can also select **⌘+N** or **Ctrl+N**.)
 
-    <img src="https://assets.postman.com/postman-docs/v10/create-new-websocket-v10-2.jpg" alt="New WebSocket request" width="500px"/>
+    <img src="https://assets.postman.com/postman-docs/v10/create-new-websocket-v10-3.jpg" alt="New WebSocket request" width="500px"/>
 
 1. Enter the WebSocket server URL. A WebSocket URL begins with `ws://` or `wss://`.
 
