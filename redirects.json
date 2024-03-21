@@ -2424,6 +2424,10 @@
     "to": "/docs/sending-requests/graphql/graphql-overview/"
   },
   {
+    "from": "/docs/sending-requests/postman-vault-secrets/",
+    "to": "/docs/sending-requests/postman-vault/postman-vault-secrets/"
+  },
+  {
     "from": "/docs/sending-requests/intro-to-collections/",
     "to": "/docs/sending-requests/create-requests/intro-to-collections/"
   },
