@@ -52,20 +52,20 @@ When you have made the changes that you want to a forked collection or environme
     * If there are any conflicts between the fork and the parent element, Postman highlights them so that you can [resolve them](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#resolving-conflicts-from-a-pull-request).
 
 1. Select **Overview**.
-1. Enter a title and description for your pull request, and select up to 50 reviewers from the dropdown list. Reviewers must have [Editor access](/docs/collaborating-in-postman/roles-and-permissions/#element-based-roles) on the element to merge your changes.
+1. Enter a title and description for your pull request, and select up to 50 reviewers and [user groups](/docs/collaborating-in-postman/user-groups/) from the dropdown list. Reviewers and user groups must have [Editor access](/docs/collaborating-in-postman/roles-and-permissions/#element-based-roles) for the element to merge your changes.
 1. Select **Create Pull Request**.
 
     <img alt="Create Pull Request" src="https://assets.postman.com/postman-docs/v10/pull-request-overview-v10.jpg" width="350px"/>
 
 [Postman notifies the reviewers](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#reviewing-pull-requests) you selected about your pull request. You will receive a notification if the reviewers [comment on](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#adding-comments), [approve](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#approving-a-pull-request), or [merge](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/#merging-changes-from-a-pull-request) the pull request.
 
-> A reviewer must have an Editor role for the element to merge changes. If you add a user who doesn't have Editor access as a reviewer, there will be a warning icon next to their name.
+> A reviewer or group must have the Editor role for the element to merge changes. If you add a user or group that doesn't have Editor access as a reviewer, there will be a warning icon next to the name. Reviewers and groups with the Viewer role can approve PRs, but can't merge PRs.
 >
 > <img alt="Reviewer permission" src="https://assets.postman.com/postman-docs/pull-request-reviewer-permission.jpg" width="350px"/>
 
 ## Creating public pull requests
 
-To create a pull request on a public collection or environment, you must fork the parent element into a public workspace so that the users you ask to [review it](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/) have access to it.
+To create a pull request on a public collection or environment, you must fork the parent element into a public workspace so that the users or groups you ask to [review it](/docs/collaborating-in-postman/using-version-control/reviewing-pull-requests/) have access to it.
 
 To create a public pull request, do the following:
 
@@ -95,7 +95,7 @@ Pull request settings let you manage permissions for reviewers and assign merge 
 
     <img alt="Collection Manage Roles" src="https://assets.postman.com/postman-docs/v10/collection-manage-roles-v10.jpg" width="300px"/>
 
-1. Select **Editor** for the users you want to give Editor access to.
+1. Select **Editor** for the users and groups you want to give Editor access to.
 
     <img alt="Manage Roles" src="https://assets.postman.com/postman-docs/v10/manage-roles-collection-v10.jpg" width="600px"/>
 

@@ -31,6 +31,7 @@ The VS Code extension enables you to:
 
 * Create and send HTTP, raw WebSocket, and gRPC requests.
 * Import collections and environments exported from Postman, and import requests from cURL commands.
+* Collaborate with team members by sharing collections, environments, and workspaces.
 * Write and view collection documentation.
 * Edit and send requests from a workspace's request history.
 * Create cookies and send them with requests.
@@ -42,4 +43,4 @@ The VS Code extension enables you to:
 
 To install and learn more about the VS Code extension, visit the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode).
 
-![Postman VS Code extension](https://assets.postman.com/postman-docs/postman-vs-code-extension-v0-16-0.jpg)
+![Postman VS Code extension](https://assets.postman.com/postman-docs/postman-vs-code-extension-v0-19-1.jpg)

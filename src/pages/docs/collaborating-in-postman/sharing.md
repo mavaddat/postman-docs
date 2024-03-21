@@ -53,6 +53,7 @@ You can share your collections, requests, examples, collection folders, APIs, Fl
 * Hover over the element's name in the overview page and select the link icon <img alt="Link icon" src="https://assets.postman.com/postman-docs/icon-workspace-link-v9.jpg#icon" width="18px"> to copy the element's URL to the clipboard.
 * For requests and collection folders, you can also select the more actions icon <img alt="More actions icon" src="https://assets.postman.com/postman-docs/icon-more-actions-v9.jpg#icon" width="16px"> next to the element you want to share and select **Copy link** to copy the element's URL to the clipboard.
 * To share a URL to a collection, collection folder, request, or example with an active environment selected, [choose an environment using the environment selector](/docs/sending-requests/variables/managing-environments/#switch-between-environments), copy the element's link to your clipboard, then send the link to team members you want to share with.
+* You can also use the [Postman VS Code extension](/docs/getting-started/basics/about-vs-code-extension/) to share a collection and environment, or a URL to a collection and environment.
 
 ### Sharing using names, emails, or groups
 
@@ -155,7 +156,7 @@ You can change an external user's role at the team and collection levels. You ca
 
 To learn how to change an external user's team role, see [Manage guests](/docs/administration/managing-your-team/manage-team-members/#manage-guests). To learn how an external user can request a role change, see [Requesting Editor role access for a collection as an external user](/docs/collaborating-in-postman/requesting-access-to-elements/#requesting-editor-role-access-for-a-collection-as-an-external-user).
 
-You can turn off the toggle next to **Allow Guests to join your team and view this collection with the link**. When you turn this off, new external users can no longer be assigned the Guest role. External users already assigned the Guest role will continue to have access to the collection. If this is turned off for all collections an external user could access, they will be removed from the team and unable to access collections in the team.
+You can turn off the toggle next to **Allow Guests to join your team and view this collection with the link**. When you turn this off, new external users can no longer be assigned the Guest role. External users already assigned the Guest role will continue to have access to the collection.
 
 To remove external users at the team level, see [Remove team members](/docs/administration/managing-your-team/manage-team-members/#remove-team-members). In certain cases, Guests with access to only one collection are automatically removed from the team:
 
