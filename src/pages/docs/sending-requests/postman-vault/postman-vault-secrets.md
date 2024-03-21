@@ -139,9 +139,9 @@ To add secrets to your Postman Vault, do the following:
 
         > To allow sending requests to any subdomain of an allowed domain, use `*` to represent any subdomain. For example, add `*.example.com` to allow sending requests to any subdomain of `example.com`.
 
-1. Select <img alt="Save icon" src="https://assets.postman.com/postman-docs/icon-save.jpg#icon" width="16px"> **Save**.
+    ![Add secrets to Postman Vault](https://assets.postman.com/postman-docs/v10/add-postman-vault-secrets-v10-24.jpg)
 
-    ![Add secrets to Postman Vault](https://assets.postman.com/postman-docs/v10/add-postman-vault-secrets-v10-23-c.jpg)
+    > Changes are automatically saved to your Postman Vault.
 
 To set data as vault secrets from the request builder, do the following:
 
@@ -173,9 +173,10 @@ To edit vault secrets, select <img alt="Vault icon" src="https://assets.postman.
 * To update the list of allowed domains, select the empty cell or list of domains.
 * To make a secret unavailable without deleting it, clear the checkbox next to the secret. Any references to the secret will be unresolved. To make the secret available again, select the checkbox.
 * To [link a different secret from an external vault](/docs/sending-requests/postman-vault/postman-vault-integrations/#link-a-different-secret-from-an-external-vault), select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px"> next to the secret you want to update, then select the edit icon <img alt="Edit icon" src="https://assets.postman.com/postman-docs/documentation-edit-icon-v8-10.jpg#icon" width="18px">.
-* Select <img alt="Save icon" src="https://assets.postman.com/postman-docs/icon-save.jpg#icon" width="16px"> **Save** to save any changes you've made.
 
-![Edit vault secrets](https://assets.postman.com/postman-docs/v10/edit-postman-vault-secrets-v10-23-c.jpg)
+![Edit vault secrets](https://assets.postman.com/postman-docs/v10/edit-postman-vault-secrets-v10-24.jpg)
+
+> Changes are automatically saved to your Postman Vault.
 
 ## Use vault secrets
 
@@ -214,7 +215,6 @@ An *unresolved vault secret* is a secret that's not defined or Postman can't ref
 A vault secret can be unresolved for the following reasons:
 
 * The secret isn't present in your Postman Vault.
-* The secret was created but the changes weren't saved.
 * You aren't using the [Postman Desktop Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-desktop-agent) or the [Postman Browser Agent](/docs/getting-started/basics/about-postman-agent/#the-postman-browser-agent) to send requests from the Postman web app.
 * The secret is turned off in your Postman Vault.
 * The secret isn't allowed to be in requests to the domain.

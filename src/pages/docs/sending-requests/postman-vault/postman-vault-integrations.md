@@ -146,7 +146,7 @@ To set up an OIDC identity provider in HashiCorp Vault using the CLI, do the fol
 To integrate with HashiCorp Vault, do the following:
 
 1. As a Postman Team or Super Admin, [open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right.
-1. Select **Set Up Integration** next to **Hashicorp Vault**.
+1. Select **Set Up Integration** next to **HashiCorp Vault**.
 
     <!-- <img src="https://assets.postman.com/postman-docs/v10/postman-vault-settings-v10-24.jpg" alt="Postman Vault settings" width="443px"/> -->
 
@@ -160,17 +160,17 @@ To integrate with HashiCorp Vault, do the following:
 
 1. Select **Set Up HashiCorp**.
 
-> Postman Team and Super Admins can edit the HashiCorp Vault integration later. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Edit** next to **Hashicorp Vault**.
+> Postman Team and Super Admins can edit the HashiCorp Vault integration later. Select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right, then select **Edit** next to **HashiCorp Vault**.
 
 To authenticate with your HashiCorp account, do the following:
 
 1. [Open your Postman Vault](/docs/sending-requests/postman-vault/postman-vault-secrets/#access-your-postman-vault), then select <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> **Settings** in the top right. Optionally, you can authenticate when you [add a vault secret](/docs/sending-requests/postman-vault/postman-vault-secrets/#add-sensitive-data-as-vault-secrets).
-1. Select **Connect** next to **Hashicorp Vault**.
+1. Select **Connect** next to **HashiCorp Vault**.
 1. You'll be prompted to authorize Postman to access your HashiCorp account.  After you grant access, you can close the browser tab and return to Postman.
 
 To link a secret's value from HashiCorp Vault, do the following:
 
-1. In Postman, enter a name for the vault secret, hover over the **Value** cell, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">, then select **Hashicorp Vault**.
+1. In Postman, enter a name for the vault secret, hover over the **Value** cell, select the vault integration icon <img alt="Vault icon" src="https://assets.postman.com/postman-docs/icons/icon-postman-vault-2.jpg#icon" width="20px">, then select **HashiCorp Vault**.
 
     <img src="https://assets.postman.com/postman-docs/v10/link-hashicorp-vault-secret-v10-24.jpg" alt="Link HashiCorp value" width="541px"/>
 
