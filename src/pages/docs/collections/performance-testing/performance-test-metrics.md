@@ -30,7 +30,7 @@ To understand how your API's performance has changed over time, you can choose t
 
 The **Summary** tab displays performance metrics in real time so you can observe how your API performs under load.
 
-<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-24.jpg"/>
+<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-24a.jpg"/>
 
 You can view the following information about the performance test:
 
