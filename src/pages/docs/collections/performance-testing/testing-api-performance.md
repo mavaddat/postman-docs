@@ -33,7 +33,9 @@ To [configure a performance test](/docs/collections/performance-testing/performa
 
 ## View real-time performance metrics
 
-Performance tests run in the Postman desktop app on your computer and not in the cloud. When you start the test, the _Collection Runner_ displays performance metrics in real time. You can [view performance test metrics](/docs/collections/performance-testing/performance-test-metrics/) such as the average response time, error rate, and throughput for all requests or individual requests.
+Performance tests run in the Postman desktop app on your computer and not in the cloud. When you start the test, the _Collection Runner_ displays performance metrics in real time.
+
+You can [view performance test metrics](/docs/collections/performance-testing/performance-test-metrics/) such as the average response time, error rate, and throughput for all requests or individual requests. You can also [compare two performance runs](/docs/collections/performance-testing/performance-test-metrics/#compare-two-performance-runs) to understand how your API's performance has changed over time.
 
 ## Find and debug performance issues
 

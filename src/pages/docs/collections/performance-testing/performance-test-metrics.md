@@ -1,6 +1,6 @@
 ---
 title: "View metrics for performance tests"
-updated: 2023-10-16
+updated: 2024-03-15
 contextual_links:
   - type: section
     name: "Additional resources"
@@ -18,16 +18,19 @@ contextual_links:
 
 During a [performance test](/docs/collections/performance-testing/performance-test-configuration/), all requests are sent from your computer where you are running the Postman desktop app. You can view real-time metrics such as the average response time, error rate, and throughput. You can also customize the performance test graph to focus on the requests or test metrics you're most interested in.
 
+To understand how your API's performance has changed over time, you can choose two performance runs and compare metrics between them.
+
 ## Contents
 
 * [View performance metrics](#view-performance-metrics)
 * [Customize the performance view](#customize-the-performance-view)
+* [Compare two performance runs](#compare-two-performance-runs)
 
 ## View performance metrics
 
 The **Summary** tab displays performance metrics in real time so you can observe how your API performs under load.
 
-<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-18a.jpg"/>
+<img alt="Viewing performance metrics" src="https://assets.postman.com/postman-docs/v10/performance-test-graph-v10-24a.jpg"/>
 
 You can view the following information about the performance test:
 
@@ -76,3 +79,27 @@ To change the graph back to the default view, select **Reset**.
 To view details for a section of the graph, select a point on the graph. The table below the graph shows total requests, throughput, response time, and error metrics for each request during the selected time period. To change the graph back to the default time period, select **Clear Filter**.
 
 <img alt="Viewing a time period" src="https://assets.postman.com/postman-docs/v10/performance-test-zoom-v10-15.jpg" width="620px"/>
+
+## Compare two performance runs
+
+APIs in service tend to change with the addition of new features, improvements, and bug fixes. Over time, these changes can have an impact on the API's performance.
+
+To understand how the performance of your API has changed over time, you can compare performance runs. Select two runs to compare, and Postman displays the difference between the two runs for various performance metrics.
+
+> Make sure to [name your performance runs](/docs/collections/performance-testing/performance-test-configuration/#rename-a-performance-run) so it's easier to identify them when comparing runs.
+
+To compare two performance runs, do the following:
+
+1. Open the [past performance run](/docs/collections/performance-testing/performance-test-configuration/#view-past-performance-runs) you want to compare other runs to. This will be the reference run.
+1. Select <img alt="Full screen icon" src="https://assets.postman.com/postman-docs/icons/icon-compare.jpg#icon" width="16px"/> **Compare runs** to enter comparison mode.
+1. Choose a performance run to compare to the reference run. Select a recent run from the list, or search for a run by name.
+1. Use the performance view to compare the selected runs:
+
+    * The graph shows performance data for the reference run (solid lines) and the comparison run (dotted lines). Hover over a point on the graph to view more details.
+    * The table below the graph shows how values in the comparison run differ from the reference run. A value in green (<span style="color:green;">&#9660;</span>) indicates better performance and a value in red (<span style="color:red;">&#9650;</span>) indicates worse performance. Values in gray indicate differences that aren't necessarily better or worse.
+    * You can [customize the performance view](#customize-the-performance-view) to display the metrics or requests you're most interested in comparing.
+    * At any time you, can choose another comparison run in the list.
+
+1. When you're finished comparing performance runs, select **Exit Comparison**.
+
+<img alt="Comparing performance runs" src="https://assets.postman.com/postman-docs/v10/performance-test-compare-v10-24a.jpg"/>

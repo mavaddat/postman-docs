@@ -42,7 +42,7 @@ You can view error trends after the performance test is complete. The error tren
 
 To view error trends, select the **Errors** tab. You can also select the **Error rate** on the **Summary** tab and select **View Error Trends**.
 
-<img alt="Viewing error trends" src="https://assets.postman.com/postman-docs/v10/performance-test-errors-graph-v10-18a.jpg"/>
+<img alt="Viewing error trends" src="https://assets.postman.com/postman-docs/v10/performance-test-errors-graph-v10-24a.jpg"/>
 
 You can view the following information about the error trends:
 
