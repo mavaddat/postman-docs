@@ -80,7 +80,7 @@ _Workspace as an element_ represents a whole container where being an Admin give
 
 To create a new workspace, you can also select **New** in the sidebar, then select **Workspace** and follow the same steps.
 
-<img alt="Create new workspace" src="https://assets.postman.com/postman-docs/v10/create-new-workspace-v10-1.jpg" width="500px"/>
+<img alt="Create new workspace" src="https://assets.postman.com/postman-docs/v10/create-new-workspace-v10-2.jpg" width="500px"/>
 
 You can also create a new workspace in the [Workspaces dashboard](https://app.getpostman.com/dashboard). Select **Create Workspace** and follow the same steps.
 

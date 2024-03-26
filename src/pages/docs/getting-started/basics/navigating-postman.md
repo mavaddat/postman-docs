@@ -108,9 +108,9 @@ To see the task options that are available for elements in the sidebar, select t
 
 For collections, folders and requests inside a collection, and requests in History, you can select more than one element at a time. Press and hold **⌘** or **Ctrl**, then select the desired elements. For elements that are next to each other, press and hold **Shift**, then select the desired elements. For collections and their contents, you can also use [keyboard shortcuts](/docs/getting-started/installation/settings/#shortcuts) for tasks like copying, pasting, and deleting.
 
-You can select **New** in the sidebar to create requests, collections, APIs, and other common Postman elements. Select an element to create it in your workspace. You can also pin the elements you use most often. To pin an element, hover over an element and select the pin element icon <img alt="Pin element icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-element-v10.jpg#icon" width="17px">. To unpin an element, hover over the pinned element and deselect the pin element icon <img alt="Unpin element icon" src="https://assets.postman.com/postman-docs/v10/icon-unpin-element-icon-v10.jpg#icon" width="17px">.
+You can select **New** in the sidebar to create requests, collections, and other common Postman elements. Select an element to create it in your workspace. You can also pin the elements you use most often. To pin an element, hover over an element and select the pin element icon <img alt="Pin element icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-element-v10.jpg#icon" width="17px">. To unpin an element, hover over the pinned element and deselect the pin element icon <img alt="Unpin element icon" src="https://assets.postman.com/postman-docs/v10/icon-unpin-element-icon-v10.jpg#icon" width="17px">.
 
-<img src="https://assets.postman.com/postman-docs/v10/create-new-pin-elements-v10.jpg" alt="Pin elements" width="500px"/>
+<img src="https://assets.postman.com/postman-docs/v10/create-new-pin-elements-v10-1.jpg" alt="Pin elements" width="500px"/>
 
 To hide the sidebar, select the hide sidebar icon <img alt="Hide sidebar icon" src="https://assets.postman.com/postman-docs/icon-hide-sidebar-v9.jpg#icon" width="18px"> from the [footer](#footer) or right-click in an empty part of the sidebar and select **Collapse sidebar**.
 

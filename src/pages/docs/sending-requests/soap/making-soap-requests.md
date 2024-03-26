@@ -43,7 +43,7 @@ Postman can make HTTP calls using Simple Object Access Protocol (SOAP), a platfo
 
 1. To open an HTTP request, select __New > HTTP__.
 
-    <img alt="Create new request" src="https://assets.postman.com/postman-docs/v10/create-new-http-v10-4.jpg" width="500px"/>
+    <img alt="Create new request" src="https://assets.postman.com/postman-docs/v10/create-new-http-v10-6.jpg" width="500px"/>
 
 1. Enter your SOAP endpoint URL in the address field. For this example, use the following endpoint URL: `https://www.dataaccess.com/webservicesserver/NumberConversion.wso`.
 

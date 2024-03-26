@@ -31,7 +31,7 @@ Your requests can include multiple details determining the data Postman will sen
 
 You can create a new request from a workspace, by using **New > HTTP**, or by selecting **+** to open a new tab.
 
-<img alt="Create new request" src="https://assets.postman.com/postman-docs/v10/create-new-http-v10-4.jpg" width="500px"/>
+<img alt="Create new request" src="https://assets.postman.com/postman-docs/v10/create-new-http-v10-6.jpg" width="500px"/>
 
 Select **Save** to save your request. You can give your request a name and description, and choose or create a [collection](/docs/sending-requests/create-requests/intro-to-collections/) to save it in.
 
@@ -49,9 +49,9 @@ You can change the protocol for a new request. Select **New** in the sidebar and
 
 In addition to HTTP, Postman supports sending requests using [GraphQL](/docs/sending-requests/graphql/graphql-overview/), [gRPC](/docs/sending-requests/grpc/grpc-client-overview/), [WebSocket](/docs/sending-requests/websocket/websocket-overview/), [MQTT](/docs/sending-requests/mqtt-client/mqtt-client-overview/), and [SOAP](/docs/sending-requests/soap/making-soap-requests/) protocols.
 
-> You can't change the request protocol after you select **Save**.
+<img alt="Select protocol" src="https://assets.postman.com/postman-docs/v10/select-protocol-v10.jpg" width="200px" />
 
-<img alt="Select protocol" src="https://assets.postman.com/postman-docs/v10/select-protocol-v10-22.gif" />
+> You can't change the request protocol after you select **Save**.
 
 ### Specify request URLs
 
