@@ -32,7 +32,7 @@ gRPC requests in Postman include a variety of tools, views, and controls to help
 
 Create a new gRPC request by selecting **New** in the sidebar. Select **gRPC** from the list to open a blank gRPC request in a new tab.
 
-<img src="https://assets.postman.com/postman-docs/v10/create-new-grpc-v10-2.jpg" alt="New gRPC request" width="500px"/>
+<img src="https://assets.postman.com/postman-docs/v10/create-new-grpc-v10-3.jpg" alt="New gRPC request" width="500px"/>
 
 ## The request section
 
@@ -44,7 +44,7 @@ The request section includes the required configurations to connect to the serve
 
     > You can't change the request protocol after you select **Save**.
 
-    <img src="https://assets.postman.com/postman-docs/v10/select-protocol-v10-22.gif" alt="Select protocol" />
+    <img src="https://assets.postman.com/postman-docs/v10/grpc-tab-request-v10.jpg" alt="Select protocol" width="200px" />
 
 * **Server URL** - Defines the endpoint where the service is hosted. A gRPC URL often starts with `grpc://` instead of `http://` or `https://`. While creating a new request, you can also browse through URLs you've used by selecting the URL box. This helps you create the request faster if you’re testing multiple methods on the same endpoint.
 

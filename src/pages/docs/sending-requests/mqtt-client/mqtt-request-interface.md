@@ -24,7 +24,7 @@ MQTT requests in Postman include a variety of tools, views, and controls to help
 
 Create a new MQTT request by selecting the **New** button in the sidebar, which brings up the **Create new** dialog. Select **MQTT** from the list to open a blank MQTT request in a new tab.
 
-  <img src="https://assets.postman.com/postman-docs/v10/mqtt/mqtt-new-request-v10.jpg" alt="New MQTT request" width="500px"/>
+  <img src="https://assets.postman.com/postman-docs/v10/mqtt/mqtt-new-request-v10-1.jpg" alt="New MQTT request" width="500px"/>
 
 You can also create a new MQTT request by selecting the New Tab icon <img alt="New Tab icon" src="https://assets.postman.com/postman-docs/v10/icon-pin-collection-v10.14.0.jpg#icon" width="16px"> in the tabs bar and selecting the **Request type** button next to the request name (Untitled Request) and selecting **MQTT** from the list.
 

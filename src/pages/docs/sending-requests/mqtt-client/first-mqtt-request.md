@@ -24,7 +24,7 @@ In this example of an MQTT request, you will connect to a public broker, subscri
 
 In Postman, select **New > MQTT** to create a new request. (In the Postman desktop app, you can also select **⌘+N** or **Ctrl+N**, then select **MQTT**).
 
-  <img src="https://assets.postman.com/postman-docs/v10/mqtt/mqtt-new-request-v10.jpg" alt="New MQTT request" width="500px"/>
+  <img src="https://assets.postman.com/postman-docs/v10/mqtt/mqtt-new-request-v10-1.jpg" alt="New MQTT request" width="500px"/>
 
 ## Connect to a broker with Postman
 
