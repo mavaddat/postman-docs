@@ -1,55 +1,75 @@
 ---
 title: "Intro to SSO"
-order: 131
-page_id: "intro_sso"
-warning: false
+updated: 2023-03-22
 contextual_links:
   - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
-    name: "Related Blog Posts"
+    name: "Videos"
   - type: link
-    name: "Announcing updated Postman plans and pricing"
-    url: "https://blog.postman.com/announcing-updated-postman-plans-and-pricing/"
+    name: "Postman 101 for Admins | Webinar"
+    url: "https://youtu.be/d6pw-0Yy5fs"
+  - type: subtitle
+    name: "Case Studies"
+  - type: link
+    name: "PayPal uses SSO to onboard developers"
+    url: "https://www.postman.com/case-studies/paypal/"
+  - type: link
+    name: "Western Governors University (WGU) uses SSO to create teams"
+    url: "https://www.postman.com/case-studies/wgu/"
 ---
 
-> __[SSO is available on Postman Professional and Enterprise plans.](https://www.postman.com/pricing)__
+> **[SSO is available on Postman Professional and Enterprise plans.](https://www.postman.com/pricing)**
 
-## What is SSO?
+Single sign-on (SSO) services enable you to manage your team’s identity across all the SaaS products that you use.
 
-Single Sign-On (SSO) services make it easy to manage your team’s identity across all the SaaS products that you use.
+With an SSO service, a user can access multiple applications using one set of credentials (for example, an email address and password). The SSO service authenticates the user once for all the applications the user has been given rights to and eliminates further prompts when the user switches applications during the same session.
 
-SSO services permit a user to use one set of login credentials (e.g., name/email and password) to access multiple applications. The service authenticates the end user only once for all the applications the user has been given rights to and eliminates further prompts when the user switches applications during the same session.
+An example of SSO is Google's sign-in implementation for products like Gmail, YouTube, and Google Drive. Any user who is signed in to one of Google's products is automatically signed in to their other products as well.
 
-An example of SSO is Google's implementation of login for their products, such as Gmail, YouTube, and so on. Any user that is logged in to one of Google's products is automatically logged in to their other products as well.
+## Contents
 
-### What are the advantages of SSO?
+* [What are the advantages of SSO?](#what-are-the-advantages-of-sso)
+* [Prerequisites for SSO with Postman](#prerequisites-for-sso-with-postman)
+* [Supported IdPs](#supported-idps)
+* [SSO setup for SAML 2.0 compliant IdPs](#sso-setup-for-saml-20-compliant-idps)
+
+## What are the advantages of SSO?
 
 * Removes the need for users to remember and manage multiple passwords.
-* Simplifies users' experience by allowing them to log in at one single access point and enjoy a seamless experience across multiple applications.
+* Simplifies users' experience by enabling them to sign in at a single access point and work seamlessly across multiple applications.
 * Increases productivity by significantly reducing the password-related support emails.
-* Reduces phishing and thereby making sure users aren't tricked into giving away sensitive information.
+* Reduces phishing attempts that try to trick users into giving away sensitive information.
 
-### Prerequisites for SSO with Postman
+## Prerequisites for SSO with Postman
 
-* Team’s Identity Provider (IdP) must support the SAML 2.0 standard.
+* Team’s identity provider (IdP) must support the SAML 2.0 standard.
 
-### Identity Providers Supported
+## Supported IdPs
 
-* [Okta](https://www.okta.com/)
-* [OneLogin](https://www.onelogin.com/)
-* [Duo](https://duo.com/)
-* [Ping Identity](https://www.pingidentity.com/en.html)
-* [AD FS](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755226(v=ws.11))
-* [GSuite](https://workspace.google.com/products/admin/)
-* [Custom SAML](/docs/administration/sso/admin-sso/)
+Professional plans:
 
-### SSO setup for SAML 2.0 compliant IdPs
+* [Google Workspace](/docs/administration/sso/google-workspace/)
 
-Most SAML 2.0 compliant identity providers require the same information about the service provider for setup (Postman is the service provider). These values are specific to a Postman team and are available after configuring SSO in the Edit Team Page.
+> Professional plans purchased prior to September 14, 2022 can also use SSO with Okta, OneLogin, Duo, Ping Identity, Microsoft AD FS, Microsoft Entra ID, and custom SAML.
 
-Learn more about [setting up SSO](/docs/administration/sso/admin-sso/).
+Enterprise plans:
 
-**Note:** While configuring your IdP, make sure the user’s email address is set in attribute statements.
+* [Microsoft AD FS](/docs/administration/sso/microsoft-adfs/)
+* [Microsoft Entra ID](/docs/administration/sso/azure-ad/)
+* [Custom SAML](/docs/administration/sso/custom-saml/)
+* [Duo](/docs/administration/sso/duo/)
+* [Google Workspace](/docs/administration/sso/google-workspace/)
+* [Okta](/docs/administration/sso/okta/)
+* [OneLogin](/docs/administration/sso/onelogin/)
+* [Ping Identity](/docs/administration/sso/ping-identity/)
 
-**Note:** Postman’s form-based authentication mechanism and Google OAuth 2.0 remain enabled even if SSO is configured for a team.
+## SSO setup for SAML 2.0 compliant IdPs
+
+Most SAML 2.0 compliant identity providers require the same information about the service provider for setup (Postman is the service provider). These values are specific to a Postman team and are available while [configuring SSO](/docs/administration/sso/admin-sso/).
+
+> While configuring your IdP, make sure to set your users' email address in SAML attributes and claims. Postman expects to receive an email address from your IdP to identify each user.
+
+<!-- -->
+
+> If you configure SSO, Postman Password and Google Oauth 2.0 authentication methods remain enabled for your team. You can turn off these authentication methods to only allow your team to sign in using SSO.

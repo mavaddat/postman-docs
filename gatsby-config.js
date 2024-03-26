@@ -17,33 +17,10 @@ module.exports = {
     author: 'Postman',
     siteUrl: siteUrl,
   },
+  trailingSlash: 'always',
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: 'UA-43979731-4',
-        // eslint-disable-next-line max-len
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 1000,
-        // Defers execution of google analytics script after page load
-        defer: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-M42M5N',
-        includeInDevelopment: true,
-      },
-    },
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -100,7 +77,12 @@ module.exports = {
     'gatsby-plugin-meta-redirect',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/search/', '/administration/keep-out']
+      }
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -134,7 +116,7 @@ module.exports = {
       resolve: 'gatsby-plugin-gdpr-cookies',
       options: {
         googleAnalytics: {
-          trackingId: 'UA-43979731-4',
+          trackingId: 'G-CX7P9K6W67',
           anonymize: true,
         },
         environments: ['production', 'development'],
@@ -143,19 +125,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-newrelic',
       options: {
-        configs: {
-          production: {
-            instrumentationType: 'proAndSPA',
-            accountId: process.env.RELIC_ACCOUNT_ID,
-            trustKey: process.env.RELIC_TRUST_KEY,
-            agentID: process.env.RELIC_PRODUCTION_AGENT_ID,
-            licenseKey: process.env.RELIC_LICENSE_KEY,
-            applicationID: process.env.RELIC_PRODUCTION_APPLICATION_ID,
-            beacon: 'bam.nr-data.net',
-            errorBeacon: 'bam.nr-data.net',
-          },
-        },
-      },
+        config: {
+          instrumentationType: 'pro',
+          accountId: process.env.RELIC_ACCOUNT_ID,
+          trustKey: process.env.RELIC_TRUST_KEY,
+          agentID: process.env.RELIC_PRODUCTION_AGENT_ID,
+          licenseKey: process.env.RELIC_LICENSE_KEY,
+          applicationID: process.env.RELIC_PRODUCTION_APPLICATION_ID,
+          beacon: 'bam.nr-data.net',
+          errorBeacon: 'bam.nr-data.net'
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-algolia',
@@ -163,34 +143,11 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries,
+        dryRun: false, // default: false, only calculate which objects would be indexed, but do not push to Algolia
         chunkSize: 10000, // default: 1000
-        enablePartialUpdates: true, // only index new, changed, deleted records
-        matchFields: ['excerpt', 'contextual_links', 'search_keyword', 'headings', 'fields', 'modified'],
-        concurrentQueries: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        develop: true, // Enable while using `gatsby develop`
-        // tailwind: true, // Enable tailwindcss support
-        ignore: [
-          '/prism-tomorrow.css',
-          '/doc.scss',
-          '/print.css',
-        ], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-
-        purgeCSSOptions: {
-          // https://purgecss.com/configuration.html#options
-          safelist: [
-            'collapsing',
-            'gatsby-resp-iframe-wrapper',
-            /^ais-/,
-          ], // Don't remove this selector. Put regex last.
-          // safelist: ['code', 'blockquote', ':not(pre)>code[class*=language-]'], // Don't remove this selector
-        },
+        enablePartialUpdates: false, // only index new, changed, deleted records
+        matchFields: ['title', 'headings', 'internal', 'excerpt', 'contextual_links', 'search_keyword',  'slug', 'content', 'objectID', 'earlyAccess', 'early_access'],
+        // concurrentQueries: false, //queries run sequentially to avoid hanging builds
       },
     },
   ],

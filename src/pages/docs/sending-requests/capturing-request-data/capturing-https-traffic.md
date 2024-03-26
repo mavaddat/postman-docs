@@ -1,35 +1,19 @@
 ---
-title: "Capturing HTTPS traffic"
-order: 32
-page_id: "capturing_http_requests"
-updated: 2022-01-05
+title: "Capture HTTPS traffic using the Postman built-in proxy"
+updated: 2023-09-15
 contextual_links:
   - type: section
-    name: "Prerequisites"
-  - type: link
-    name: "Sending requests"
-    url: "/docs/sending-requests/requests/"
-  - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
     name: "Videos"
   - type: link
     name: "Capture API Calls With a Proxy"
     url: "https://youtu.be/bjrCHUITZ3k"
   - type: subtitle
-    name: "Related Blog Posts"
+    name: "Blog posts"
   - type: link
-    name: "Reverse engineering an API"
-    url: "https://medium.com/better-practices/reverse-engineering-an-api-403fae885303"
-  - type: link
-    name: "Using Postman Proxy to Capture and Inspect API Calls from iOS or Android Devices"
-    url: "https://blog.postman.com/using-postman-proxy-to-capture-and-inspect-api-calls-from-ios-or-android-devices/"
-  - type: link
-    name: "Capture Responses Using the Postman Proxy"
-    url: "https://blog.postman.com/capture-responses-using-the-postman-proxy/"
-
-warning: false
-
+    name: "Postman’s Proxy Now Fully Supports HTTPS Endpoints"
+    url: "https://blog.postman.com/postmans-proxy-now-fully-supports-https-endpoints/"
 ---
 
 In addition to capturing HTTP traffic, you can use the Postman's built-in proxy to inspect HTTPS communication from your Android, iOS, Linux, macOS, and Windows devices.
@@ -45,7 +29,7 @@ You must install the `postman-proxy-ca.crt` certificate on your device to be abl
     * [Installing the security certificate on Windows](#installing-the-security-certificate-on-windows)
 * [macOS](#macos)
 * [CentOS and Red Hat Enterprise Linux](#centos-and-red-hat-enterprise-linux)
-* [Ubuntu](#Ubuntu)
+* [Ubuntu](#ubuntu)
     * [Installing the certificate for use with Chrome](#installing-the-certificate-for-use-with-chrome)
     * [Installing the certificate for use with Mozilla Firefox](#installing-the-certificate-for-use-with-mozilla-firefox)
 * [iOS](#ios)
@@ -54,15 +38,19 @@ You must install the `postman-proxy-ca.crt` certificate on your device to be abl
 
 ## Windows
 
+> If you're on Windows and using Postman v10.18 or later, the Postman security certificate is automatically installed on your computer the first time you start the proxy. Also, you don't need to install OpenSSL. To learn more, go to [Capturing requests with the Postman proxy](/docs/sending-requests/capturing-request-data/capture-with-proxy/).
+
 Before you install the `postman-proxy-ca.crt` certificate, you must install the OpenSSL module.
 
 ### Installing OpenSSL on Windows
 
 Postman uses **OpenSSL** to generate certificate-key pairs. For Postman to be able to generate the `postman-proxy-ca.crt` certificate, the OpenSSL module must be installed on your computer and accessible through the command line.
 
-OpenSSL is already installed for macOS and is typically installed for Linux. For Windows systems, you must install OpenSSL manually:
+OpenSSL is already installed for macOS and is typically installed for Linux. For Windows systems, you must install OpenSSL manually.
 
-1. Download and install the [OpenSSL v1.1.1 installer](https://slproweb.com/products/Win32OpenSSL.html) for your operating system version. **Important:** OpenSSL v1.x is required to generate certificates. Later versions of OpenSSL are not supported at this time.
+To install OpenSSL for Windows systems, do the following:
+
+1. Download and install the [OpenSSL v1.1.1 installer](https://slproweb.com/products/Win32OpenSSL.html) for your operating system version. OpenSSL v1.x is required to generate certificates. Later versions of OpenSSL aren't supported at this time.
 
     > During installation, make sure to select the option to copy the OpenSSL DLLs to the **OpenSSL binaries (/bin) directory**.
 
@@ -73,12 +61,12 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
     ![download OpenSSL installer](https://assets.postman.com/postman-docs/windows-environment-variables-edit-browse-bb.jpg)
 
 1. Select **Browse**.
-1. Navigate to and select **This PC > Local Disk (C:) > Program Files > OpenSSL-Win64 > bin**.
+1. Find and select **This PC > Local Disk (C:) > Program Files > OpenSSL-Win64 > bin**.
 
     ![download OpenSSL installer](https://assets.postman.com/postman-docs/windows-oppssl-environment-variables-bin.jpg)
 
 1. Select **OK** to add the folder directory. Then select **OK** to confirm changes and close the remaining windows.
-1. Open a command prompt. To do this, open the Windows **Start** menu, search for **cmd**, and select **Open**. Enter the command `openssl version` to confirm that installation was successful. You should see output similar to the following:
+1. Open the Windows command line. To do this, open the **Start** menu, search for **cmd**, and select **Open**. On the command line, enter the command `openssl version` to confirm that installation was successful. The output will be similar to the following:
 
     ``OpenSSL 1.1.1l  24 Aug 2021``
 
@@ -86,7 +74,7 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 > Before you begin, make sure to [install the OpenSSL module](#installing-openssl-on-windows) so Postman can generate the certificate.
 
-1. In Windows File Explorer, navigate to the `%APPDATA%\Postman\proxy` folder. Typically, the folder will be located at `C:\Users\<user>\AppData\Roaming\Postman\proxy`.
+1. In Windows File Explorer, open the `%APPDATA%\Postman\proxy` folder. Typically, the folder will be located at `C:\Users\<user>\AppData\Roaming\Postman\proxy`.
 
 1. Right-click on the **postman-proxy-ca.crt** file and select **Install Certificate**.
 
@@ -100,11 +88,15 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 1. Select **OK** and then select **Next**.
 1. Select **Finish** to import the certificate.
-1. Restart the Postman app.
+1. Restart Postman.
 
 ## macOS
 
-1. In the macOS Finder, navigate to the `~/Library/Application Support/Postman/proxy` folder.
+> If you're on macOS and using Postman v10.17 or later, the Postman security certificate is automatically installed on your computer the first time you start the proxy. To learn more, go to [Capturing requests with the Postman proxy](/docs/sending-requests/capturing-request-data/capture-with-proxy/).
+
+To install the security certificate on macOS, do the following:
+
+1. In the macOS Finder, open the `~/Library/Application Support/Postman/proxy` folder.
 1. Double-click the `postman-proxy-ca.crt` file.
 1. Select **System** in the **Keychain** list, and then select **Add**. Enter your system password to confirm the action.
 1. In Keychain Access, double-click the imported Postman certificate to open it.
@@ -112,11 +104,14 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
     [![Select System keychains](https://assets.postman.com/postman-docs/mac-install-new-crt-v9-1.jpg)](https://assets.postman.com/postman-docs/mac-install-new-crt-v9-1.jpg)
 
 1. Expand the **Trust** section. Select the option to **Always Trust** when using this certificate, and make sure **Always Trust** is selected for **Secure Sockets Layer(SSL)**.
-    [![Select always trust for Postman keychain](https://assets.postman.com/postman-docs/mac-install-crt-always-trust-v9-1.jpg)](https://assets.postman.com/postman-docs/mac-install-crt-always-trust-v9-1.jpg)
+
+    ![Select always trust for Postman keychain](https://assets.postman.com/postman-docs/v10/mac-install-crt-always-trust-v10.jpg)
 
 1. Close the certificate window. Enter your system password to update the settings.
 
 ## CentOS and Red Hat Enterprise Linux
+
+To install the security certificate on CentOS and Red Hat Enterprise Linux, do the following:
 
 1. Copy the `postman-proxy-ca.crt` certificate file from `~/.config/Postman/proxy` to the `/etc/pki/ca-trust/source/anchors/` directory.
 
@@ -127,15 +122,17 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 ## Ubuntu
 
-1. Create the directory for the CA certificate with the command below.
+To install the security certificate on Ubuntu, do the following:
+
+1. Create the directory for the CA certificate with this command:
 
     `sudo mkdir -p /usr/share/ca-certificates/extra`
 
-1. Copy `postman-proxy-ca.crt` to the new folder with the command below.
+1. Copy `postman-proxy-ca.crt` to the new folder with this command:
 
     `sudo cp ~/.config/Postman/proxy/postman-proxy-ca.crt /usr/share/ca-certificates/extra/postman-proxy-ca.crt`
 
-1. Add the certificate to the system with the two commands below.
+1. Add the certificate to the system with these two commands:
 
     `sudo dpkg-reconfigure ca-certificates`
 
@@ -143,9 +140,9 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 ### Installing the certificate for use with Chrome
 
-1. Open Google Chrome and go to the URL `chrome://settings/certificates`.
+1. Open Google Chrome and go to the URL `chrome://settings/security`.
 
-1. Select **Manage certificates** from the list.
+1. Select **Manage device certificates** from the list.
 
 1. Select the **Authorities** tab and then **Import**.
 
@@ -167,11 +164,13 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 ## iOS
 
+To install the security certificate on iOS, do the following:
+
 1. Download the `postman-proxy-ca.crt` certificate to the iOS device (for example, using AirDrop). You can find the certificate file on your computer in the following location:
 
-    * **macOS:** `~/Library/Application Support/Postman/proxy`
-    * **Windows:** `C:\Users\<user>\AppData\Roaming\Postman\proxy`
-    * **Linux:** `~/.config/Postman/proxy`
+    * **macOS** - `~/Library/Application Support/Postman/proxy`
+    * **Windows** - `C:\Users\<user>\AppData\Roaming\Postman\proxy`
+    * **Linux** - `~/.config/Postman/proxy`
 
 1. Go to **Settings > Profile Downloaded**, and then select **Install**. Enter your passcode to proceed.
 1. A security warning displays. Select **Install**.
@@ -183,16 +182,18 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 > The certificate installation process may differ depending on your device and Android version.
 
+To install the security certificate on Android, do the following:
+
 1. Download the `postman-proxy-ca.crt` certificate to the Android device. You can find the certificate file on your computer in the following location:
 
-    * **macOS:** `~/Library/Application Support/Postman/proxy`
-    * **Windows:** `C:\Users\<user>\AppData\Roaming\Postman\proxy`
-    * **Linux:** `~/.config/Postman/proxy`
+    * **macOS** - `~/Library/Application Support/Postman/proxy`
+    * **Windows** - `C:\Users\<user>\AppData\Roaming\Postman\proxy`
+    * **Linux** - `~/.config/Postman/proxy`
 
 1. Open the **Settings** app and go to **Security > Encryption & credentials**.
 1. Select **Install a certificate** and select the **CA Certificate** option.
 1. A security warning displays. Select **Install anyway** to proceed.
-1. Browse for and select the `postman-proxy-ca.crt` certificate file. You will see a message that the certificate is installed. You can now capture traffic through a web browser on Android.
+1. Browse for and select the `postman-proxy-ca.crt` certificate file. You will get a message that the certificate is installed. You can capture traffic through a web browser on Android.
 
 > **Need to capture requests from an Android app?** To capture requests from an Android app, you need to add a network security configuration file to your app to trust the `postman-proxy-ca.crt` certificate. For more information, see [Trust additional CAs](https://developer.android.com/training/articles/security-config#TrustingAdditionalCas) on the Android Developers portal.
 
@@ -200,14 +201,16 @@ OpenSSL is already installed for macOS and is typically installed for Linux. For
 
 ## Troubleshooting certificate issues
 
-If you are unable to correctly install the `postman-proxy-ca.crt` certificate, or if the certificate is not allowing you to capture traffic, try regenerating and reinstalling the certificate.
+If you are unable to correctly install the `postman-proxy-ca.crt` certificate, or if the certificate isn't allowing you to capture traffic, regenerate and reinstall the certificate.
 
-1. Make sure you are running Postman version 9.1 or later. See [Updating Postman](/docs/getting-started/installation-and-updates/#updating-postman).
-1. On the computer where the Postman app is installed, delete the `/Postman/Proxy` folder. You can find the folder in the following location:
+To regenerate and reinstall the certificate, do the following:
 
-    * **macOS:** `~/Library/Application Support/Postman/proxy`
-    * **Windows:** `C:\Users\<user>\AppData\Roaming\Postman\proxy`
-    * **Linux:** `~/.config/Postman/proxy`
+1. Make sure you are running Postman version 9.1 or later. See [Update Postman](/docs/getting-started/installation/installation-and-updates/#update-postman).
+1. On the computer where Postman is installed, delete the `/Postman/Proxy` folder. You can find the folder in the following location:
 
-1. Close and restart the Postman app. Postman regenerates the certificate.
-1. Follow the steps for your device to [reinstall the certificate](#capturing-https-traffic).
+    * **macOS** - `~/Library/Application Support/Postman/proxy`
+    * **Windows** - `C:\Users\<user>\AppData\Roaming\Postman\proxy`
+    * **Linux** - `~/.config/Postman/proxy`
+
+1. Close and restart Postman. Postman regenerates the certificate.
+1. If prompted, follow the steps for your device to reinstall the certificate.

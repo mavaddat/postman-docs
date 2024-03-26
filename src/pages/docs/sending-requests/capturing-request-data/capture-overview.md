@@ -1,55 +1,64 @@
 ---
-title: "Capturing request data overview"
-page_id: "capturing_overview"
-updated: 2022-02-16
+title: "Capture HTTP traffic and sync cookies in Postman"
+updated: 2024-03-06
 contextual_links:
   - type: section
-    name: "Prerequisites"
-  - type: link
-    name: "Sending requests"
-    url: "/docs/sending-requests/requests/"
-  - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
     name: "Videos"
   - type: link
     name: "Capture API Calls With a Proxy"
     url: "https://youtu.be/bjrCHUITZ3k"
   - type: subtitle
-    name: "Related Blog Posts"
-  - type: link
-    name: "Enhanced HTTP Traffic Capture and Analysis in Postman"
-    url: "https://blog.postman.com/http-traffic-capture-and-analysis-in-postman/"
-  - type: link
-    name: "Reverse engineering an API"
-    url: "https://medium.com/better-practices/reverse-engineering-an-api-403fae885303"
-  - type: link
-    name: "Using Postman Proxy to Capture and Inspect API Calls from iOS or Android Devices"
-    url: "https://blog.postman.com/using-postman-proxy-to-capture-and-inspect-api-calls-from-ios-or-android-devices/"
+    name: "Blog posts"
   - type: link
     name: "Capture Responses Using the Postman Proxy"
     url: "https://blog.postman.com/capture-responses-using-the-postman-proxy/"
-
-warning: false
-
+  - type: link
+    name: "Enhanced HTTP Traffic Capture and Analysis in Postman"
+    url: "https://blog.postman.com/http-traffic-capture-and-analysis-in-postman/"
 ---
 
-Capturing HTTP traffic is an important tool for API development and testing. When you enable request capturing in Postman, you can see the requests passing between client applications and your API and save them to a collection. You can then use the saved request information to understand how your API is behaving and to assist with debugging. (You might even discover undocumented APIs!)
+Capturing HTTP traffic is an important tool for API development and testing. Postman enables you to inspect the requests passing between client applications and your API and save them to a collection. You can use the saved requests to understand how your API is behaving and to assist with debugging.
 
-Postman Proxy and Postman Interceptor provide two ways to capture HTTP and HTTPS traffic, as well as cookies. To capture traffic, first start the proxy or interceptor, and then begin a capture session. A session represents a specific time frame during which you want to capture traffic (for example, while a client application is sending a series of requests that you want to observe or debug).
+Postman's built-in proxy and Postman Interceptor provide two ways to capture HTTP and HTTPS traffic in Postman. You can also use the proxy or Interceptor to capture and sync cookies to the Postman cookie jar.
 
-After you begin a capture session, you can freely pause or resume capturing, and clear any captured traffic, without stopping the proxy or interceptor. In addition, you can use Postman's search and filtering capabilities to narrow down the requests you see based on the criteria you choose.
+To capture traffic, begin a proxy or Interceptor session. A session represents a specific time frame during which you want to capture traffic. For example, you can capture traffic while a client application is sending a series of requests that you want to observe or debug.
 
-## Using Postman Proxy
+After you stop the session, you can view the captured requests in Postman. You can also use Postman's search and filtering capabilities to narrow down the requests based on the criteria you choose.
 
-A proxy is an intermediary server that sits between a client application (like a mobile app or a web browser) and the destination server that the client is ultimately communicating with (like an API). When Postman Proxy is enabled and a client has been configured to use the proxy, a request from the client first goes to Postman, which then forwards the request on to the destination server.
+## Contents
 
-If you start a capture session while the proxy is enabled, Postman can capture any HTTP or HTTPS traffic passing through the proxy. You can then search or filter the requests, or save them to a collection. You can also capture and save cookies, which can be used when making future requests.
+* [The Postman proxy](#the-postman-proxy)
+* [Postman Interceptor](#postman-interceptor)
+* [Capture and sync cookies](#capture-and-sync-cookies)
 
-Learn more about [capturing HTTP requests](/docs/sending-requests/capturing-request-data/capturing-http-requests/) and [capturing HTTPS traffic](/docs/sending-requests/capturing-request-data/capturing-https-traffic/).
+## The Postman proxy
 
-## Using Postman Interceptor
+A proxy is an intermediary server that sits between a client application (like a mobile app) and the destination server the client is communicating with (like an API). When the Postman proxy is enabled and a client has been configured to use the proxy, a request from the client goes to Postman first. Postman then forwards the request on to the destination server.
 
-Postman Interceptor is similar to Postman Proxy in that it can capture requests sent between a client and a server. However, Postman Interceptor uses a Chrome plug-in rather than Postman's built-in proxy. With Postman Interceptor, you can capture HTTP and HTTP requests sent from a Google Chrome browser. You can also capture cookies from a server for use in your requests.
+If you start a proxy session while the proxy is enabled, Postman can capture any HTTP or HTTPS traffic passing through the proxy. You can then search or filter the requests, or save them to a collection.
+
+To capture requests using the Postman proxy, view the instructions for your operating system and Postman version:
+
+* If you're on macOS (Postman v10.17 or later) or Windows (Postman v10.18 or later), go to [Capture traffic using the Postman built-in proxy](/docs/sending-requests/capturing-request-data/capture-with-proxy/).
+
+* If you're on Linux (all Postman versions), macOS (Postman v10.16 or earlier), or Windows (v10.17 or earlier), go to [Capture HTTP requests in Postman](/docs/sending-requests/capturing-request-data/capturing-http-requests/).
+
+* To capture secure HTTPS traffic from a client device like a phone, you need to install the Postman security certificate on the device. To learn more, go to [Capture HTTPS traffic using the Postman built-in proxy](/docs/sending-requests/capturing-request-data/capturing-https-traffic/).
+
+> To check which version of Postman you're using, select the settings icon <img alt="Settings icon" src="https://assets.postman.com/postman-docs/icon-settings-v9.jpg#icon" width="16px"> in the header and select **Settings > About**.
+
+## Postman Interceptor
+
+Postman Interceptor provides another way to capture requests sent between a client and a server. Interceptor uses a browser extension rather than Postman's built-in proxy. With Postman Interceptor, you can capture HTTP and HTTPS requests sent from a web browser.
 
 Learn more about [using Postman Interceptor](/docs/sending-requests/capturing-request-data/interceptor/).
+
+## Capture and sync cookies
+
+Along with capturing requests, Postman can capture cookies during a proxy or Interceptor session. You can manually add any captured cookies to the [Postman cookie jar](/docs/sending-requests/response-data/cookies/) and use them when sending requests from Postman.
+
+Postman's built-in proxy and Interceptor also support continuous cookie syncing. Once enabled, all captured cookies for the domains you specify are automatically synced to the Postman cookie jar.
+
+Learn more about [syncing cookies](/docs/sending-requests/capturing-request-data/syncing-cookies/).

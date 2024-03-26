@@ -1,9 +1,35 @@
 import React from 'react';
-import './BreadCrumbsLinks.scss';
-import { leftNavItems } from '../LeftNav/LeftNavItems';
 
+import { leftNavItems } from '../LeftNav/LeftNavItems';
+import styled from 'styled-components';
+import {theme} from '../../../styles/theme';
 // Example: Home / Getting Started /
 // a list of links separated by / to aid in navigation
+const BreadCrumbStyles = styled.nav`
+    & a:link,
+    a:visited,
+    span {
+        color: ${theme.colors.grey_50};
+        transition: all 0.2s ease-in-out;
+        border-bottom: 1px transparent;
+    }
+    & a:hover,
+    a:active {
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        color: ${theme.colors.blue_60};
+        border-bottom: 1px solid;
+    }
+
+ol.lc-breadcrumbs {
+    margin: 0;
+    li {
+        list-style-type: none;
+        display: inline;
+        padding-left: 0;
+    }
+}
+`
 class BreadCrumbsLinks extends React.Component {
   constructor(props) {
     super(props);
@@ -42,23 +68,31 @@ class BreadCrumbsLinks extends React.Component {
   render() {
     const { parentLink, subParentLink } = this.state;
     return (
-      <nav className="breadcrumb-wrapper" aria-label="You are here:">
-        <div  className="mb-3">
-          <a href="/" className="small breadcrumb-home-link">Home</a>
-          <span className="small"> / </span>
+      <BreadCrumbStyles className=" mb-3" aria-label="breadcrumbs">
+        <ol className="lc-breadcrumbs">
+          <li>
+            <a href="/" className="small breadcrumb-home-link" title="Learning Center">Home</a>
+            <span className="small" aria-hidden="true"> / </span>
+          </li>
           {JSON.stringify(subParentLink) !== '{}' ? (
             <>
-            <a href={parentLink.url} className="small breadcrumb-parent-link">{parentLink.name}</a>
-            <span className="small"> / </span>
+            <li>
+              <a href={parentLink.url} className="small breadcrumb-parent-link">{parentLink.name}</a>
+              <span className="small" aria-hidden="true"> / </span>
+            </li>
+            <li>
               <a href={subParentLink.slug} className="small breadcrumb-subparent-link">{subParentLink.name}</a>
+            </li>
             </>
           ) : (
-              <>
-            <a href={parentLink.url} className="small breadcrumb-parent-link">{parentLink.name}</a>
-          </>
+            <>
+            <li>
+              <a href={parentLink.url} className="small breadcrumb-parent-link">{parentLink.name}</a>
+            </li>
+            </>
           )}
-        </div>
-      </nav>
+        </ol>
+      </BreadCrumbStyles>
     )
   }
 }

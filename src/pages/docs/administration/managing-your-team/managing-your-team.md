@@ -1,106 +1,67 @@
 ---
-title: "Managing your team"
-order: 121
-page_id: "managing_your_team"
-warning: false
+title: "Team management overview"
+updated: 2024-01-18
 contextual_links:
   - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
     name: "Videos"
   - type: link
-    name: "Postman 101 for Admins"
-    url: "https://youtu.be/rEKvQO8EYR8"
+    name: "Working With Your Team in Postman | The Exploratory"
+    url: "https://youtu.be/NwT062tYvzs?si=OKAzhZqKATKAOS9K"
   - type: subtitle
-    name: "Related Blog Posts"
+    name: "Blog posts"
   - type: link
-    name: "Manage Large Teams in Postman with Workspaces, Permissions, and Version Control"
-    url: "https://blog.postman.com/postman-team-workspaces-and-permissions/"
+    name: "How to Securely Deploy Postman at Scale, Part 1: User Management"
+    url: "https://blog.postman.com/how-to-securely-deploy-postman-at-scale-user-management/"
   - type: link
-    name: "Govern Your Public API Collections More Effectively"
-    url: "https://blog.postman.com/govern-your-public-api-collections-more-effectively/"
-
+    name: "How to securely deploy Postman at scale, part 2: information management"
+    url: "https://blog.postman.com/how-to-securely-deploy-postman-at-scale-part-2-information-management/"
 ---
 
-> __[Certain team options are only available on Postman Basic, Professional, and Enterprise plans.](https://www.postman.com/pricing)__
+> **[Some team options are only available on Postman Professional and Enterprise plans.](https://www.postman.com/pricing)**
 
-Postman provides a number of ways to manage your team.
+Postman provides a variety of tools you can use to set up, manage, and secure your team. As a [Team Admin or Super Admin](/docs/collaborating-in-postman/roles-and-permissions/#team-roles), you can streamline the onboarding process, manage access to workspaces and products, and customize your team's experience to align with your organization's goals.
+
+> If you're setting up your Postman team, check out Postman's [onboarding checklist](/docs/administration/onboarding-checklist/) to get started.
 
 ## Contents
 
-* [Member roles](#member-roles)
-    * [Managing roles](#managing-roles)
-* [Invites](#invites)
-    * [Inviting to a team](#inviting-to-a-team)
-    * [Managing invitations](#managing-invitations)
-* [Changing team size](#changing-team-size)
-* [Removing team members](#removing-team-members)
-* [Next steps](#next-steps)
+* [Manage team members](#manage-team-members)
+* [Manage team workspaces](#manage-team-workspaces)
+* [Manage product access](#manage-product-access)
+* [Configure team settings](#configure-team-settings)
+* [Secure your Postman team](#secure-your-postman-team)
 
-## Member roles
+## Manage team members
 
-Everyone in your team is a member. Each member has certain roles, which allow them to perform various actions. These can be granted directly to users individually, or via [groups](/docs/administration/managing-your-team/user-groups/). To learn more, visit [Roles and Permissions](/docs/collaborating-in-postman/roles-and-permissions/).
+You can [invite collaborators](/docs/administration/managing-your-team/manage-team-members/#invite-users) to your Postman team, including Developers, Admins, external partners, and Guests. You can [update users' assigned roles](/docs/administration/managing-your-team/manage-team-members/#manage-team-roles) and manage their access to resources as needed.
 
-### Managing roles
+If you're setting up an [Enterprise team](https://www.postman.com/pricing/), you can use [Postman groups](https://learning.postman.com/docs/collaborating-in-postman/user-groups/) to assign roles and manage access to elements at scale.
 
-An admin can modify the roles of other team members individually by selecting **Team** in the upper right > [**Manage Team**](https://go.postman.co/settings/team/members).
+## Manage team workspaces
 
-An admin can manage which team members have **Admin** and **Developer** roles. If you are on a [Postman Professional or Enterprise](https://www.postman.com/pricing) plan, an admin will also have the option of assigning a **Community Manager**. If you are on a Postman Enterprise plan, an admin will additionally have the option to assign the **Super Admin** role.
+[Team workspaces](/docs/collaborating-in-postman/using-workspaces/creating-workspaces/) enable you to share projects with collaborators and manage access to them within your team.
 
-Only a team member with the billing role can grant the **Billing** role to or remove it from other team members.
+If you're setting up a [Professional or Enterprise team](https://www.postman.com/pricing/), you can also create [private workspaces](/docs/collaborating-in-postman/working-with-your-team/collaborating-in-team-workspaces/). A private workspace is a team workspace that's only visible to the user who created it and team members who have been invited to join it.
 
-Under **Members**, select the roles next to the user you would like to update. Select the roles you would like to assign or unassign, then **Update Roles** to confirm your changes.
+If you're setting up an [Enterprise team](https://www.postman.com/pricing/), you can also [manage which users can create team workspaces](/docs/administration/managing-your-team/manage-team-workspaces/).
 
-<img alt="Edit team roles" src="https://assets.postman.com/postman-docs/members-and-groups-update-roles-9.5.jpg"/>
+## Manage product access
 
-Each team member must have a minimum of one role assigned to them.
+You can [manage access](/docs/administration/managing-your-team/manage-team-product-access/) to add-on products and Enterprise solutions that you've purchased for your team. This enables you to provide additional permissions and features to team members as needed.
 
-Teams may have two support accounts at no additional cost. Support accounts are defined as members with only admin and/or billing roles.
+## Configure team settings
 
-> Roles can also be assigned via [groups](/docs/administration/managing-your-team/user-groups/).
+You can manage a variety of settings in your [team settings dashboard](/docs/administration/managing-your-team/team-settings/#access-team-settings). From the dashboard, you can configure items such as your team's [profile](/docs/administration/managing-your-team/team-settings/#manage-your-team-profile), [discoverability](/docs/administration/managing-your-team/team-settings/#make-your-team-discoverable), [custom domains](/docs/administration/managing-your-team/team-settings/#adding-custom-domains), and [authentication methods](/docs/administration/managing-your-team/team-settings/#edit-authentication-methods).
 
-## Invites
+## Secure your Postman team
 
-Invitations are sent to individuals you opt to add to your Postman team. Only admins are able to send, delete, and resend these. However, other members of the team can request to invite members to the team. These requests must be approved by an admin. Once approved, an invite will be sent to the individual.
+Depending on your [plan](https://www.postman.com/pricing), you can secure your team's data and user accounts by using the following:
 
-To allow Postman users from your company to request to join your team, [enable team discovery](/docs/collaborating-in-postman/collaboration-intro/#making-your-team-discoverable).
-
-### Inviting to a team
-
-Navigate to [Manage Team](https://go.postman.co/settings/team/members) and select **Invite People**. Enter the email address of the individual you would like to invite, select **Add**, edit their roles, then **Send Invites**.
-
-<img alt="Invite users to team" src="https://assets.postman.com/postman-docs/team-invite-people-v9.1.0.jpg" width="350px"/>
-
-Alternatively, you can invite users to your team via links. To do so, select **Get Link**.
-
-### Managing invitations
-
-Select [**Invite links**](https://go.postman.co/settings/team/manage-invite-links) from the left-hand menu to view a list of invitation links your team has generated. Here, you can review which users generated links, when they were generated, their expiry date, and their URL.
-
-<img alt="Invite links dashboard" src="https://assets.postman.com/postman-docs/team-manage-invite-links-v9.2.jpg"/>
-
-To copy the invite URL, hover over a row and select the copy icon <img alt="Copy link icon" src="https://assets.postman.com/postman-docs/icon-copy-v9.jpg" width="15px" style="vertical-align:middle;margin-bottom:5px"> to the right.
-
-To revoke an invitation, hover over the invitation and select the trash can icon <img alt="Delete link icon" src="https://assets.postman.com/postman-docs/icon-delete-v9.jpg" width="12px" style="vertical-align:middle;margin-bottom:5px"> to the right.
-
-## Changing team size
-
-To change your team size, see [Changing your plan](/docs/administration/billing/#changing-your-plan).
-
-## Removing team members
-
-To remove a member from your team, navigate to your team's page > **Members and groups**. Select the <img alt="External link icon" src="https://assets.postman.com/postman-docs/icon-delete-v9.jpg" width="12px" style="vertical-align:middle;margin-bottom:5px"> icon next the team member's name.
-
-![Removing a team member](https://assets.postman.com/postman-docs/remove-member.jpg)
-
-To confirm, select **Remove User From Team**.
-
-![Confirmation for removing a team member](https://assets.postman.com/postman-docs/remove-user-from-team-confirmation.jpg)
-
-> When you remove a user from your team, you will still retain access to any data they have shared with the team. However, any data in the user’s personal workspaces is owned by that user and their ownership for that data will not be transferred when they are removed from your team.
-
-## Next steps
-
-To find information on billing, see [Managing your billing](/docs/administration/billing/).
-
-Learn more about the various roles that can be granted to your team members in [Roles and Permissions](/docs/collaborating-in-postman/roles-and-permissions/).
+* [Postman API key management](/docs/administration/managing-your-team/managing-api-keys/)
+* [Secret Scanner](/docs/administration/managing-your-team/secret-scanner/)
+* [Audit logs](/docs/administration/managing-your-team/audit-logs/)
+* [SSO](/docs/administration/sso/intro-sso/)
+* [SCIM](/docs/administration/scim-provisioning/scim-provisioning-overview/)
+* [Domain verification and capture](/docs/administration/domain-verification-and-capture/domain-capture-overview/)

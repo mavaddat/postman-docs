@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
-  lang, meta, title, slug,
+  lang, meta, title, slug, lastModifiedTime, earlyAccess,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -22,11 +22,10 @@ function SEO({
             description
             author
           }
-        }
+        }   
       }
     `,
   );
-
   return (
     <Helmet
       htmlAttributes={{
@@ -36,24 +35,40 @@ function SEO({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: 'robots',
+          content: `${earlyAccess ? 'noindex' : 'index'}`,
+        },
+        {
           name: 'google-site-verification',
           content: '58TM3lGyGn6c2Bj0PvPQSNzrd9_yBsHs2BjJ6KMHlRU',
         },
         {
           property: 'og:url',
-          content: 'https://learning.postman.com',
+          content: `https://learning.postman.com${slug}`,
+        },
+        {
+          property: 'og:description',
+          content: `${title}: documentation for Postman, the collaboration platform for API development. Create better APIs—faster.`,
         },
         {
           property: 'og:title',
-          content: title,
+          content: `${title} | Postman Learning Center`,
         },
         {
           property: 'og:site_name',
           content: 'Postman Learning Center',
         },
         {
+         property: 'article:publisher',
+         content: 'https://www.facebook.com/getpostman/',
+        },
+        {
+         property: 'article:modified_time',
+         content: lastModifiedTime
+        },
+        {
           property: 'og:image',
-          content: 'https://learning.postman.com/postman-api-platform-social-preview.jpeg',
+          content: 'https://voyager.postman.com/social-preview/learning-center/postman-learning-center-social-preview.jpg',
         },
         {
           property: 'og:type',
@@ -69,7 +84,11 @@ function SEO({
         },
         {
           name: 'twitter:title',
-          content: title,
+          content: `${title} | Postman Learning Center`,
+        },
+        {
+          property: 'twitter:description',
+          content: `${title}: documentation for Postman, the collaboration platform for API development. Create better APIs—faster.`,
         },
         {
           property: 'twitter:domain',
@@ -77,7 +96,7 @@ function SEO({
         },
         {
           property: 'twitter:image',
-          content: 'https://learning.postman.com/postman-api-platform-social-preview.jpeg',
+          content: 'https://voyager.postman.com/social-preview/learning-center/postman-learning-center-social-preview.jpg',
         },
         {
           property: 'twitter:site',
@@ -85,9 +104,16 @@ function SEO({
         },
       ].concat(meta)}
     >
+     <script type="text/javascript" src="https://cdn.cookielaw.org/consent/1cef3369-6d07-4928-b977-2d877eb670c4/OtAutoBlock.js" />
+     <link rel="preconnect" href="https://voyager.postman.com" crossorigin />
+     <link
+       href="https://voyager.postman.com/font/fonts.css"
+       rel="stylesheet"
+     />
+     <noscript>{`<link href="https://voyager.postman.com/font/fonts.css" rel="stylesheet" type="text/css" />`}</noscript>
       {/* OneTrust */}
-      <script type="text/javascript" src="https://cdn.cookielaw.org/consent/1cef3369-6d07-4928-b977-2d877eb670c4/OtAutoBlock.js" />
-      <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="1cef3369-6d07-4928-b977-2d877eb670c4" />
+
+      <script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="1cef3369-6d07-4928-b977-2d877eb670c4" />
       <link rel="canonical" href={`https://learning.postman.com${slug}`} />
       {/* Algolia Instantsearch IE11 support v3 */}
       {/* <script src="https://polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.includes" /> */}
@@ -95,8 +121,7 @@ function SEO({
       {/* Algolia Instantsearch IE11 support v4 */}
       <link rel="dns-prefetch" href="https://polyfill.io" />
       <link crossOrigin rel="preconnect" href="https://polyfill.io" />
-      <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries" />
-
+      <script async src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
 
     </Helmet>
   );

@@ -1,30 +1,31 @@
 ---
-title: "Managing public elements"
-order: 76.1
-page_id: "manage_public_elements"
-warning: false
+title: "Manage public elements in Postman"
+updated: 2023-06-15
 contextual_links:
   - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
-    name: "Related Blog Posts"
+    name: "Videos"
   - type: link
-    name: "Govern Your Public API Collections More Effectively"
-    url: "https://blog.postman.com/govern-your-public-api-collections-more-effectively/"
+    name: "Discovering APIs | Postman Enterprise"
+    url: "https://youtu.be/e1v647ayIBg"
+  - type: subtitle
+    name: "Blog posts"
+  - type: link
+    name: "Introducing Public Workspace Summary Emails"
+    url: "https://blog.postman.com/introducing-public-workspace-summary-emails/"
+  - type: link
+    name: "How to Securely Deploy Postman at Scale, Part 2: Information Management"
+    url: "https://blog.postman.com/how-to-securely-deploy-postman-at-scale-part-2-information-management/"
   - type: link
     name: "How to Set Up Your First Public Workspace"
     url: "https://blog.postman.com/how-to-set-up-public-workspaces/"
-  - type: section
-    name: "Next Steps"
-  - type: link
-    name: "Creating workspaces"
-    url: "/docs/collaborating-in-postman/using-workspaces/creating-workspaces/"
 search_keyword: "collection links, collection JSON links, manage public elements, public documentation, public workspaces"
 ---
 
-> **[Manage public elements is available only on Postman Enterprise plan.](https://www.postman.com/pricing/)**
+> **[Manage public elements is available on Postman Enterprise plans.](https://www.postman.com/pricing/)**
 
-The [Manage public elements](https://blog.postman.com/govern-your-public-api-collections-more-effectively/) dashboard gives you a central place to control what collections are shared outside of your team for public consumption. You need to have a [Community Manager](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) role in enterprise organizations to view and manage everything that’s made public by your team — including public collections links, public documentation, and public workspaces created by members of your team — all in one place.
+The [Manage public elements](https://blog.postman.com/govern-your-public-api-collections-more-effectively/) dashboard gives you a central place to control what collections are shared outside of your team for public consumption. You need to have a Community Manager or Super Admin [team role](/docs/collaborating-in-postman/roles-and-permissions/#team-roles) in enterprise organizations to view and manage everything that’s made public by your team, including public collections links, public documentation, and public workspaces created by members of your team, all in one place.
 
 ## Contents
 
@@ -32,46 +33,54 @@ The [Manage public elements](https://blog.postman.com/govern-your-public-api-col
     * [Workspaces](#workspaces)
     * [Public documentation](#public-documentation)
     * [Collection JSON links](#collection-json-links)
-* [Next steps](#next-steps)
+    * [Collection access keys](#collection-access-keys)
 
 ### Managing public elements
 
-To manage public elements, you need to have a Community Manager role in a Postman **Enterprise** plan. Use the dashboard to manage what collections your team has exposed for public consumption and to see which team member created a specific link. You have the ability to delete links to collections you feel should not be public. From the **Home** page, go to the **Manage public elements** section and select **Manage** to navigate to the dashboard view.
+To manage public elements, you need to have a Super Admin or Community Manager role in a Postman **Enterprise** plan. Use the dashboard to manage what collections your team has exposed for public consumption and for information about specific links. You can also delete links to collections you feel shouldn't be public.
 
-<img alt="Manage public elements" src="https://assets.postman.com/postman-docs/manage-public-elements.jpg"/>
-
-You can access manage public elements by navigating to the **Team** dropdown menu in the upper right corner and selecting **Manage Public Elements**.
-
-<img alt="Manage public elements from team dropdown" src="https://assets.postman.com/postman-docs/manage-public-elements-option-from-team-dropdown.jpg" height="400px"/>
+To access the **Manage public elements** dashboard, select **Team** in the header, then select **Manage Public Elements**.
 
 #### Workspaces
 
-In the **Workspaces** tab, you have access to all the public workspaces created by your team. You can also view and respond to requests to make workspaces public. Along with workspace name, the request date and the requester details are displayed.
+In the dashboard's **Workspaces** tab, you have access to all the public workspaces created by your team. You can also view and respond to requests to make workspaces public. Along with workspace name, the request date and the requester details are displayed.
 
-<img alt="Manage workspaces" src="https://assets.postman.com/postman-docs/manage-workspaces.jpg"/>
-
-To respond to the request, select **Respond** to the right of the workspace. Approve the request to convert the workspace into a [public workspace](/docs/collaborating-in-postman/public-workspaces/).
+To respond to the request, hover over the relevant line, then select **Respond**. Approve the request to convert the workspace into a [public workspace](/docs/collaborating-in-postman/using-workspaces/public-workspaces/).
 
 <img alt="Convert to public workspaces" src="https://assets.postman.com/postman-docs/request-visibility-public-workspace.jpg"/>
 
-#### Public Documentation
+> To learn more about workspaces, see [Creating workspaces](/docs/collaborating-in-postman/using-workspaces/creating-workspaces/) and [Managing workspaces](/docs/collaborating-in-postman/using-workspaces/managing-workspaces/). For more details on how to create a public workspace, visit [Public workspaces](/docs/collaborating-in-postman/using-workspaces/public-workspaces/).
 
-The **Documentation** tab displays all the collections with published documentation. Use the search box to filter by the publisher. Along with the collection name and environment name, you can view the date the documentation was published on, who published it, and the documentation URL. Copy the **Documentation URL** and paste it in a browser of your choice, and you will have access to the documentation.
+#### Public documentation
 
-<img alt="Public documentation" src="https://assets.postman.com/postman-docs/public-documentation.jpg"/>
+The dashboard's **Documentation** tab displays all the collections with published documentation. Use the search box to filter by the publisher. Along with the collection name and environment name, you can view the date the documentation was published on, who published it, and the documentation URL.
+
+You can also view and respond to requests to make documentation public. To approve or deny a publish request, hover over a request and select **Review Request**. Select **Approve** to [publish the documentation](/docs/publishing-your-api/publishing-your-docs/) and make it public, or select **Deny** to keep the documentation private.
+
+<img alt="Responding to publish requests" src="https://assets.postman.com/postman-docs/request-publish-documentation-v10-2.jpg"/>
 
 #### Collection JSON links
 
-The **Collection JSON Links** tab displays all the collections with JSON links. You can use the toggle option to enable sharing collection JSON via public links.
+> Sharing collection JSON files using a public link has been deprecated. No new links can be generated and existing links can't be modified or edited. Users can still access any existing collection JSON links.
+>
+> To share a collection's JSON, you can use the Postman API. To learn more, see [Sharing using the Postman API](/docs/collaborating-in-postman/sharing/#sharing-using-the-postman-api).
 
-As the Community Manager, you will be able to view, access, or delete the collections with JSON links. In addition to the collection name, the dashboard displays more information about the date the link was updated on, who updated the link, and the JSON link.
+The dashboard's **Collection JSON Links** tab displays all the collections with existing JSON links.
 
-If you turn off the toggle option, no new links can be generated and existing links cannot be modified or edited. The previously created JSON links will still remain accessible.
+As a Community Manager or Super Admin, you can view or delete a collection JSON link. In addition to the collection name, the dashboard displays more information about the date the link was updated on, who updated the link, and the JSON link.
 
-Hover over the **JSON link** corresponding to the collection and click **Copy link to JSON**. Paste the link in a browser of your choice and you will have access to the collection JSON.
+#### Collection access keys
 
-<img alt="Collection JSON links" src="https://assets.postman.com/postman-docs/collection-json-links.jpg"/>
+The dashboard's **Collection Access Keys** tab displays your team's [collection access keys](/docs/developer/postman-api/authentication/#generate-a-collection-access-key). You can view which collection a key belongs to, the date of its creation, and who created it. To revoke a key, hover over the key and select **Delete**.
 
-## Next steps
+If you turn off the **Allow creation of Collection Access Keys** setting, this prevents users from [creating new collection access keys](/docs/collaborating-in-postman/sharing/#sharing-using-the-postman-api).
 
-To learn more about workspaces, see [Creating workspaces](/docs/collaborating-in-postman/using-workspaces/creating-workspaces/) and [Managing workspaces](/docs/collaborating-in-postman/using-workspaces/managing-workspaces/). For more details on how to create a public workspace, visit [Public workspaces](/docs/collaborating-in-postman/public-workspaces/).
+![The Collection Access Keys tab](https://assets.postman.com/postman-docs/manage-public-elements-collection-access-keys-v10.jpg)
+
+Select **Revoke All Keys** to remove all of the team's existing keys. If you select this, a warning appears.
+
+![Revoking a team's keys](https://assets.postman.com/postman-docs/revoke-team-collection-access-keys-v10.jpg)
+
+In the warning, select **Revoke All Keys** to confirm. To cancel, select **Keep All Keys** or close the window.
+
+> **Revoking collection access keys is permanent.** You will not be able to undo this action.

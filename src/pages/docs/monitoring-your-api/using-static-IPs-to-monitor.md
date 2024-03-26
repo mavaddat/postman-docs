@@ -1,34 +1,23 @@
 ---
-title: Running monitors using static IPs
+title: "Configure Postman Monitors to run from static IPs"
 order: 93
 page_id: "using_static_IPs_to_monitor"
+search_keyword: "whitelist, whitelist IP"
 updated: 2022-2-14
 warning: false
 contextual_links:
   - type: section
-    name: "Prerequisites"
-  - type: link
-    name: "Intro to monitoring"
-    url: "/docs/monitoring-your-api/intro-monitors/"
-  - type: section
-    name: "Additional Resources"
+    name: "Additional resources"
   - type: subtitle
     name: "Videos"
   - type: link
     name: "API Monitoring | The Exploratory"
     url: "https://youtu.be/tDQzY1Hn2LY"
-  - type: section
-    name: "Next steps"
-  - type: link
-    name: "Integrations for monitoring"
-    url: "/docs/integrations/intro-integrations/"
 ---
 
-> __[Static IP address monitoring is available on Postman Professional and Enterprise plans.](https://www.postman.com/pricing)__
+> **[Static IP address monitoring is available on Postman Professional and Enterprise plans.](https://www.postman.com/pricing)**
 
 Postman's static IP feature enables you to use [collection-based monitors](/docs/monitoring-your-api/setting-up-monitor/) to monitor APIs that are behind a restricted firewall. This feature is available to all Postman Professional and Enterprise customers, provided your IT team [allowlists](#allowlisting-static-ip-addresses) the associated static IP addresses. The provided static IP addresses are fixed to their specified region and are shared by all customers who use this feature.
-
-> Static IPs are not available for uptime monitors.
 
 ## Contents
 
@@ -55,7 +44,7 @@ When [creating a new collection-based monitor](/docs/monitoring-your-api/setting
 
 ## Changing an existing monitor to run from a static IP address
 
-Select **Monitors** from the left sidebar, and then select a collection-based monitor. Select the three dots <img alt="Three dots icon" src="https://assets.postman.com/postman-docs/icon-three-dots-v9.jpg" width="18px" style="vertical-align:middle;margin-bottom:5px"> at the upper right, and then select **Edit**.
+Select **Monitors** in the sidebar, and then select a collection-based monitor. Select the more actions icon <img alt="More actions icon" src="https://assets.postman.com/postman-docs/icon-more-actions-v9.jpg#icon" width="16px">at the upper right, and then select **Edit**.
 
 <img src="https://assets.postman.com/postman-docs/select-edit-monitor.jpg" width="293px" alt="Edit monitor"/>
 
@@ -65,4 +54,6 @@ Under **Regions**, choose the **Manually select region** option. Select your des
 
 ## Next steps
 
-Learn how to set up [integrations](/docs/integrations/intro-integrations/) for your monitor results.
+After learning how to monitor APIs that are behind a restricted firewall, you can set up an integration with other tools in your development workflow.
+
+* To learn how to set up integrations for your monitor results, see [Integrating with Postman](/docs/integrations/intro-integrations/).

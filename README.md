@@ -2,7 +2,7 @@
 
 # Postman Learning Center
 
-Postman is the collaboration platform for API development. The [Postman Learning Center](https://learning.postman.com/) has the resources you need to ramp up quickly and extend your skills with Postman. Postman enables you to write API test cases in any format of your choice (JSON/XML/many more) and run them to verify and validate your API. Moreover, Postman provides [collections](https://learning.postman.com/docs/getting-started/creating-the-first-collection/) which can improve a developer's workflow. There are also powerful tools for API-first development, including writing API schemas and generating server code. Postman is available for several platforms including Windows, macOS, and Linux. For more information visit [the Postman website](https://www.postman.com/).
+Postman is the collaboration platform for API development. The [Postman Learning Center](https://learning.postman.com/) has the resources you need to ramp up quickly and extend your skills with Postman. Postman enables you to write API test cases in any format of your choice (JSON/XML/many more) and run them to verify and validate your API. Moreover, Postman provides [collections](https://learning.postman.com/docs/getting-started/first-steps/creating-the-first-collection/) which can improve a developer's workflow. There are also powerful tools for API-first development, including writing API schemas and generating server code. Postman is available for several platforms including Windows, macOS, and Linux. For more information visit [the Postman website](https://www.postman.com/).
 
 ## Contribution guidelines
 
@@ -12,7 +12,7 @@ We would love for you to contribute to the Learning Center! To contribute to thi
 * The [Contribution Guidelines](CONTRIBUTING.md)
 * The [Documentation Style Guide](DOCS_STYLE_GUIDE.md)
 
-**NOTE:** We have added a new Markdown linter with GitHub Actions. When making a pull request, it will run against this linter. Your changed files are required to pass linting before they will be merged. More information on this can be found in the [contribution guidelines](CONTRIBUTING.md).
+**NOTE:** We've added a new Markdown linter with GitHub Actions. When making a pull request, it will run against this linter. Your changed files are required to pass linting before they will be merged. More information on this can be found in the [contribution guidelines](CONTRIBUTING.md).
 
 > To say thank you for your contribution, we’d love to send you exclusive Contributor swag. Fill out the [Contributor Submission form](https://docs.google.com/forms/d/e/1FAIpQLSfbLAcxl-IOiv3NmgEaWw7FleOaXnIyIoIrY_zn6U4JvjQBGA/viewform?usp=send_form) and we’ll send you a token of our gratitude.
 
@@ -30,13 +30,13 @@ We would love for you to contribute to the Learning Center! To contribute to thi
 
 ```
 
-**NOTE:** this site was built with node v14.15.0. We recommend installing and using [nvm](https://github.com/nvm-sh/nvm) and setting your node version to v14.15.0.
+**NOTE:** this site was built with Node.js v14.17.1. We recommend installing and using [nvm](https://github.com/nvm-sh/nvm) and setting your Node.js version to v14.17.1.
 
 ### Build using Docker
 
 You can build the Learning Center and run it in a Docker container by creating a `dockerfile`.
 
-1. Start by cloning the the repository
+1. Start by cloning the repository:
 
    `git clone https://github.com/postmanlabs/postman-docs.git`
 
@@ -81,7 +81,7 @@ You can build the Learning Center and run it in a Docker container by creating a
 
 #### Docker Compose
 
-You can also build with the `docker-compose` command using the dockerfile above and this docker-compose.yaml
+You can also build with the `docker-compose` command using the `dockerfile` above and this `docker-compose.yaml`:
 
 ```yaml
 
@@ -95,7 +95,7 @@ services:
 
 ```
 
-The docker-compose.yaml should be in the same directory as the postman-docs directory and dockerfile.
+The `docker-compose.yaml` must be in the same directory as the `postman-docs` directory and `dockerfile`.
 
 ```shell
 
@@ -107,7 +107,7 @@ The docker-compose.yaml should be in the same directory as the postman-docs dire
 
 ```
 
-Start run the container with this command
+Start run the container with this command:
 
 `$ docker-compose up`
 
@@ -119,7 +119,7 @@ The built site will only host the most up-to-date docs. All legacy documentation
 
 * Posts are maintained under the `/src/pages/docs` folder.
 
-* The folder structure of /docs is the URL structure for posts. For example, `/docs/postman/variables-and-environments/variables.md` is mapped to the URL `https://learning.postman.com/docs/postman/variables-and-environments/variables/`.
+* The folder structure of `/docs` is the URL structure for posts. For example, `/docs/postman/variables-and-environments/variables.md` is mapped to the URL `https://learning.postman.com/docs/postman/variables-and-environments/variables/`.
 
 * Links in the docs should be relative. Example:
 
